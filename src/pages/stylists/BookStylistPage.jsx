@@ -108,35 +108,35 @@ export default function BookStylistPage() {
         </h1>
 
         {/* Steps */}
-        <div className="flex items-center justify-between mb-8 overflow-x-auto pb-4">
+        <div className="flex items-center overflow-x-auto whitespace-nowrap scrollbar-hide gap-2 mb-6 pb-2">
           {steps.map((step, index) => (
-            <div key={step.id} className="flex items-center">
+            <div
+              key={step.id}
+              className="flex items-center flex-shrink-0"
+            >
               <div className="flex flex-col items-center min-w-[80px]">
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
-                  currentStep > step.id
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${currentStep > step.id
                     ? 'bg-success-500 text-white'
                     : currentStep === step.id
-                    ? 'bg-primary-600 text-white'
-                    : 'bg-secondary-200 dark:bg-secondary-700 text-secondary-500'
-                }`}>
+                      ? 'bg-primary-600 text-white'
+                      : 'bg-secondary-200 dark:bg-secondary-700 text-secondary-500'
+                  }`}>
                   {currentStep > step.id ? <Check className="w-4 h-4" /> : step.id}
                 </div>
-                <p className={`text-xs mt-2 font-medium ${
-                  currentStep >= step.id ? 'text-primary-600' : 'text-secondary-500'
-                }`}>
+                <p className={`text-xs mt-2 font-medium ${currentStep >= step.id ? 'text-primary-600' : 'text-secondary-500'
+                  }`}>
                   {step.title}
                 </p>
               </div>
               {index < steps.length - 1 && (
-                <div className={`w-16 h-0.5 ${
-                  currentStep > step.id ? 'bg-success-500' : 'bg-secondary-200 dark:bg-secondary-700'
-                }`} />
+                <div className={`w-16 h-0.5 ${currentStep > step.id ? 'bg-success-500' : 'bg-secondary-200 dark:bg-secondary-700'
+                  }`} />
               )}
             </div>
           ))}
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
           {/* Main Content */}
           <div className="lg:col-span-2">
             <motion.div
@@ -155,13 +155,12 @@ export default function BookStylistPage() {
                         <button
                           key={service.id}
                           onClick={() => setBooking({ ...booking, serviceId: service.id })}
-                          className={`w-full p-4 rounded-xl border-2 text-left transition-all ${
-                            booking.serviceId === service.id
+                          className={`w-full p-4 sm:p-5 rounded-xl border-2 text-left transition-all ${booking.serviceId === service.id
                               ? 'border-primary-600 bg-primary-50 dark:bg-primary-900/20'
                               : 'border-secondary-200 dark:border-secondary-700 hover:border-secondary-300'
-                          }`}
+                            }`}
                         >
-                          <div className="flex items-center justify-between">
+                          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                             <div>
                               <h3 className="font-medium text-secondary-900 dark:text-white">{service.name}</h3>
                               <p className="text-sm text-secondary-500">{service.duration_minutes} minutes</p>
@@ -177,11 +176,10 @@ export default function BookStylistPage() {
                     <div className="mt-6">
                       <h3 className="font-medium text-secondary-900 dark:text-white mb-3">Service Location</h3>
                       <div className="flex gap-4">
-                        <label className={`flex-1 p-4 rounded-xl border-2 cursor-pointer transition-all ${
-                          booking.serviceType === 'salon'
+                        <label className={`flex-1 p-4 rounded-xl border-2 cursor-pointer transition-all ${booking.serviceType === 'salon'
                             ? 'border-primary-600 bg-primary-50 dark:bg-primary-900/20'
                             : 'border-secondary-200 dark:border-secondary-700'
-                        }`}>
+                          }`}>
                           <input
                             type="radio"
                             name="serviceType"
@@ -192,11 +190,10 @@ export default function BookStylistPage() {
                           />
                           <span className="font-medium text-secondary-900 dark:text-white">Salon Visit</span>
                         </label>
-                        <label className={`flex-1 p-4 rounded-xl border-2 cursor-pointer transition-all ${
-                          booking.serviceType === 'home'
+                        <label className={`flex-1 p-4 rounded-xl border-2 cursor-pointer transition-all ${booking.serviceType === 'home'
                             ? 'border-primary-600 bg-primary-50 dark:bg-primary-900/20'
                             : 'border-secondary-200 dark:border-secondary-700'
-                        }`}>
+                          }`}>
                           <input
                             type="radio"
                             name="serviceType"
@@ -244,17 +241,16 @@ export default function BookStylistPage() {
                             key={i}
                             disabled={day.disabled || !day.date}
                             onClick={() => day.date && setBooking({ ...booking, date: day.date })}
-                            className={`aspect-square rounded-lg flex items-center justify-center text-sm transition-all ${
-                              !day.date
+                            className={`aspect-square rounded-lg flex items-center justify-center text-sm transition-all ${!day.date
                                 ? ''
                                 : day.disabled
-                                ? 'text-secondary-300 dark:text-secondary-600 cursor-not-allowed'
-                                : booking.date && booking.date.toDateString() === day.date.toDateString()
-                                ? 'bg-primary-600 text-white'
-                                : day.isToday
-                                ? 'border-2 border-primary-600 text-primary-600'
-                                : 'hover:bg-secondary-100 dark:hover:bg-secondary-700'
-                            }`}
+                                  ? 'text-secondary-300 dark:text-secondary-600 cursor-not-allowed'
+                                  : booking.date && booking.date.toDateString() === day.date.toDateString()
+                                    ? 'bg-primary-600 text-white'
+                                    : day.isToday
+                                      ? 'border-2 border-primary-600 text-primary-600'
+                                      : 'hover:bg-secondary-100 dark:hover:bg-secondary-700'
+                              }`}
                           >
                             {day.date?.getDate() || ''}
                           </button>
@@ -274,11 +270,10 @@ export default function BookStylistPage() {
                         <button
                           key={time}
                           onClick={() => setBooking({ ...booking, time })}
-                          className={`p-3 rounded-xl text-sm font-medium transition-all ${
-                            booking.time === time
+                          className={`p-3 rounded-xl text-sm font-medium transition-all ${booking.time === time
                               ? 'bg-primary-600 text-white'
                               : 'bg-secondary-100 dark:bg-secondary-800 text-secondary-700 dark:text-secondary-300 hover:bg-secondary-200 dark:hover:bg-secondary-700'
-                          }`}
+                            }`}
                         >
                           {(() => {
                             const [hour, minute] = time.split(':')
@@ -362,11 +357,10 @@ export default function BookStylistPage() {
                       ].map((method) => (
                         <label
                           key={method.id}
-                          className={`flex items-center gap-3 p-4 rounded-xl border-2 cursor-pointer transition-all ${
-                            booking.paymentMethod === method.id
+                          className={`flex items-center gap-3 p-4 rounded-xl border-2 cursor-pointer transition-all ${booking.paymentMethod === method.id
                               ? 'border-primary-600 bg-primary-50 dark:bg-primary-900/20'
                               : 'border-secondary-200 dark:border-secondary-700'
-                          }`}
+                            }`}
                         >
                           <input
                             type="radio"

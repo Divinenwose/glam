@@ -86,18 +86,19 @@ const mockStylists = [
 
 export default function StylistsPage() {
   const [searchParams, setSearchParams] = useSearchParams()
-  const [stylists, setStylists] = useState([])
+  const [stylists, setStylists] = useState(mockStylists)
   const [loading, setLoading] = useState(true)
   const [showFilters, setShowFilters] = useState(false)
 
   const [filters, setFilters] = useState({
-    location: searchParams.get('location') || '',
-    service: searchParams.get('service') || '',
-    rating: searchParams.get('rating') || '',
-    experience: searchParams.get('experience') || '',
-    homeService: searchParams.get('homeService') === 'true',
-    salonService: searchParams.get('salonService') !== 'false',
-    verified: searchParams.get('verified') !== 'false',
+    location: searchParams.get("location") || "",
+    service: searchParams.get("service") || "",
+    rating: searchParams.get("rating") || "",
+    experience: searchParams.get("experience") || "",
+    distance: searchParams.get("distance") || "",
+    homeService: searchParams.get("homeService") === "true",
+    salonService: searchParams.get("salonService") !== "false",
+    verified: searchParams.get("verified") !== "false",
   })
 
   useEffect(() => {
@@ -108,31 +109,97 @@ export default function StylistsPage() {
     }, 800)
   }, [])
 
+  useEffect(() => {
+    let filtered = [...mockStylists];
+
+    // Location or stylist name
+    if (filters.location) {
+      const search = filters.location.toLowerCase();
+
+      filtered = filtered.filter(
+        stylist =>
+          stylist.name.toLowerCase().includes(search) ||
+          stylist.city.toLowerCase().includes(search)
+      );
+    }
+
+    // Service
+    if (filters.service) {
+      filtered = filtered.filter(stylist =>
+        stylist.specializations.some(service =>
+          service.toLowerCase() === filters.service.toLowerCase()
+        )
+      );
+    }
+
+    // Rating
+    if (filters.rating) {
+      filtered = filtered.filter(
+        stylist => stylist.rating >= Number(filters.rating)
+      );
+    }
+
+    // Experience
+    if (filters.experience) {
+      filtered = filtered.filter(
+        stylist => stylist.experience_years >= Number(filters.experience)
+      );
+    }
+
+    // Home Service
+    if (filters.homeService) {
+      filtered = filtered.filter(
+        stylist => stylist.offers_home_service
+      );
+    }
+
+    // Salon Service
+    if (filters.salonService) {
+      filtered = filtered.filter(
+        stylist => stylist.offers_salon_service
+      );
+    }
+
+    // Verified
+    if (filters.verified) {
+      filtered = filtered.filter(
+        stylist => stylist.is_verified
+      );
+    }
+
+    setStylists(filtered);
+  }, [filters]);
+
   const handleFilterChange = (key, value) => {
     setFilters({ ...filters, [key]: value })
   }
 
   const applyFilters = () => {
-    const params = new URLSearchParams()
+    const params = new URLSearchParams();
+
     Object.entries(filters).forEach(([key, value]) => {
-      if (value) params.append(key, value)
-    })
-    setSearchParams(params)
-    setShowFilters(false)
-  }
+      if (value) params.set(key, value);
+    });
+
+    setSearchParams(params);
+    setShowFilters(false);
+  };
 
   const clearFilters = () => {
     setFilters({
-      location: '',
-      service: '',
-      rating: '',
-      experience: '',
+      location: "",
+      service: "",
+      rating: "",
+      experience: "",
+      distance: "",
       homeService: false,
       salonService: true,
       verified: true,
-    })
-    setSearchParams({})
-  }
+    });
+
+    setStylists(mockStylists);
+    setSearchParams({});
+  };
 
   const activeFilterCount = Object.values(filters).filter(Boolean).length
 
