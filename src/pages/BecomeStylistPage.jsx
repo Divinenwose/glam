@@ -72,15 +72,6 @@ export default function BecomeStylistPage() {
       {/* Header */}
       <div className="bg-white dark:bg-secondary-900 border-b border-secondary-200 dark:border-secondary-800">
         <div className="container-custom py-8">
-          <Link to="/" className="flex items-center gap-2 mb-6">
-            <div className="p-2 bg-primary-600 rounded-xl">
-              <Scissors className="w-5 h-5 text-white" />
-            </div>
-            <span className="text-xl font-display font-semibold text-secondary-900 dark:text-white">
-              GlamBook
-            </span>
-          </Link>
-
           <h1 className="text-2xl font-display font-bold text-secondary-900 dark:text-white mb-2">
             Become a Hairstylist
           </h1>
@@ -91,23 +82,22 @@ export default function BecomeStylistPage() {
       </div>
 
       <div className="container-custom py-8">
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 lg:gap-8">
           {/* Form - Left 2 columns */}
           <div className="lg:col-span-2">
             {/* Progress */}
-            <div className="flex items-center justify-between mb-8 overflow-x-auto pb-4">
+            <div className="flex items-start gap-4 mb-6 overflow-x-auto scrollbar-hide pb-4">
               {steps.map((step, index) => (
                 <div
                   key={index}
                   className={`flex items-center ${index < steps.length - 1 ? 'flex-1' : ''}`}
                 >
-                  <div className="flex flex-col items-center min-w-[80px]">
+                  <div className="flex flex-col items-center min-w-[60px] sm:min-w-[80px]">
                     <div
-                      className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
-                        currentStep >= index
+                      className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs sm:text-sm font-medium ${currentStep >= index
                           ? 'bg-primary-600 text-white'
                           : 'bg-secondary-200 dark:bg-secondary-700 text-secondary-500'
-                      }`}
+                        }`}
                     >
                       {currentStep > index ? <Check className="w-4 h-4" /> : index + 1}
                     </div>
@@ -119,9 +109,8 @@ export default function BecomeStylistPage() {
                   </div>
                   {index < steps.length - 1 && (
                     <div
-                      className={`flex-1 h-0.5 mx-2 ${
-                        currentStep > index ? 'bg-primary-600' : 'bg-secondary-200 dark:bg-secondary-700'
-                      }`}
+                      className={`flex-1 h-0.5 mx-2 ${currentStep > index ? 'bg-primary-600' : 'bg-secondary-200 dark:bg-secondary-700'
+                        }`}
                     />
                   )}
                 </div>
@@ -133,7 +122,7 @@ export default function BecomeStylistPage() {
               key={currentStep}
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="bg-white dark:bg-secondary-900 rounded-2xl shadow-soft p-6 lg:p-8"
+              className="bg-white dark:bg-secondary-900 rounded-2xl shadow-soft p-4 sm:p-6 lg:p-8"
             >
               {currentStep === 0 && (
                 <div className="space-y-6">
@@ -327,10 +316,11 @@ export default function BecomeStylistPage() {
               )}
 
               {/* Navigation */}
-              <div className="flex items-center justify-between mt-8 pt-6 border-t border-secondary-200 dark:border-secondary-700">
+              <div className="mt-8 pt-6 border-t border-secondary-200 dark:border-secondary-700 flex flex-col-reverse sm:flex-row gap-3 sm:justify-between">
                 <Button
                   variant="ghost"
                   onClick={handlePrev}
+                  className="w-full sm:w-auto"
                   disabled={currentStep === 0}
                 >
                   <ArrowLeft className="w-4 h-4 mr-2" />
@@ -338,7 +328,7 @@ export default function BecomeStylistPage() {
                 </Button>
 
                 {currentStep < steps.length - 1 ? (
-                  <Button onClick={handleNext}>
+                  <Button onClick={handleNext} className="w-full sm:w-auto">
                     Next
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
@@ -353,8 +343,8 @@ export default function BecomeStylistPage() {
           </div>
 
           {/* Benefits - Right column */}
-          <div className="lg:col-span-1">
-            <div className="sticky top-24 space-y-4">
+         <div className="lg:col-span-1 mt-8 xl:mt-0">
+            <div className="space-y-4 lg:sticky lg:top-24">
               {benefits.map((benefit, index) => (
                 <Card key={index} className="p-4">
                   <div className="flex items-start gap-3">

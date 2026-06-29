@@ -10,9 +10,10 @@ export function StylistCard({ stylist, index = 0 }) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
+      className="h-full"
     >
-      <Link to={`/stylists/${stylist.id}`}>
-        <Card hover className="group overflow-hidden">
+      <Link to={`/stylists/${stylist.id}`} className="block h-full">
+        <Card hover className="group h-full flex flex-col overflow-hidden">
           {/* Image */}
           <div className="relative h-48 overflow-hidden">
             <img
@@ -41,8 +42,8 @@ export function StylistCard({ stylist, index = 0 }) {
           </div>
 
           {/* Content */}
-          <div className="p-4">
-            <div className="flex items-start justify-between gap-2 mb-2">
+          <div className="p-4 flex flex-col flex-1">
+            <div className="mt-auto flex items-center justify-between gap-2 mb-2">
               <div>
                 <h3 className="font-semibold text-secondary-900 dark:text-white">
                   {stylist.name}

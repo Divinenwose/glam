@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   Menu, X, Scissors, ChevronDown, User, LogOut, Settings,
@@ -24,6 +24,11 @@ export default function Navbar() {
   const { darkMode, toggleDarkMode } = useTheme()
   const location = useLocation()
 
+  useEffect(() => {
+    setMobileMenuOpen(false)
+    setProfileOpen(false)
+  }, [location.pathname])
+
   const isActive = (path) => location.pathname === path
 
   const handleSignOut = async () => {
@@ -31,12 +36,16 @@ export default function Navbar() {
     setProfileOpen(false)
   }
 
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
     <nav className="sticky top-0 z-50 glass">
       <div className="container-custom">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
+          <a href="/" className="flex items-center gap-2 group">
             <motion.div
               whileHover={{ rotate: 15 }}
               className="p-2 bg-primary-600 rounded-xl"
@@ -46,27 +55,27 @@ export default function Navbar() {
             <span className="text-xl font-display font-semibold text-secondary-900 dark:text-white">
               GlamBook
             </span>
-          </Link>
+          </a>
 
-          {/* Desktop Navigation */}
+          {/* Deskhrefp Navigation */}
           <div className="hidden lg:flex items-center gap-1">
             {navigation.map((item) => (
-              <Link
+              <a
                 key={item.name}
-                to={item.href}
+                href={item.href}
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${isActive(item.href)
                   ? 'text-primary-600 bg-primary-50 dark:bg-primary-900/20'
                   : 'text-secondary-600 hover:text-secondary-900 dark:text-secondary-300 dark:hover:text-white hover:bg-secondary-100 dark:hover:bg-secondary-800'
                   }`}
               >
                 {item.name}
-              </Link>
+              </a>
             ))}
           </div>
 
           {/* Right side */}
           <div className="flex items-center gap-3">
-            {/* Theme Toggle */}
+            {/* Theme hrefggle */}
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -87,10 +96,10 @@ export default function Navbar() {
             {user ? (
               <>
                 {/* Notifications */}
-                <Link to="/notifications" className="relative p-2 rounded-lg text-secondary-600 hover:bg-secondary-100 dark:text-secondary-300 dark:hover:bg-secondary-800">
+                <a href="/notifications" className="relative p-2 rounded-lg text-secondary-600 hover:bg-secondary-100 dark:text-secondary-300 dark:hover:bg-secondary-800">
                   <Bell className="w-5 h-5" />
-                  <span className="absolute top-1 right-1 w-2 h-2 bg-primary-600 rounded-full"></span>
-                </Link>
+                  <span className="absolute hrefp-1 right-1 w-2 h-2 bg-primary-600 rounded-full"></span>
+                </a>
 
                 {/* Profile Dropdown */}
                 <div className="relative">
@@ -126,46 +135,46 @@ export default function Navbar() {
                         </div>
 
                         <div className="py-2">
-                          <Link
-                            to={profile?.role === 'stylist' ? '/stylist/dashboard' : profile?.role === 'admin' ? '/admin/dashboard' : '/dashboard'}
+                          <a
+                            href={profile?.role === 'stylist' ? '/stylist/dashboard' : profile?.role === 'admin' ? '/admin/dashboard' : '/dashboard'}
                             onClick={() => setProfileOpen(false)}
                             className="flex items-center gap-3 px-4 py-2 text-secondary-600 dark:text-secondary-300 hover:bg-secondary-50 dark:hover:bg-secondary-800"
                           >
                             <LayoutDashboard className="w-4 h-4" />
                             Dashboard
-                          </Link>
-                          <Link
-                            to="/bookings"
+                          </a>
+                          <a
+                            href="/bookings"
                             onClick={() => setProfileOpen(false)}
                             className="flex items-center gap-3 px-4 py-2 text-secondary-600 dark:text-secondary-300 hover:bg-secondary-50 dark:hover:bg-secondary-800"
                           >
                             <Calendar className="w-4 h-4" />
                             Bookings
-                          </Link>
-                          <Link
-                            to="/favorites"
+                          </a>
+                          <a
+                            href="/favorites"
                             onClick={() => setProfileOpen(false)}
                             className="flex items-center gap-3 px-4 py-2 text-secondary-600 dark:text-secondary-300 hover:bg-secondary-50 dark:hover:bg-secondary-800"
                           >
                             <Heart className="w-4 h-4" />
                             Favorites
-                          </Link>
-                          <Link
-                            to="/messages"
+                          </a>
+                          <a
+                            href="/messages"
                             onClick={() => setProfileOpen(false)}
                             className="flex items-center gap-3 px-4 py-2 text-secondary-600 dark:text-secondary-300 hover:bg-secondary-50 dark:hover:bg-secondary-800"
                           >
                             <MessageSquare className="w-4 h-4" />
                             Messages
-                          </Link>
-                          <Link
-                            to="/settings"
+                          </a>
+                          <a
+                            href="/settings"
                             onClick={() => setProfileOpen(false)}
                             className="flex items-center gap-3 px-4 py-2 text-secondary-600 dark:text-secondary-300 hover:bg-secondary-50 dark:hover:bg-secondary-800"
                           >
                             <Settings className="w-4 h-4" />
                             Settings
-                          </Link>
+                          </a>
                         </div>
 
                         <div className="border-t border-secondary-100 dark:border-secondary-800 pt-2">
@@ -184,18 +193,18 @@ export default function Navbar() {
               </>
             ) : (
               <div className="hidden lg:flex items-center gap-2">
-                <Link
-                  to="/login"
+                <a
+                  href="/login"
                   className="btn-ghost hidden sm:inline-flex"
                 >
                   Sign in
-                </Link>
-                <Link
-                  to="/register"
+                </a>
+                <a
+                  href="/register"
                   className="btn-primary"
                 >
                   Get started
-                </Link>
+                </a>
               </div>
             )}
 
@@ -218,15 +227,15 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden border-t border-secondary-100 dark:border-secondary-800"
+            className="lg:hidden bg-white dark:bg-black border-t border-secondary-100 dark:border-secondary-800"
           >
             <div className="container-custom py-4">
               {/* Navigation */}
               <div className="space-y-1">
                 {navigation.map((item) => (
-                  <Link
+                  <a
                     key={item.name}
-                    to={item.href}
+                    href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
                     className={`block px-3 py-2 rounded-lg transition-colors ${isActive(item.href)
                       ? "text-primary-600 bg-primary-50 dark:bg-primary-900/20"
@@ -234,28 +243,28 @@ export default function Navbar() {
                       }`}
                   >
                     {item.name}
-                  </Link>
+                  </a>
                 ))}
               </div>
 
-              {/* Auth Buttons */}
+              {/* Auth buttons */}
               {!user && (
                 <div className="mt-6 space-y-3 border-t border-secondary-200 dark:border-secondary-700 pt-4">
-                  <Link
-                    to="/login"
-                    onClick={() => setMobileMenuOpen(false)}
+                  <a
+                    href="/login"
+                   onClick={closeMobileMenu}
                     className="block w-full text-center py-3 rounded-xl border border-secondary-300 dark:border-secondary-700 text-secondary-700 dark:text-secondary-200 hover:bg-secondary-100 dark:hover:bg-secondary-800 transition"
                   >
                     Sign In
-                  </Link>
+                  </a>
 
-                  <Link
-                    to="/register"
-                    onClick={() => setMobileMenuOpen(false)}
+                  <a
+                    href="/register"
+                    onClick={closeMobileMenu}
                     className="block w-full text-center py-3 rounded-xl bg-primary-600 text-white font-semibold hover:bg-primary-700 transition"
                   >
                     Get Started
-                  </Link>
+                  </a>
                 </div>
               )}
             </div>

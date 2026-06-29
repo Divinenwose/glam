@@ -36,7 +36,7 @@ const featuredStylists = [
     starting_price: 45,
     specializations: ["Men's Haircuts", 'Fades', 'Beard Trim'],
     is_verified: true,
-    image: 'https://images.pexels.com/photos/1811822/pexels-photo-1811822.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://images.pexels.com/photos/3993312/pexels-photo-3993312.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
   {
     id: '3',
@@ -72,7 +72,7 @@ const popularHairstyles = [
   { name: 'Locs', image: 'https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=400' },
   { name: 'Fade', image: 'https://images.pexels.com/photos/1709530/pexels-photo-1709530.jpeg?auto=compress&cs=tinysrgb&w=400' },
   { name: 'Balayage', image: 'https://images.pexels.com/photos/1529036/pexels-photo-1529036.jpeg?auto=compress&cs=tinysrgb&w=400' },
-  { name: 'Bridal Hair', image: 'https://images.pexels.com/photos/1990932/pexels-photo-1990932.jpeg?auto=compress&cs=tinysrgb&w=400' },
+  { name: 'Bridal Hair', image: 'https://images.pexels.com/photos/1529036/pexels-photo-1529036.jpeg?auto=compress&cs=tinysrgb&w=400' },
 ]
 
 const reviews = [
@@ -258,7 +258,7 @@ export default function HomePage() {
                 className="relative"
               >
                 <div className="bg-white dark:bg-secondary-800 rounded-2xl p-6 h-full">
-                  <span className="text-5xl font-bold text-primary-100 dark:text-primary-900/30">
+                  <span className="text-5xl font-bold text-primary-500 dark:text-primary-400/70">
                     {step.number}
                   </span>
                   <h3 className="text-xl font-semibold text-secondary-900 dark:text-white mt-4 mb-2">
@@ -297,7 +297,7 @@ export default function HomePage() {
             </Link>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
             {featuredStylists.map((stylist, index) => (
               <StylistCard key={stylist.id} stylist={stylist} index={index} />
             ))}
@@ -416,7 +416,7 @@ export default function HomePage() {
                   className="rounded-2xl w-full h-64 object-cover"
                 />
                 <img
-                  src="https://images.pexels.com/photos/1811822/pexels-photo-1811822.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  src="https://images.pexels.com/photos/3993312/pexels-photo-3993312.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt="Barber styling"
                   className="rounded-2xl w-full h-64 object-cover mt-8"
                 />

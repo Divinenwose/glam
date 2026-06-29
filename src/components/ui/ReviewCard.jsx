@@ -9,9 +9,10 @@ export function ReviewCard({ review, index = 0 }) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
+      className="h-full"
     >
-      <Card className="p-4">
-        <div className="flex items-start gap-3">
+      <Card className="h-full flex flex-col p-4">
+        <div className="flex items-start gap-3 flex-1">
           <Avatar
             src={review.customer?.avatar_url}
             alt={review.customer?.full_name}

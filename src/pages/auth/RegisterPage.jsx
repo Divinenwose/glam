@@ -68,24 +68,15 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="min-h-screen flex">
+    <div className="h-auto flex">
       {/* Left side - Form */}
-      <div className="flex-1 flex items-center justify-center p-8">
+      <div className="flex-1 flex items-center justify-center my-16 p-8">
         <motion.div
           key={step}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="w-full max-w-md"
         >
-          <Link to="/" className="flex items-center gap-2 mb-8">
-            <div className="p-2 bg-primary-600 rounded-xl">
-              <Scissors className="w-5 h-5 text-white" />
-            </div>
-            <span className="text-xl font-display font-semibold text-secondary-900 dark:text-white">
-              GlamBook
-            </span>
-          </Link>
-
           {/* Progress indicator */}
           <div className="flex items-center gap-2 mb-8">
             <div className={`flex-1 h-1 rounded ${step >= 1 ? 'bg-primary-600' : 'bg-secondary-200 dark:bg-secondary-700'}`} />
@@ -276,7 +267,7 @@ export default function RegisterPage() {
       {/* Right side - Image */}
       <div className="hidden lg:block lg:w-1/2 relative">
         <img
-          src="https://images.pexels.com/photos/1811822/pexels-photo-1811822.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          src="https://images.pexels.com/photos/3993312/pexels-photo-3993312.jpeg?auto=compress&cs=tinysrgb&w=1200"
           alt="Hairstylist"
           className="absolute inset-0 w-full h-full object-cover"
         />
