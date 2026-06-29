@@ -54,11 +54,10 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  isActive(item.href)
-                    ? 'text-primary-600 bg-primary-50 dark:bg-primary-900/20'
-                    : 'text-secondary-600 hover:text-secondary-900 dark:text-secondary-300 dark:hover:text-white hover:bg-secondary-100 dark:hover:bg-secondary-800'
-                }`}
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${isActive(item.href)
+                  ? 'text-primary-600 bg-primary-50 dark:bg-primary-900/20'
+                  : 'text-secondary-600 hover:text-secondary-900 dark:text-secondary-300 dark:hover:text-white hover:bg-secondary-100 dark:hover:bg-secondary-800'
+                  }`}
               >
                 {item.name}
               </Link>
@@ -184,7 +183,7 @@ export default function Navbar() {
                 </div>
               </>
             ) : (
-              <div className="flex items-center gap-2">
+              <div className="hidden lg:flex items-center gap-2">
                 <Link
                   to="/login"
                   className="btn-ghost hidden sm:inline-flex"
@@ -211,30 +210,54 @@ export default function Navbar() {
         </div>
       </div>
 
+
       {/* Mobile menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden border-t border-secondary-100 dark:border-secondary-800"
           >
-            <div className="container-custom py-4 space-y-1">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`block px-3 py-2 rounded-lg transition-colors ${
-                    isActive(item.href)
-                      ? 'text-primary-600 bg-primary-50 dark:bg-primary-900/20'
-                      : 'text-secondary-600 dark:text-secondary-300'
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
+            <div className="container-custom py-4">
+              {/* Navigation */}
+              <div className="space-y-1">
+                {navigation.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`block px-3 py-2 rounded-lg transition-colors ${isActive(item.href)
+                      ? "text-primary-600 bg-primary-50 dark:bg-primary-900/20"
+                      : "text-secondary-600 dark:text-secondary-300"
+                      }`}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+
+              {/* Auth Buttons */}
+              {!user && (
+                <div className="mt-6 space-y-3 border-t border-secondary-200 dark:border-secondary-700 pt-4">
+                  <Link
+                    to="/login"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block w-full text-center py-3 rounded-xl border border-secondary-300 dark:border-secondary-700 text-secondary-700 dark:text-secondary-200 hover:bg-secondary-100 dark:hover:bg-secondary-800 transition"
+                  >
+                    Sign In
+                  </Link>
+
+                  <Link
+                    to="/register"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block w-full text-center py-3 rounded-xl bg-primary-600 text-white font-semibold hover:bg-primary-700 transition"
+                  >
+                    Get Started
+                  </Link>
+                </div>
+              )}
             </div>
           </motion.div>
         )}
