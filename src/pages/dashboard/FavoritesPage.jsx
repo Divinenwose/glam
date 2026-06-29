@@ -57,7 +57,7 @@ export default function FavoritesPage() {
       <div className="space-y-4">
         {favorites.map((stylist, index) => (
           <motion.div
-            key={styist.id}
+            key={stylist.id}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}

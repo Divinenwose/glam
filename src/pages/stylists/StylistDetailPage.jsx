@@ -84,7 +84,7 @@ export default function StylistDetailPage() {
     <div className="bg-secondary-50 dark:bg-secondary-950 pb-12">
       {/* Header */}
       <div className="bg-white dark:bg-secondary-900 border-b border-secondary-200 dark:border-secondary-800">
-        <div className="container-custom py-4">
+        <div className="container-custom p-6">
           <Link to="/stylists" className="flex items-center gap-1 text-primary-600 hover:text-primary-700">
             <ChevronLeft className="w-4 h-4" />
             Back to search
@@ -93,7 +93,7 @@ export default function StylistDetailPage() {
       </div>
 
       <div className="container-custom mt-6">
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
           {/* Left - Main Content */}
           <div className="lg:col-span-2 space-y-6">
             {/* Profile Header */}
@@ -102,10 +102,10 @@ export default function StylistDetailPage() {
               animate={{ opacity: 1, y: 0 }}
             >
               <Card className="overflow-hidden">
-                <div className="flex flex-col md:flex-row">
+                <div className="flex flex-col lg:flex-row">
                   {/* Image Slider */}
-                  <div className="md:w-1/3 relative">
-                    <div className="aspect-square overflow-hidden">
+                  <div className="w-full lg:w-1/3 relative">
+                    <div className="h-72 sm:aspect-square overflow-hidden">
                       <img
                         src={stylist.portfolio_images[currentImageIndex]}
                         alt={stylist.name}
@@ -139,11 +139,11 @@ export default function StylistDetailPage() {
                   </div>
 
                   {/* Info */}
-                  <div className="md:w-2/3 p-6">
-                    <div className="flex items-start justify-between mb-4">
+                  <div className="w-full lg:w-2/3 p-4 sm:p-9">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
                       <div>
                         <div className="flex items-center gap-2 mb-1">
-                          <h1 className="text-2xl font-display font-bold text-secondary-900 dark:text-white">
+                          <h1 className="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-secondary-900 dark:text-white">
                             {stylist.name}
                           </h1>
                           {stylist.is_verified && (
@@ -164,7 +164,7 @@ export default function StylistDetailPage() {
                       </div>
                     </div>
 
-                    <div className="flex flex-wrap gap-4 text-sm text-secondary-600 dark:text-secondary-400 mb-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm mb-4 text-secondary-600 dark:text-secondary-400 mb-4">
                       <div className="flex items-center gap-1">
                         <MapPin className="w-4 h-4" />
                         {stylist.city}
@@ -209,16 +209,15 @@ export default function StylistDetailPage() {
 
             {/* Tabs */}
             <div className="border-b border-secondary-200 dark:border-secondary-700">
-              <div className="flex gap-8">
+              <div className="flex gap-6 overflow-x-auto whitespace-nowrap scrollbar-hide">
                 {['services', 'portfolio', 'reviews', 'about'].map((tab) => (
                   <button
                     key={tab}
                     onClick={() => setActiveTab(tab)}
-                    className={`pb-4 px-1 capitalize font-medium transition-colors ${
-                      activeTab === tab
-                        ? 'text-primary-600 border-b-2 border-primary-600'
-                        : 'text-secondary-600 dark:text-secondary-400 hover:text-secondary-900 dark:hover:text-white'
-                    }`}
+                    className={`pb-4 px-2 shrink-0 capitalize font-medium transition-colors ${activeTab === tab
+                      ? 'text-primary-600 border-b-2 border-primary-600'
+                      : 'text-secondary-600 dark:text-secondary-400 hover:text-secondary-900 dark:hover:text-white'
+                      }`}
                   >
                     {tab}
                   </button>
@@ -236,7 +235,7 @@ export default function StylistDetailPage() {
                 <div className="space-y-4">
                   {stylist.services.map((service) => (
                     <Card key={service.id} className="p-4">
-                      <div className="flex items-start justify-between">
+                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                         <div className="flex-1">
                           <h3 className="font-semibold text-secondary-900 dark:text-white">{service.name}</h3>
                           {service.description && (
@@ -261,9 +260,13 @@ export default function StylistDetailPage() {
                             )}
                           </div>
                         </div>
-                        <div className="text-right">
+                        <div className="sm:text-right">
                           <p className="text-xl font-bold text-primary-600">{formatCurrency(service.price)}</p>
-                          <Button size="sm" onClick={handleBookNow} className="mt-2">
+                          <Button
+                            size="sm"
+                            onClick={handleBookNow}
+                            className="mt-2 w-full sm:w-auto"
+                          >
                             Book
                           </Button>
                         </div>
@@ -274,7 +277,7 @@ export default function StylistDetailPage() {
               )}
 
               {activeTab === 'portfolio' && (
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                   {stylist.portfolio_images.map((img, index) => (
                     <div key={index} className="aspect-square rounded-xl overflow-hidden">
                       <img src={img} alt="" className="w-full h-full object-cover hover:scale-105 transition-transform" />
@@ -315,7 +318,7 @@ export default function StylistDetailPage() {
 
           {/* Right - Sidebar */}
           <div className="lg:col-span-1">
-            <div className="sticky top-24 space-y-4">
+            <div className="space-y-4 lg:sticky lg:top-24">
               {/* Booking Card */}
               <Card className="p-6">
                 <div className="mb-4">
@@ -325,7 +328,7 @@ export default function StylistDetailPage() {
                   </p>
                 </div>
 
-                <div className="space-y-2 mb-6">
+                <div className="space-y-3 mb-6">
                   <Button onClick={handleBookNow} className="w-full">
                     <Calendar className="w-4 h-4 mr-2" />
                     Book Now
@@ -336,7 +339,7 @@ export default function StylistDetailPage() {
                   </Button>
                 </div>
 
-                <div className="flex gap-2">
+                <div className="grid grid-cols-2 gap-2">
                   <Button variant="ghost" size="icon" className="flex-1">
                     <Heart className="w-4 h-4" />
                   </Button>
@@ -349,9 +352,9 @@ export default function StylistDetailPage() {
               {/* Working Hours */}
               <Card className="p-6">
                 <h3 className="font-semibold text-secondary-900 dark:text-white mb-4">Working Hours</h3>
-                <div className="space-y-2 text-sm">
+                <div className="space-y-3 text-sm">
                   {Object.entries(stylist.working_hours).map(([day, hours]) => (
-                    <div key={day} className="flex justify-between">
+                    <div key={day} className="flex items-center justify-between">
                       <span className="capitalize text-secondary-600 dark:text-secondary-400">{day}</span>
                       <span className="text-secondary-900 dark:text-white">
                         {hours ? `${hours.start} - ${hours.end}` : 'Closed'}

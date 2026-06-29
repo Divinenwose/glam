@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Bell, Lock, Globe, Palette, ChevronRight, Switch, User, Shield } from 'lucide-react'
+import { Bell, Lock, Globe, Palette, ChevronRight, User, Shield } from 'lucide-react'
 import { Card, Button } from '../../components/ui'
 import { useTheme } from '../../context/ThemeContext'
 import toast from 'react-hot-toast'

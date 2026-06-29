@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
@@ -6,7 +6,6 @@ import {
   User, Bell, Menu, X, ChevronLeft, LogOut, HelpCircle
 } from 'lucide-react'
 import { useAuth } from '../../context/AuthContext'
-import Navbar from './Navbar'
 
 const sidebarLinks = {
   customer: [
@@ -48,8 +47,12 @@ export default function DashboardLayout() {
   const location = useLocation()
   const navigate = useNavigate()
 
-  const role = profile?.role || 'customer'
+  const role = 'stylist'
   const links = sidebarLinks[role] || sidebarLinks.customer
+
+  useEffect(() => {
+    setSidebarOpen(false)
+  }, [location.pathname])
 
   const handleSignOut = async () => {
     await signOut()
@@ -64,20 +67,21 @@ export default function DashboardLayout() {
       <AnimatePresence>
         {sidebarOpen && (
           <motion.div
+            key="overlay"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
             onClick={() => setSidebarOpen(false)}
-            className="fixed inset-0 z-40 bg-black/50 lg:hidden"
+            className="fixed inset-0 z-40 bg-black/50 hidden"
           />
         )}
       </AnimatePresence>
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 z-50 h-full w-64 bg-white dark:bg-secondary-900 border-r border-secondary-200 dark:border-secondary-800 transform transition-transform duration-300 lg:translate-x-0 ${
-          sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-        }`}
+        className={`fixed top-0 left-0 z-50 h-full w-64 bg-white dark:bg-secondary-900 border-r border-secondary-200 dark:border-secondary-800 transform transition-transform duration-300 lg:translate-x-0 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'
+          }`}
       >
         <div className="flex items-center justify-between p-4 border-b border-secondary-200 dark:border-secondary-800">
           <Link to="/" className="flex items-center gap-2">
@@ -102,11 +106,10 @@ export default function DashboardLayout() {
               key={link.name}
               to={link.href}
               onClick={() => setSidebarOpen(false)}
-              className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
-                isActive(link.href)
-                  ? 'text-primary-600 bg-primary-50 dark:bg-primary-900/20 font-medium'
-                  : 'text-secondary-600 dark:text-secondary-400 hover:bg-secondary-100 dark:hover:bg-secondary-800'
-              }`}
+              className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${isActive(link.href)
+                ? 'text-primary-600 bg-primary-50 dark:bg-primary-900/20 font-medium'
+                : 'text-secondary-600 dark:text-secondary-400 hover:bg-secondary-100 dark:hover:bg-secondary-800'
+                }`}
             >
               <link.icon className="w-5 h-5" />
               {link.name}

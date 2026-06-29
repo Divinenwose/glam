@@ -27,14 +27,6 @@ export default function ForgotPasswordPage() {
         animate={{ opacity: 1, y: 0 }}
         className="w-full max-w-md"
       >
-        <Link to="/login" className="flex items-center gap-2 mb-8">
-          <div className="p-2 bg-primary-600 rounded-xl">
-            <Scissors className="w-5 h-5 text-white" />
-          </div>
-          <span className="text-xl font-display font-semibold text-secondary-900 dark:text-white">
-            GlamBook
-          </span>
-        </Link>
 
         {sent ? (
           <div className="bg-white dark:bg-secondary-900 rounded-2xl shadow-soft p-8 text-center">

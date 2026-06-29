@@ -75,30 +75,52 @@ export default function Navbar() {
 
           {/* Right side */}
           <div className="flex items-center gap-3">
-            {/* Theme hrefggle */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={toggleDarkMode}
-              className="p-2 rounded-lg text-secondary-600 hover:bg-secondary-100 dark:text-secondary-300 dark:hover:bg-secondary-800"
-            >
-              {darkMode ? (
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-              ) : (
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                </svg>
-              )}
-            </motion.button>
+            {/* Theme toggle (Guests only) */}
+            {!user && (
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={toggleDarkMode}
+                className="p-2 rounded-lg text-secondary-600 hover:bg-secondary-100 dark:text-secondary-300 dark:hover:bg-secondary-800"
+              >
+                {darkMode ? (
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                    />
+                  </svg>
+                )}
+              </motion.button>
+            )}
 
             {user ? (
               <>
                 {/* Notifications */}
                 <a href="/notifications" className="relative p-2 rounded-lg text-secondary-600 hover:bg-secondary-100 dark:text-secondary-300 dark:hover:bg-secondary-800">
                   <Bell className="w-5 h-5" />
-                  <span className="absolute hrefp-1 right-1 w-2 h-2 bg-primary-600 rounded-full"></span>
+                  <span className="absolute top-1 right-1 w-2 h-2 bg-primary-600 rounded-full"></span>
                 </a>
 
                 {/* Profile Dropdown */}
@@ -107,7 +129,7 @@ export default function Navbar() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => setProfileOpen(!profileOpen)}
-                    className="flex items-center gap-2 p-1.5 pr-3 rounded-full bg-secondary-100 dark:bg-secondary-800 hover:bg-secondary-200 dark:hover:bg-secondary-700"
+                    className="flex items-center gap-2 p-1.5 rounded-full bg-secondary-100 dark:bg-secondary-800 hover:bg-secondary-200 dark:hover:bg-secondary-700"
                   >
                     <div className="w-8 h-8 rounded-full bg-primary-600 text-white flex items-center justify-center">
                       {profile?.avatar_url ? (
@@ -116,7 +138,7 @@ export default function Navbar() {
                         <span className="text-sm font-medium">{profile?.full_name?.[0] || 'U'}</span>
                       )}
                     </div>
-                    <ChevronDown className="w-4 h-4 text-secondary-600 dark:text-secondary-300" />
+                    <ChevronDown className="hidden lg:block w-4 h-4 text-secondary-600 dark:text-secondary-300" />
                   </motion.button>
 
                   <AnimatePresence>
@@ -208,6 +230,8 @@ export default function Navbar() {
               </div>
             )}
 
+
+
             {/* Mobile menu button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -252,7 +276,7 @@ export default function Navbar() {
                 <div className="mt-6 space-y-3 border-t border-secondary-200 dark:border-secondary-700 pt-4">
                   <a
                     href="/login"
-                   onClick={closeMobileMenu}
+                    onClick={closeMobileMenu}
                     className="block w-full text-center py-3 rounded-xl border border-secondary-300 dark:border-secondary-700 text-secondary-700 dark:text-secondary-200 hover:bg-secondary-100 dark:hover:bg-secondary-800 transition"
                   >
                     Sign In
