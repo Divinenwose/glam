@@ -26,7 +26,7 @@ export default function VerifyEmailPage() {
       >
         <div className="bg-white dark:bg-secondary-900 rounded-2xl shadow-soft p-6 sm:p-8 text-center">
           <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center mx-auto mb-5">
-            <Mail className="w-7 h-7 sm:w-8 sm:h-8 text-primary-600" />
+            <Mail className="w-7 h-7 sm:w-8 sm:h-8 text-burgundy" />
           </div>
 
           <h2 className="text-xl font-display font-bold text-secondary-900 dark:text-white mb-2">
@@ -58,7 +58,7 @@ export default function VerifyEmailPage() {
           <div className="pt-2">
             <Link
               to="/login"
-              className="text-sm font-medium text-primary-600 dark:text-primary-400 hover:underline"
+              className="text-sm font-medium text-pink dark:text-pink hover:text-gold hover:underline"
             >
               Back to Sign In
             </Link>

@@ -85,9 +85,9 @@ export default function StylistDetailPage() {
       {/* Header */}
       <div className="bg-white dark:bg-secondary-900 border-b border-secondary-200 dark:border-secondary-800">
         <div className="container-custom p-6">
-          <Link to="/stylists" className="flex items-center gap-1 text-primary-600 hover:text-primary-700">
+          <Link to="/stylists" className="flex items-center gap-1 text-pink dark:text-pink hover:text-gold hover:underline">
             <ChevronLeft className="w-4 h-4" />
-            Back to search
+            Back to stylists
           </Link>
         </div>
       </div>

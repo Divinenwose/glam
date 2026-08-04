@@ -62,7 +62,7 @@ export default function AdminReviewsPage() {
                   <td className="px-6 py-4 text-secondary-600 dark:text-secondary-400">{formatDate(review.date)}</td>
                   <td className="px-6 py-4 text-right">
                     <div className="flex items-center justify-end gap-2">
-                      <button className="text-primary-600 text-sm hover:underline">View</button>
+                      <button className="text-pink text-sm hover:text-gold hover:underline">View</button>
                       <button className="text-error-500 text-sm hover:underline">
                         {review.visible ? 'Hide' : 'Approve'}
                       </button>

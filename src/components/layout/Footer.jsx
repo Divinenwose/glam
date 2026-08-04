@@ -37,7 +37,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-secondary-50 dark:bg-secondary-900 border-t border-secondary-200 dark:border-secondary-800">
+    <footer className="bg-secondary-50 dark:bg-secondary-900 text-secondary-700 dark:text-secondary-200">
       <div className="container-custom py-12 lg:py-16">
         {/* Main Footer Content */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
@@ -55,15 +55,15 @@ export default function Footer() {
               Connecting beauty professionals with clients seeking exceptional hairstyling services.
             </p>
             <div className="space-y-2">
-              <a href="mailto:hello@glambook.com" className="flex items-center gap-2 text-sm text-secondary-600 dark:text-secondary-400 hover:text-primary-600 dark:hover:text-primary-400">
+              <a href="mailto:hello@glambook.com" className="flex items-center gap-2 text-sm text-secondary-600 dark:text-secondary-300 hover:text-secondary-900">
                 <Mail className="w-4 h-4" />
                 hello@glambook.com
               </a>
-              <a href="tel:+1234567890" className="flex items-center gap-2 text-sm text-secondary-600 dark:text-secondary-400 hover:text-primary-600 dark:hover:text-primary-400">
+              <a href="tel:+1234567890" className="flex items-center gap-2 text-sm text-secondary-600 dark:text-secondary-300 hover:text-secondary-900">
                 <Phone className="w-4 h-4" />
                 (123) 456-7890
               </a>
-              <div className="flex items-center gap-2 text-sm text-secondary-600 dark:text-secondary-400">
+              <div className="flex items-center gap-2 text-sm text-secondary-600 dark:text-secondary-300">
                 <MapPin className="w-4 h-4" />
                 New York, NY 10001
               </div>
@@ -78,7 +78,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-sm text-secondary-600 dark:text-secondary-400 hover:text-primary-600 dark:hover:text-primary-400"
+                    className="text-sm text-secondary-600 dark:text-secondary-300 hover:text-secondary-900"
                   >
                     {link.name}
                   </Link>
@@ -95,7 +95,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-sm text-secondary-600 dark:text-secondary-400 hover:text-primary-600 dark:hover:text-primary-400"
+                    className="text-sm text-secondary-600 dark:text-secondary-300 hover:text-secondary-900"
                   >
                     {link.name}
                   </Link>
@@ -112,7 +112,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-sm text-secondary-600 dark:text-secondary-400 hover:text-primary-600 dark:hover:text-primary-400"
+                    className="text-sm text-secondary-600 dark:text-secondary-300 hover:text-secondary-900"
                   >
                     {link.name}
                   </Link>
@@ -129,7 +129,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-sm text-secondary-600 dark:text-secondary-400 hover:text-primary-600 dark:hover:text-primary-400"
+                    className="text-sm text-secondary-600 dark:text-secondary-300 hover:text-secondary-900"
                   >
                     {link.name}
                   </Link>
@@ -140,7 +140,7 @@ export default function Footer() {
         </div>
 
         {/* Newsletter */}
-        <div className="mt-12 pt-8 border-t border-secondary-200 dark:border-secondary-800">
+          <div className="mt-12 pt-8 border-t border-secondary-100 dark:border-secondary-800">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
             <div>
               <h3 className="font-semibold text-secondary-900 dark:text-white mb-1">
@@ -150,7 +150,7 @@ export default function Footer() {
                 Get the latest updates, tips, and exclusive offers.
               </p>
             </div>
-            <form className="flex gap-2">
+              <form className="flex gap-2">
               <input
                 type="email"
                 placeholder="Enter your email"
@@ -164,7 +164,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-8 pt-8 border-t border-secondary-200 dark:border-secondary-800">
+        <div className="mt-8 pt-8 border-t border-secondary-100 dark:border-secondary-800">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <p className="text-sm text-secondary-600 dark:text-secondary-400">
               &copy; {new Date().getFullYear()} GlamBook. All rights reserved.
@@ -174,7 +174,7 @@ export default function Footer() {
                 <a
                   key={social.name}
                   href={social.href}
-                  className="p-2 rounded-lg text-secondary-400 hover:text-primary-600 hover:bg-secondary-100 dark:hover:bg-secondary-800 dark:hover:text-primary-400 transition-colors"
+                  className="p-2 rounded-lg text-secondary-600 dark:text-secondary-300 hover:text-secondary-900 hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors"
                   aria-label={social.name}
                 >
                   <social.icon className="w-5 h-5" />

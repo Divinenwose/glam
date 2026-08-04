@@ -77,7 +77,7 @@ export function BookingCard({ booking, index = 0, showActions = true }) {
           <div className="px-4 py-3 bg-secondary-50 dark:bg-secondary-800/50 flex items-center justify-between">
             <Link
               to={`/bookings/${booking.id}`}
-              className="text-sm text-primary-600 dark:text-primary-400 hover:underline flex items-center gap-1"
+              className="text-sm text-pink dark:text-pink hover:text-gold hover:underline flex items-center gap-1"
             >
               View details
               <ChevronRight className="w-4 h-4" />

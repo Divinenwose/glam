@@ -168,7 +168,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50 dark:from-secondary-950 dark:to-secondary-900 overflow-hidden">
+      <section className="relative hero-gradient overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary-200/30 dark:bg-primary-900/20 rounded-full blur-3xl" />
@@ -188,7 +188,7 @@ export default function HomePage() {
                 Over 10,000+ Verified Hairstylists
               </span>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-secondary-900 dark:text-white mb-6 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight">
                 Find Your Perfect
                 <span className="text-gradient block">Hairstylist Today</span>
               </h1>

@@ -28,7 +28,7 @@ export default function BookingDetailPage() {
 
   return (
     <div className="space-y-6">
-      <Link to="/bookings" className="flex items-center gap-1 text-primary-600 hover:text-primary-700">
+      <Link to="/bookings" className="flex items-center gap-1 text-pink dark:text-pink hover:text-gold hover:underline">
         <ChevronLeft className="w-4 h-4" />
         Back to bookings
       </Link>
@@ -137,9 +137,9 @@ export default function BookingDetailPage() {
                 <span className="text-secondary-900 dark:text-white">{formatCurrency(booking.platform_fee)}</span>
               </div>
               <div className="border-t border-secondary-200 dark:border-secondary-700 pt-3 mt-3">
-                <div className="flex justify-between font-bold">
+                  <div className="flex justify-between font-bold">
                   <span className="text-secondary-900 dark:text-white">Total</span>
-                  <span className="text-primary-600">{formatCurrency(booking.total)}</span>
+                  <span className="text-burgundy">{formatCurrency(booking.total)}</span>
                 </div>
               </div>
             </div>

@@ -94,7 +94,7 @@ export default function BookStylistPage() {
         <div className="container-custom py-4">
           <button
             onClick={() => navigate(-1)}
-            className="flex items-center gap-1 text-primary-600 hover:text-primary-700"
+            className="flex items-center gap-1 text-pink dark:text-pink hover:text-gold hover:underline"
           >
             <ChevronLeft className="w-4 h-4" />
             Back
@@ -166,7 +166,7 @@ export default function BookStylistPage() {
                               <p className="text-sm text-secondary-500">{service.duration_minutes} minutes</p>
                             </div>
                             <div className="text-right">
-                              <p className="font-bold text-primary-600">{formatCurrency(service.price)}</p>
+                              <p className="font-bold text-burgundy">{formatCurrency(service.price)}</p>
                             </div>
                           </div>
                         </button>
@@ -246,9 +246,9 @@ export default function BookStylistPage() {
                                 : day.disabled
                                   ? 'text-secondary-300 dark:text-secondary-600 cursor-not-allowed'
                                   : booking.date && booking.date.toDateString() === day.date.toDateString()
-                                    ? 'bg-primary-600 text-white'
+                                      ? 'bg-primary-600 text-white'
                                     : day.isToday
-                                      ? 'border-2 border-primary-600 text-primary-600'
+                                      ? 'border-2 border-primary-600 text-burgundy'
                                       : 'hover:bg-secondary-100 dark:hover:bg-secondary-700'
                               }`}
                           >

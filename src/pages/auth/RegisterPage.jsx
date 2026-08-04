@@ -227,11 +227,11 @@ export default function RegisterPage() {
                   />
                   <span className="text-sm text-secondary-600 dark:text-secondary-400">
                     I agree to the{' '}
-                    <Link to="/terms" className="text-primary-600 hover:underline">
+                    <Link to="/terms" className="text-pink dark:text-pink hover:text-gold hover:underline">
                       Terms of Service
                     </Link>{' '}
                     and{' '}
-                    <Link to="/privacy" className="text-primary-600 hover:underline">
+                    <Link to="/privacy" className="text-pink dark:text-pink hover:text-gold hover:underline">
                       Privacy Policy
                     </Link>
                   </span>
@@ -254,9 +254,9 @@ export default function RegisterPage() {
           )}
 
           <div className="mt-8 text-center">
-            <p className="text-secondary-600 dark:text-secondary-400">
+              <p className="text-secondary-600 dark:text-secondary-400">
               Already have an account?{' '}
-              <Link to="/login" className="text-primary-600 dark:text-primary-400 font-medium hover:underline">
+              <Link to="/login" className="text-pink dark:text-pink font-medium hover:text-gold hover:underline">
                 Sign in
               </Link>
             </p>
