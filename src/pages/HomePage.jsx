@@ -183,7 +183,7 @@ export default function HomePage() {
               transition={{ duration: 0.6 }}
               className="max-w-3xl mx-auto text-center"
             >
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 text-sm font-medium mb-6">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-600/30 text-primary-700 dark:text-primary-400 text-sm font-medium mb-6">
                 <Sparkles className="w-4 h-4" />
                 Over 10,000+ Verified Hairstylists
               </span>
@@ -239,10 +239,10 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 dark:text-black mb-4">
               How GlamBook Works
             </h2>
-            <p className="text-lg text-secondary-600 dark:text-secondary-400 max-w-2xl mx-auto">
+            <p className="text-lg text-secondary-600 dark:text-secondary-100 max-w-2xl mx-auto">
               Book your next hairstyle in four simple steps
             </p>
           </motion.div>
@@ -264,7 +264,7 @@ export default function HomePage() {
                   <h3 className="text-xl font-semibold text-secondary-900 dark:text-white mt-4 mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-secondary-600 dark:text-secondary-400">
+                  <p className="text-secondary-600 dark:text-white">
                     {step.description}
                   </p>
                 </div>
@@ -287,7 +287,7 @@ export default function HomePage() {
               <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 dark:text-white mb-2">
                 Featured Stylists
               </h2>
-              <p className="text-secondary-600 dark:text-secondary-400">
+              <p className="text-secondary-600 dark:text-secondary-200">
                 Top-rated professionals in your area
               </p>
             </div>
@@ -321,10 +321,10 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 dark:text-black mb-4">
               Popular Hairstyles
             </h2>
-            <p className="text-lg text-secondary-600 dark:text-secondary-400">
+            <p className="text-lg text-secondary-600 dark:text-black">
               Discover trending styles from our talented stylists
             </p>
           </motion.div>
@@ -373,7 +373,7 @@ export default function HomePage() {
               <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 dark:text-white mt-2 mb-6">
                 The Smart Way to Find Your Hairstylist
               </h2>
-              <p className="text-lg text-secondary-600 dark:text-secondary-400 mb-8">
+              <p className="text-lg text-secondary-600 dark:text-white mb-8">
                 We connect you with verified beauty professionals, ensuring quality, safety, and convenience every step of the way.
               </p>
 
@@ -444,10 +444,10 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 dark:text-black mb-4">
               What Our Customers Say
             </h2>
-            <p className="text-lg text-secondary-600 dark:text-secondary-400">
+              <p className="text-lg text-secondary-600 dark:text-secondary-200">
               Real experiences from real clients
             </p>
           </motion.div>
@@ -549,7 +549,7 @@ export default function HomePage() {
             </div>
 
             <div className="text-center mt-8">
-              <p className="text-secondary-600 dark:text-secondary-400 mb-4">
+              <p className="text-secondary-600 dark:text-secondary-200 mb-4">
                 Still have questions?
               </p>
               <Link to="/contact" className="btn-primary">
@@ -569,10 +569,10 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="max-w-2xl mx-auto text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 dark:text-black mb-4">
               Stay in the Loop
             </h2>
-            <p className="text-lg text-secondary-600 dark:text-secondary-400 mb-8">
+            <p className="text-lg text-secondary-600 dark:text-black mb-8">
               Subscribe to get the latest tips, trends, and exclusive offers delivered to your inbox.
             </p>
             <form className="flex flex-col sm:flex-row gap-3">
@@ -585,7 +585,7 @@ export default function HomePage() {
                 Subscribe Now
               </button>
             </form>
-            <p className="text-sm text-secondary-500 dark:text-secondary-500 mt-4">
+            <p className="text-sm text-secondary-500 dark:text-black mt-4">
               No spam, ever. Unsubscribe anytime.
             </p>
           </motion.div>
