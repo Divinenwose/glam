@@ -168,7 +168,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative hero-gradient overflow-hidden">
+      <section className="relative overflow-hidden bg-primary-700">
         {/* Background decoration */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary-200/30 dark:bg-primary-900/20 rounded-full blur-3xl" />
@@ -193,7 +193,7 @@ export default function HomePage() {
                 <span className="text-gradient block">Hairstylist Today</span>
               </h1>
 
-              <p className="text-lg md:text-xl text-secondary-600 dark:text-secondary-400 mb-8 max-w-2xl mx-auto">
+              <p className="text-lg md:text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
                 Connect with verified beauty professionals in your area. Browse portfolios, read reviews, and book your next appointment with confidence.
               </p>
             </motion.div>
@@ -211,7 +211,7 @@ export default function HomePage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="flex flex-wrap items-center justify-center gap-8 mt-10 text-secondary-600 dark:text-secondary-400"
+              className="flex flex-wrap items-center justify-center gap-8 mt-10 text-primary-100"
             >
               <div className="flex items-center gap-2">
                 <Shield className="w-5 h-5 text-success-500" />
@@ -258,7 +258,7 @@ export default function HomePage() {
                 className="relative"
               >
                 <div className="bg-white dark:bg-secondary-800 rounded-2xl p-6 h-full">
-                  <span className="text-5xl font-bold text-primary-500 dark:text-primary-400/70">
+                  <span className="text-5xl font-bold text-primary-700 dark:text-primary-400/70">
                     {step.number}
                   </span>
                   <h3 className="text-xl font-semibold text-secondary-900 dark:text-white mt-4 mb-2">
@@ -367,7 +367,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <span className="text-primary-600 dark:text-primary-400 font-medium text-sm uppercase tracking-wider">
+              <span className="text-primary-700 dark:text-primary-400 font-medium text-sm uppercase tracking-wider">
                 Why Choose Us
               </span>
               <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 dark:text-white mt-2 mb-6">
@@ -388,7 +388,7 @@ export default function HomePage() {
                     className="flex gap-4"
                   >
                     <div className="p-3 rounded-xl bg-primary-50 dark:bg-primary-900/20 h-fit">
-                      <item.icon className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+                      <item.icon className="w-6 h-6 text-primary-700 dark:text-primary-400" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-secondary-900 dark:text-white mb-1">
@@ -423,7 +423,7 @@ export default function HomePage() {
               </div>
               <div className="absolute -bottom-6 -left-6 bg-white dark:bg-secondary-800 rounded-2xl shadow-soft-lg p-6">
                 <div className="flex items-center gap-4">
-                  <div className="text-4xl font-bold text-primary-600">10K+</div>
+                  <div className="text-4xl font-bold text-primary-700">10K+</div>
                   <div>
                     <p className="font-semibold text-secondary-900 dark:text-white">Happy Clients</p>
                     <p className="text-sm text-secondary-500">Across 50+ cities</p>
@@ -461,7 +461,7 @@ export default function HomePage() {
       </section>
 
       {/* Become a Stylist CTA */}
-      <section className="section bg-gradient-to-br from-primary-600 to-primary-700 dark:from-primary-900 dark:to-primary-950">
+      <section className="section bg-primary-700 dark:bg-primary-800">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div

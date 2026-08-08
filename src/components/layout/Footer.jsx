@@ -37,14 +37,14 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-secondary-50 dark:bg-secondary-900 text-secondary-700 dark:text-secondary-200">
+    <footer className="border-t border-primary-100/70 bg-[var(--background)] dark:border-primary-900/40 dark:bg-[var(--background)] text-secondary-700 dark:text-secondary-200">
       <div className="container-custom py-12 lg:py-16">
         {/* Main Footer Content */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
           {/* Brand Column */}
           <div className="col-span-2 lg:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="p-2 bg-primary-600 rounded-xl">
+              <div className="p-2 bg-primary-700 rounded-xl">
                 <Scissors className="w-5 h-5 text-white" />
               </div>
               <span className="text-xl font-display font-semibold text-secondary-900 dark:text-white">
@@ -55,11 +55,11 @@ export default function Footer() {
               Connecting beauty professionals with clients seeking exceptional hairstyling services.
             </p>
             <div className="space-y-2">
-              <a href="mailto:hello@glambook.com" className="flex items-center gap-2 text-sm text-secondary-600 dark:text-secondary-300 hover:text-secondary-900">
+              <a href="mailto:hello@glambook.com" className="flex items-center gap-2 text-sm text-secondary-600 dark:text-secondary-300 hover:text-primary-700">
                 <Mail className="w-4 h-4" />
                 hello@glambook.com
               </a>
-              <a href="tel:+1234567890" className="flex items-center gap-2 text-sm text-secondary-600 dark:text-secondary-300 hover:text-secondary-900">
+              <a href="tel:+1234567890" className="flex items-center gap-2 text-sm text-secondary-600 dark:text-secondary-300 hover:text-primary-700">
                 <Phone className="w-4 h-4" />
                 (123) 456-7890
               </a>
@@ -78,7 +78,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-sm text-secondary-600 dark:text-secondary-300 hover:text-secondary-900"
+                    className="text-sm text-secondary-600 dark:text-secondary-300 hover:text-primary-700"
                   >
                     {link.name}
                   </Link>
@@ -95,7 +95,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-sm text-secondary-600 dark:text-secondary-300 hover:text-secondary-900"
+                    className="text-sm text-secondary-600 dark:text-secondary-300 hover:text-primary-700"
                   >
                     {link.name}
                   </Link>
@@ -112,7 +112,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-sm text-secondary-600 dark:text-secondary-300 hover:text-secondary-900"
+                    className="text-sm text-secondary-600 dark:text-secondary-300 hover:text-primary-700"
                   >
                     {link.name}
                   </Link>
@@ -129,7 +129,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-sm text-secondary-600 dark:text-secondary-300 hover:text-secondary-900"
+                    className="text-sm text-secondary-600 dark:text-secondary-300 hover:text-primary-700"
                   >
                     {link.name}
                   </Link>
@@ -174,7 +174,7 @@ export default function Footer() {
                 <a
                   key={social.name}
                   href={social.href}
-                  className="p-2 rounded-lg text-secondary-600 dark:text-secondary-300 hover:text-secondary-900 hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors"
+                  className="p-2 rounded-lg text-secondary-600 dark:text-secondary-300 hover:text-primary-700 hover:bg-primary-50 dark:hover:bg-secondary-800 transition-colors"
                   aria-label={social.name}
                 >
                   <social.icon className="w-5 h-5" />

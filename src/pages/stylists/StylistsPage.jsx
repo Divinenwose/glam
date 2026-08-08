@@ -204,11 +204,11 @@ export default function StylistsPage() {
   const activeFilterCount = Object.values(filters).filter(Boolean).length
 
   return (
-    <div className="bg-secondary-50 dark:bg-secondary-950 pb-12">
+    <div className="min-h-screen bg-secondary-50 dark:bg-secondary-950 pb-12">
       {/* Search Header */}
       <div className="bg-white dark:bg-secondary-900 border-b border-secondary-200 dark:border-secondary-800">
         <div className="container-custom py-6">
-          <div className="flex flex-col lg:flex-row lg:items-center gap-4">
+          <div className="flex flex-col gap-3 xl:flex-row xl:items-center">
             {/* Search Input */}
             <div className="flex-1">
               <div className="relative">
@@ -224,7 +224,7 @@ export default function StylistsPage() {
             </div>
 
             {/* Service Filter */}
-            <div className="w-full lg:w-48">
+            <div className="w-full xl:w-48">
               <select
                 value={filters.service}
                 onChange={(e) => handleFilterChange('service', e.target.value)}
@@ -241,7 +241,7 @@ export default function StylistsPage() {
             <Button
               variant="secondary"
               onClick={() => setShowFilters(!showFilters)}
-              className="lg:w-auto"
+              className="w-full sm:w-auto"
             >
               <SlidersHorizontal className="w-4 h-4 mr-2" />
               Filters
@@ -261,7 +261,7 @@ export default function StylistsPage() {
               exit={{ opacity: 0, height: 0 }}
               className="mt-6 pt-6 border-t border-secondary-200 dark:border-secondary-700"
             >
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+              <div className="grid gap-4 mb-6 sm:grid-cols-2 xl:grid-cols-4">
                 <div>
                   <label className="label">Minimum Rating</label>
                   <select
@@ -337,7 +337,7 @@ export default function StylistsPage() {
 
       {/* Results */}
       <div className="container-custom mt-8">
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between mb-6">
           <div>
             <h1 className="text-2xl font-display font-bold text-secondary-900 dark:text-white">
               Find Stylists
@@ -347,7 +347,7 @@ export default function StylistsPage() {
             </p>
           </div>
 
-          <select className="input w-auto">
+          <select className="input w-full sm:w-auto">
             <option value="recommended">Recommended</option>
             <option value="rating">Highest Rated</option>
             <option value="price-low">Price: Low to High</option>
@@ -367,7 +367,7 @@ export default function StylistsPage() {
             </p>
           </Card>
         ) : (
-          <div className="space-y-4">
+          <div className="grid gap-4 xl:grid-cols-2">
             {stylists.map((stylist, index) => (
               <motion.div
                 key={stylist.id}

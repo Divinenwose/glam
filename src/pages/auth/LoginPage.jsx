@@ -66,7 +66,7 @@ export default function LoginPage() {
             <div>
               <div className="flex items-center justify-between mb-1.5">
                 <label className="label mb-0">Password</label>
-                <Link to="/forgot-password" className="text-sm text-pink dark:text-pink hover:text-gold hover:underline">
+                <Link to="/forgot-password" className="text-sm text-primary-700 hover:text-primary-800 hover:underline">
                   Forgot password?
                 </Link>
               </div>
@@ -99,7 +99,7 @@ export default function LoginPage() {
           <div className="mt-8 text-center">
               <p className="text-secondary-600 dark:text-secondary-400">
               Don't have an account?{' '}
-              <Link to="/register" className="text-pink dark:text-pink font-medium hover:text-gold hover:underline">
+              <Link to="/register" className="text-primary-700 font-medium hover:text-primary-800 hover:underline">
                 Sign up
               </Link>
             </p>
@@ -114,7 +114,7 @@ export default function LoginPage() {
           alt="Hairstylist"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-300/30 to-primary-600/90" />
+        <div className="absolute inset-0 bg-primary-800/90" />
         <div className="absolute inset-0 flex items-center justify-center p-12">
           <div className="text-white text-center max-w-md">
             <h2 className="text-3xl font-display font-bold mb-4">

@@ -56,7 +56,7 @@ export default function SearchBar({ variant = 'hero', className, onSearch }) {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className={`bg-white dark:bg-secondary-900 rounded-2xl shadow-soft-lg p-4 ${className}`}
+      className={`bg-white dark:bg-secondary-900 rounded-2xl shadow-soft-lg p-4 border border-primary-100/80 ${className}`}
     >
       <div className="grid md:grid-cols-4 gap-4">
         {/* Location */}

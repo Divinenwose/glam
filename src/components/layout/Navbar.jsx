@@ -41,14 +41,14 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 glass">
+    <nav className="sticky top-0 z-50 border-b border-primary-100/70 bg-[rgba(250,248,243,0.9)] backdrop-blur-xl dark:border-primary-900/40 dark:bg-[rgba(31,26,23,0.88)]">
       <div className="container-custom">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <a href="/" className="flex items-center gap-2 group">
             <motion.div
               whileHover={{ rotate: 15 }}
-              className="p-2 bg-primary-600 rounded-xl"
+              className="p-2 bg-primary-700 rounded-xl"
             >
               <Scissors className="w-5 h-5 text-white" />
             </motion.div>
@@ -64,8 +64,8 @@ export default function Navbar() {
                 key={item.name}
                 href={item.href}
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${isActive(item.href)
-                  ? 'text-primary-600 bg-primary-50 dark:bg-primary-900/20'
-                  : 'text-secondary-600 hover:text-secondary-900 dark:text-secondary-300 dark:hover:text-white hover:bg-secondary-100 dark:hover:bg-secondary-800'
+                  ? 'text-primary-700 bg-primary-50 dark:bg-primary-900/20'
+                  : 'text-secondary-700 hover:text-primary-800 dark:text-secondary-300 dark:hover:text-white hover:bg-primary-50/80 dark:hover:bg-secondary-800'
                   }`}
               >
                 {item.name}
@@ -81,7 +81,7 @@ export default function Navbar() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={toggleDarkMode}
-                className="p-2 rounded-lg text-secondary-600 hover:bg-secondary-100 dark:text-secondary-300 dark:hover:bg-secondary-800"
+                className="p-2 rounded-lg text-secondary-700 hover:bg-primary-50 dark:text-secondary-300 dark:hover:bg-secondary-800"
               >
                 {darkMode ? (
                   <svg
@@ -118,9 +118,9 @@ export default function Navbar() {
             {user ? (
               <>
                 {/* Notifications */}
-                <a href="/notifications" className="relative p-2 rounded-lg text-secondary-600 hover:bg-secondary-100 dark:text-secondary-300 dark:hover:bg-secondary-800">
+                <a href="/notifications" className="relative p-2 rounded-lg text-secondary-700 hover:bg-primary-50 dark:text-secondary-300 dark:hover:bg-secondary-800">
                   <Bell className="w-5 h-5" />
-                  <span className="absolute top-1 right-1 w-2 h-2 bg-primary-600 rounded-full"></span>
+                  <span className="absolute top-1 right-1 w-2 h-2 bg-primary-700 rounded-full"></span>
                 </a>
 
                 {/* Profile Dropdown */}
@@ -129,9 +129,9 @@ export default function Navbar() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => setProfileOpen(!profileOpen)}
-                    className="flex items-center gap-2 p-1.5 rounded-full bg-secondary-100 dark:bg-secondary-800 hover:bg-secondary-200 dark:hover:bg-secondary-700"
+                    className="flex items-center gap-2 p-1.5 rounded-full bg-secondary-50 dark:bg-secondary-800 hover:bg-primary-50 dark:hover:bg-secondary-700"
                   >
-                    <div className="w-8 h-8 rounded-full bg-primary-600 text-white flex items-center justify-center">
+                    <div className="w-8 h-8 rounded-full bg-primary-700 text-white flex items-center justify-center">
                       {profile?.avatar_url ? (
                         <img src={profile.avatar_url} alt="" className="w-full h-full rounded-full object-cover" />
                       ) : (
@@ -160,7 +160,7 @@ export default function Navbar() {
                           <a
                             href={profile?.role === 'stylist' ? '/stylist/dashboard' : profile?.role === 'admin' ? '/admin/dashboard' : '/dashboard'}
                             onClick={() => setProfileOpen(false)}
-                            className="flex items-center gap-3 px-4 py-2 text-secondary-600 dark:text-secondary-300 hover:bg-secondary-50 dark:hover:bg-secondary-800"
+                            className="flex items-center gap-3 px-4 py-2 text-secondary-700 dark:text-secondary-300 hover:bg-primary-50 dark:hover:bg-secondary-800"
                           >
                             <LayoutDashboard className="w-4 h-4" />
                             Dashboard
@@ -168,7 +168,7 @@ export default function Navbar() {
                           <a
                             href="/bookings"
                             onClick={() => setProfileOpen(false)}
-                            className="flex items-center gap-3 px-4 py-2 text-secondary-600 dark:text-secondary-300 hover:bg-secondary-50 dark:hover:bg-secondary-800"
+                            className="flex items-center gap-3 px-4 py-2 text-secondary-700 dark:text-secondary-300 hover:bg-primary-50 dark:hover:bg-secondary-800"
                           >
                             <Calendar className="w-4 h-4" />
                             Bookings
@@ -176,7 +176,7 @@ export default function Navbar() {
                           <a
                             href="/favorites"
                             onClick={() => setProfileOpen(false)}
-                            className="flex items-center gap-3 px-4 py-2 text-secondary-600 dark:text-secondary-300 hover:bg-secondary-50 dark:hover:bg-secondary-800"
+                            className="flex items-center gap-3 px-4 py-2 text-secondary-700 dark:text-secondary-300 hover:bg-primary-50 dark:hover:bg-secondary-800"
                           >
                             <Heart className="w-4 h-4" />
                             Favorites
@@ -184,7 +184,7 @@ export default function Navbar() {
                           <a
                             href="/messages"
                             onClick={() => setProfileOpen(false)}
-                            className="flex items-center gap-3 px-4 py-2 text-secondary-600 dark:text-secondary-300 hover:bg-secondary-50 dark:hover:bg-secondary-800"
+                            className="flex items-center gap-3 px-4 py-2 text-secondary-700 dark:text-secondary-300 hover:bg-primary-50 dark:hover:bg-secondary-800"
                           >
                             <MessageSquare className="w-4 h-4" />
                             Messages
@@ -192,7 +192,7 @@ export default function Navbar() {
                           <a
                             href="/settings"
                             onClick={() => setProfileOpen(false)}
-                            className="flex items-center gap-3 px-4 py-2 text-secondary-600 dark:text-secondary-300 hover:bg-secondary-50 dark:hover:bg-secondary-800"
+                            className="flex items-center gap-3 px-4 py-2 text-secondary-700 dark:text-secondary-300 hover:bg-primary-50 dark:hover:bg-secondary-800"
                           >
                             <Settings className="w-4 h-4" />
                             Settings
@@ -277,7 +277,7 @@ export default function Navbar() {
                   <a
                     href="/login"
                     onClick={closeMobileMenu}
-                    className="block w-full text-center py-3 rounded-xl border border-secondary-300 dark:border-secondary-700 text-secondary-700 dark:text-secondary-200 hover:bg-secondary-100 dark:hover:bg-secondary-800 transition"
+                    className="block w-full text-center py-3 rounded-xl border border-primary-200 dark:border-secondary-700 text-primary-700 dark:text-secondary-200 hover:bg-primary-50 dark:hover:bg-secondary-800 transition"
                   >
                     Sign In
                   </a>
@@ -285,7 +285,7 @@ export default function Navbar() {
                   <a
                     href="/register"
                     onClick={closeMobileMenu}
-                    className="block w-full text-center py-3 rounded-xl bg-primary-600 text-white font-semibold hover:bg-primary-700 transition"
+                    className="block w-full text-center py-3 rounded-xl bg-primary-700 text-white font-semibold hover:bg-primary-800 transition"
                   >
                     Get Started
                   </a>

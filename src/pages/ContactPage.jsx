@@ -62,7 +62,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="section bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-secondary-950 dark:to-secondary-900">
+      <section className="section bg-[var(--background)]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

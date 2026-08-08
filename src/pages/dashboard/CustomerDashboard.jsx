@@ -62,7 +62,7 @@ export default function CustomerDashboard() {
           <Card>
             <div className="p-4 border-b border-secondary-200 dark:border-secondary-800 flex items-center justify-between">
               <h2 className="font-semibold text-secondary-900 dark:text-white">Upcoming Bookings</h2>
-              <Link to="/bookings" className="text-sm text-pink dark:text-pink hover:text-gold hover:underline">View all</Link>
+              <Link to="/bookings" className="text-sm text-primary-700 hover:text-primary-800 hover:underline">View all</Link>
             </div>
             <div className="p-4 space-y-4">
               {upcomingBookings.map((booking) => (
@@ -71,7 +71,7 @@ export default function CustomerDashboard() {
               {upcomingBookings.length === 0 && (
                   <div className="py-8 text-center text-secondary-500">
                   No upcoming bookings.{' '}
-                  <Link to="/stylists" className="text-pink dark:text-pink hover:text-gold hover:underline">Find a stylist</Link>
+                  <Link to="/stylists" className="text-primary-700 hover:text-primary-800 hover:underline">Find a stylist</Link>
                 </div>
               )}
             </div>

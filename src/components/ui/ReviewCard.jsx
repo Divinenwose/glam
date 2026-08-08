@@ -11,7 +11,7 @@ export function ReviewCard({ review, index = 0 }) {
       transition={{ delay: index * 0.1 }}
       className="h-full"
     >
-      <Card className="h-full flex flex-col p-4">
+      <Card className="h-full flex flex-col p-4 border-primary-100/80">
         <div className="flex items-start gap-3 flex-1">
           <Avatar
             src={review.customer?.avatar_url}

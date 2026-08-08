@@ -57,7 +57,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="section bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-secondary-950 dark:to-secondary-900">
+      <section className="section bg-[var(--background)]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -122,7 +122,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats */}
-      <section className="py-16 bg-primary-600 dark:bg-primary-900">
+      <section className="py-16 bg-primary-700 dark:bg-primary-900">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (

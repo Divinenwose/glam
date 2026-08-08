@@ -2,6 +2,174 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-primary-50: 248 238 241;
+  --color-primary-100: 242 221 227;
+  --color-primary-200: 228 192 203;
+  --color-primary-300: 210 154 173;
+  --color-primary-400: 183 104 132;
+  --color-primary-500: 155 68 100;
+  --color-primary-600: 107 16 40;
+  --color-primary-700: 91 13 34;
+  --color-primary-800: 71 11 28;
+  --color-primary-900: 49 7 19;
+  --color-primary-950: 34 4 13;
+
+  --color-secondary-50: 250 248 243;
+  --color-secondary-100: 242 236 224;
+  --color-secondary-200: 227 217 201;
+  --color-secondary-300: 208 192 166;
+  --color-secondary-400: 181 162 129;
+  --color-secondary-500: 143 125 99;
+  --color-secondary-600: 107 104 99;
+  --color-secondary-700: 77 72 67;
+  --color-secondary-800: 52 49 45;
+  --color-secondary-900: 37 35 33;
+  --color-secondary-950: 23 21 19;
+
+  --color-accent-50: 252 248 234;
+  --color-accent-100: 247 238 208;
+  --color-accent-200: 235 219 162;
+  --color-accent-300: 223 196 109;
+  --color-accent-400: 207 174 70;
+  --color-accent-500: 201 162 77;
+  --color-accent-600: 174 134 61;
+  --color-accent-700: 139 108 48;
+  --color-accent-800: 111 85 38;
+  --color-accent-900: 85 61 31;
+  --color-accent-950: 48 36 15;
+
+  --color-success-50: 238 248 243;
+  --color-success-100: 220 238 230;
+  --color-success-200: 185 219 201;
+  --color-success-300: 134 198 166;
+  --color-success-400: 79 160 126;
+  --color-success-500: 23 107 77;
+  --color-success-600: 18 91 65;
+  --color-success-700: 15 74 54;
+  --color-success-800: 13 59 44;
+  --color-success-900: 11 47 35;
+  --color-success-950: 7 27 20;
+
+  --color-warning-50: 252 248 234;
+  --color-warning-100: 247 238 208;
+  --color-warning-200: 235 219 162;
+  --color-warning-300: 223 196 109;
+  --color-warning-400: 207 174 70;
+  --color-warning-500: 201 162 77;
+  --color-warning-600: 174 134 61;
+  --color-warning-700: 139 108 48;
+  --color-warning-800: 111 85 38;
+  --color-warning-900: 85 61 31;
+  --color-warning-950: 48 36 15;
+
+  --color-error-50: 249 236 238;
+  --color-error-100: 242 217 220;
+  --color-error-200: 225 179 187;
+  --color-error-300: 203 138 150;
+  --color-error-400: 176 90 104;
+  --color-error-500: 181 42 56;
+  --color-error-600: 150 36 48;
+  --color-error-700: 120 29 42;
+  --color-error-800: 93 23 33;
+  --color-error-900: 67 19 26;
+  --color-error-950: 34 10 15;
+
+  --primary: #6B1028;
+  --accent: #C9A24D;
+  --background: #FAF8F3;
+  --surface: #FFFFFF;
+  --surface-elevated: #FFFFFF;
+  --text-primary: #242424;
+  --text-secondary: #6B6863;
+  --success: #176B4D;
+  --error: #B52A38;
+  --toast-bg: #FFFFFF;
+  --toast-color: #242424;
+}
+
+html.dark {
+  --color-primary-50: 36 10 16;
+  --color-primary-100: 53 14 24;
+  --color-primary-200: 83 23 38;
+  --color-primary-300: 114 31 48;
+  --color-primary-400: 139 40 60;
+  --color-primary-500: 161 49 74;
+  --color-primary-600: 74 11 28;
+  --color-primary-700: 97 15 34;
+  --color-primary-800: 116 20 41;
+  --color-primary-900: 142 27 50;
+  --color-primary-950: 173 39 62;
+
+  --color-secondary-50: 39 36 34;
+  --color-secondary-100: 46 42 40;
+  --color-secondary-200: 58 53 49;
+  --color-secondary-300: 77 70 64;
+  --color-secondary-400: 103 97 88;
+  --color-secondary-500: 132 123 112;
+  --color-secondary-600: 156 147 135;
+  --color-secondary-700: 188 178 165;
+  --color-secondary-800: 217 208 191;
+  --color-secondary-900: 241 235 225;
+  --color-secondary-950: 245 242 235;
+
+  --color-accent-50: 46 38 17;
+  --color-accent-100: 69 57 26;
+  --color-accent-200: 97 80 35;
+  --color-accent-300: 132 110 46;
+  --color-accent-400: 167 139 56;
+  --color-accent-500: 212 175 55;
+  --color-accent-600: 225 187 73;
+  --color-accent-700: 236 199 98;
+  --color-accent-800: 242 209 122;
+  --color-accent-900: 247 220 145;
+  --color-accent-950: 250 229 171;
+
+  --color-success-50: 12 39 28;
+  --color-success-100: 18 57 40;
+  --color-success-200: 26 83 59;
+  --color-success-300: 36 114 82;
+  --color-success-400: 49 145 108;
+  --color-success-500: 23 107 77;
+  --color-success-600: 29 124 90;
+  --color-success-700: 38 147 109;
+  --color-success-800: 51 171 129;
+  --color-success-900: 66 197 150;
+  --color-success-950: 86 219 170;
+
+  --color-warning-50: 46 38 17;
+  --color-warning-100: 69 57 26;
+  --color-warning-200: 97 80 35;
+  --color-warning-300: 132 110 46;
+  --color-warning-400: 167 139 56;
+  --color-warning-500: 212 175 55;
+  --color-warning-600: 225 187 73;
+  --color-warning-700: 236 199 98;
+  --color-warning-800: 242 209 122;
+  --color-warning-900: 247 220 145;
+  --color-warning-950: 250 229 171;
+
+  --color-error-50: 44 15 20;
+  --color-error-100: 63 20 28;
+  --color-error-200: 92 28 41;
+  --color-error-300: 130 40 58;
+  --color-error-400: 163 51 73;
+  --color-error-500: 181 42 56;
+  --color-error-600: 192 55 69;
+  --color-error-700: 206 74 90;
+  --color-error-800: 216 95 112;
+  --color-error-900: 227 116 132;
+  --color-error-950: 239 135 151;
+
+  --background: #121212;
+  --surface: #1E1E1E;
+  --surface-elevated: #242424;
+  --text-primary: #F5F2EA;
+  --text-secondary: #CFC7B0;
+  --toast-bg: #1E1E1E;
+  --toast-color: #F5F2EA;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -10,7 +178,8 @@
   }
 
   body {
-    @apply bg-white dark:bg-secondary-950 text-secondary-900 dark:text-secondary-100;
+    background-color: var(--background);
+    color: var(--text-primary);
     font-family: 'Inter', system-ui, sans-serif;
   }
 
@@ -22,6 +191,11 @@
   * {
     @apply border-secondary-200 dark:border-secondary-800;
   }
+
+  ::selection {
+    background-color: rgba(107, 16, 40, 0.2);
+    color: var(--text-primary);
+  }
 }
 
 @layer components {
@@ -30,23 +204,23 @@
   }
 
   .btn-primary {
-    @apply btn bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500 shadow-soft hover:shadow-soft-lg;
+    @apply btn bg-primary-700 text-white hover:bg-primary-800 focus:ring-primary-600 shadow-soft hover:shadow-soft-lg;
   }
 
   .btn-secondary {
-    @apply btn bg-secondary-100 text-secondary-700 hover:bg-secondary-200 dark:bg-secondary-800 dark:text-secondary-100 dark:hover:bg-secondary-700 focus:ring-secondary-500;
+    @apply btn bg-[var(--surface)] text-primary-700 border border-primary-200 hover:bg-primary-50 hover:border-primary-300 focus:ring-primary-500;
   }
 
   .btn-outline {
-    @apply btn border-2 border-primary-600 text-primary-600 hover:bg-primary-50 dark:hover:bg-primary-900/20 focus:ring-primary-500;
+    @apply btn border border-primary-600 text-primary-700 hover:bg-primary-50 focus:ring-primary-500;
   }
 
   .btn-ghost {
-    @apply btn text-secondary-600 hover:bg-secondary-100 dark:text-secondary-300 dark:hover:bg-secondary-800 focus:ring-secondary-500;
+    @apply btn text-primary-700 hover:bg-primary-50 focus:ring-primary-500;
   }
 
   .btn-accent {
-    @apply btn bg-accent-500 text-white hover:bg-accent-600 focus:ring-accent-400;
+    @apply btn bg-accent-500 text-primary-950 hover:bg-accent-600 focus:ring-accent-400;
   }
 
   .btn-success {
@@ -70,7 +244,7 @@
   }
 
   .input {
-    @apply w-full px-4 py-2.5 bg-white dark:bg-secondary-900 border border-secondary-200 dark:border-secondary-700 rounded-xl text-secondary-900 dark:text-secondary-100 placeholder-secondary-400 dark:placeholder-secondary-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200;
+    @apply w-full px-4 py-2.5 bg-[var(--surface)] border border-secondary-200 dark:border-secondary-700 rounded-xl text-[color:var(--text-primary)] placeholder-secondary-400 dark:placeholder-secondary-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200;
   }
 
   .input-error {
@@ -82,7 +256,7 @@
   }
 
   .card {
-    @apply bg-white dark:bg-secondary-900 rounded-2xl shadow-soft border border-secondary-100 dark:border-secondary-800 overflow-hidden;
+    @apply bg-[var(--surface)] rounded-2xl shadow-soft border border-primary-100/70 overflow-hidden;
   }
 
   .card-hover {
@@ -94,7 +268,7 @@
   }
 
   .badge-primary {
-    @apply badge bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400;
+    @apply badge bg-primary-50 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400;
   }
 
   .badge-secondary {
@@ -118,7 +292,7 @@
   }
 
   .link {
-    @apply text-primary-600 dark:text-primary-400 hover:underline decoration-primary-600 dark:decoration-primary-400 underline-offset-2;
+    @apply text-primary-700 dark:text-primary-400 hover:text-primary-800 hover:underline decoration-primary-700 dark:decoration-primary-400 underline-offset-2;
   }
 
   .section {
@@ -132,22 +306,30 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-accent-500;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-700 to-accent-600;
   }
 
   .glass {
-    @apply bg-white/80 dark:bg-secondary-900/80 backdrop-blur-lg border border-white/20 dark:border-secondary-700/50;
+    @apply border border-primary-100/80 bg-[rgba(255,255,255,0.82)] backdrop-blur-xl;
+  }
+
+  .dark .glass {
+    @apply border-primary-900/40 bg-[rgba(30,30,30,0.86)];
+  }
+
+  .bg-white {
+    background-color: var(--surface) !important;
   }
 
   .gradient-border {
-    background: linear-gradient(white, white) padding-box,
-                linear-gradient(135deg, theme('colors.primary.500'), theme('colors.accent.500')) border-box;
+    background: linear-gradient(var(--surface), var(--surface)) padding-box,
+                linear-gradient(135deg, theme('colors.primary.700'), theme('colors.primary.900')) border-box;
     @apply border-2 border-transparent;
   }
 
   .dark .gradient-border {
-    background: linear-gradient(theme('colors.secondary.900'), theme('colors.secondary.900')) padding-box,
-                linear-gradient(135deg, theme('colors.primary.500'), theme('colors.accent.500')) border-box;
+    background: linear-gradient(var(--surface), var(--surface)) padding-box,
+                linear-gradient(135deg, theme('colors.primary.600'), theme('colors.primary.800')) border-box;
   }
 
   .scrollbar-hide {

@@ -227,11 +227,11 @@ export default function RegisterPage() {
                   />
                   <span className="text-sm text-secondary-600 dark:text-secondary-400">
                     I agree to the{' '}
-                    <Link to="/terms" className="text-pink dark:text-pink hover:text-gold hover:underline">
+                    <Link to="/terms" className="text-primary-700 hover:text-primary-800 hover:underline">
                       Terms of Service
                     </Link>{' '}
                     and{' '}
-                    <Link to="/privacy" className="text-pink dark:text-pink hover:text-gold hover:underline">
+                    <Link to="/privacy" className="text-primary-700 hover:text-primary-800 hover:underline">
                       Privacy Policy
                     </Link>
                   </span>
@@ -256,7 +256,7 @@ export default function RegisterPage() {
           <div className="mt-8 text-center">
               <p className="text-secondary-600 dark:text-secondary-400">
               Already have an account?{' '}
-              <Link to="/login" className="text-pink dark:text-pink font-medium hover:text-gold hover:underline">
+              <Link to="/login" className="text-primary-700 font-medium hover:text-primary-800 hover:underline">
                 Sign in
               </Link>
             </p>
@@ -271,7 +271,7 @@ export default function RegisterPage() {
           alt="Hairstylist"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-600/90 to-primary-900/90" />
+        <div className="absolute inset-0 bg-primary-800/95" />
         <div className="absolute inset-0 flex items-center justify-center p-12">
           <div className="text-white text-center max-w-md">
             <h2 className="text-3xl font-display font-bold mb-4">

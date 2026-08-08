@@ -61,7 +61,7 @@ export default function StylistDashboard() {
           <Card>
             <div className="p-4 border-b border-secondary-200 dark:border-secondary-800 flex items-center justify-between">
               <h2 className="font-semibold text-secondary-900 dark:text-white">Today's Appointments</h2>
-              <Link to="/stylist/bookings" className="text-sm text-pink dark:text-pink hover:text-gold hover:underline">View all</Link>
+              <Link to="/stylist/bookings" className="text-sm text-primary-700 hover:text-primary-800 hover:underline">View all</Link>
             </div>
             <div className="p-4 space-y-4">
               {todayBookings.map((booking) => (
