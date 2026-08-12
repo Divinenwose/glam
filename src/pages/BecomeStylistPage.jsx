@@ -135,7 +135,7 @@ export default function BecomeStylistPage() {
                         value={formData.fullName}
                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                         className="input"
-                        placeholder="Your full legal name"
+                        placeholder="Your full Name"
                       />
                     </div>
                     <div>
@@ -146,7 +146,7 @@ export default function BecomeStylistPage() {
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         className="input"
-                        placeholder="+1 (555) 123-4567"
+                        placeholder="+2348069248565"
                       />
                     </div>
                   </div>
@@ -158,7 +158,7 @@ export default function BecomeStylistPage() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       className="input"
-                      placeholder="your@email.com"
+                      placeholder="johndoe@gmail.com"
                     />
                   </div>
                   <div>
