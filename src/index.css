@@ -3,170 +3,199 @@
 @tailwind utilities;
 
 :root {
-  --color-primary-50: 248 238 241;
-  --color-primary-100: 242 221 227;
-  --color-primary-200: 228 192 203;
-  --color-primary-300: 210 154 173;
-  --color-primary-400: 183 104 132;
-  --color-primary-500: 155 68 100;
-  --color-primary-600: 107 16 40;
-  --color-primary-700: 91 13 34;
-  --color-primary-800: 71 11 28;
-  --color-primary-900: 49 7 19;
-  --color-primary-950: 34 4 13;
+  /* Brand Colors - Official Palette */
+  --burgundy: #7A0E2E;
+  --gold: #D4AF37;
+  --emerald: #027A48;
+  --pink: #FF4D94;
+  --red: #D72638;
 
-  --color-secondary-50: 250 248 243;
-  --color-secondary-100: 242 236 224;
-  --color-secondary-200: 227 217 201;
-  --color-secondary-300: 208 192 166;
-  --color-secondary-400: 181 162 129;
-  --color-secondary-500: 143 125 99;
-  --color-secondary-600: 107 104 99;
-  --color-secondary-700: 77 72 67;
-  --color-secondary-800: 52 49 45;
-  --color-secondary-900: 37 35 33;
-  --color-secondary-950: 23 21 19;
+  /* Burgundy Scale - Primary Foundation */
+  --color-burgundy-50: 254 242 245;
+  --color-burgundy-100: 251 224 230;
+  --color-burgundy-200: 247 193 205;
+  --color-burgundy-300: 242 153 172;
+  --color-burgundy-400: 236 103 130;
+  --color-burgundy-500: 229 59 91;
+  --color-burgundy-600: 200 42 68;
+  --color-burgundy-700: 168 30 52;
+  --color-burgundy-800: 122 14 46;
+  --color-burgundy-900: 91 10 34;
+  --color-burgundy-950: 54 6 20;
 
-  --color-accent-50: 252 248 234;
-  --color-accent-100: 247 238 208;
-  --color-accent-200: 235 219 162;
-  --color-accent-300: 223 196 109;
-  --color-accent-400: 207 174 70;
-  --color-accent-500: 201 162 77;
-  --color-accent-600: 174 134 61;
-  --color-accent-700: 139 108 48;
-  --color-accent-800: 111 85 38;
-  --color-accent-900: 85 61 31;
-  --color-accent-950: 48 36 15;
+  /* Gold Scale - Luxury Accents */
+  --color-gold-50: 254 250 239;
+  --color-gold-100: 252 244 215;
+  --color-gold-200: 249 233 176;
+  --color-gold-300: 245 219 131;
+  --color-gold-400: 240 202 89;
+  --color-gold-500: 212 175 55;
+  --color-gold-600: 183 146 46;
+  --color-gold-700: 152 118 38;
+  --color-gold-800: 122 94 31;
+  --color-gold-900: 98 76 26;
+  --color-gold-950: 61 47 16;
 
-  --color-success-50: 238 248 243;
-  --color-success-100: 220 238 230;
-  --color-success-200: 185 219 201;
-  --color-success-300: 134 198 166;
-  --color-success-400: 79 160 126;
-  --color-success-500: 23 107 77;
-  --color-success-600: 18 91 65;
-  --color-success-700: 15 74 54;
-  --color-success-800: 13 59 44;
-  --color-success-900: 11 47 35;
-  --color-success-950: 7 27 20;
+  /* Emerald Scale - Trust & Verification */
+  --color-emerald-50: 236 253 244;
+  --color-emerald-100: 209 250 229;
+  --color-emerald-200: 167 243 208;
+  --color-emerald-300: 110 231 183;
+  --color-emerald-400: 52 211 153;
+  --color-emerald-500: 16 185 129;
+  --color-emerald-600: 5 150 105;
+  --color-emerald-700: 4 120 87;
+  --color-emerald-800: 6 95 70;
+  --color-emerald-900: 6 78 59;
+  --color-emerald-950: 2 44 34;
 
-  --color-warning-50: 252 248 234;
-  --color-warning-100: 247 238 208;
-  --color-warning-200: 235 219 162;
-  --color-warning-300: 223 196 109;
-  --color-warning-400: 207 174 70;
-  --color-warning-500: 201 162 77;
-  --color-warning-600: 174 134 61;
-  --color-warning-700: 139 108 48;
-  --color-warning-800: 111 85 38;
-  --color-warning-900: 85 61 31;
-  --color-warning-950: 48 36 15;
+  /* Pink Scale - Beauty & Glam */
+  --color-pink-50: 252 241 247;
+  --color-pink-100: 251 224 236;
+  --color-pink-200: 247 194 219;
+  --color-pink-300: 244 154 197;
+  --color-pink-400: 241 107 173;
+  --color-pink-500: 236 72 153;
+  --color-pink-600: 219 39 119;
+  --color-pink-700: 190 24 95;
+  --color-pink-800: 157 18 76;
+  --color-pink-900: 131 15 63;
+  --color-pink-950: 80 9 39;
 
-  --color-error-50: 249 236 238;
-  --color-error-100: 242 217 220;
-  --color-error-200: 225 179 187;
-  --color-error-300: 203 138 150;
-  --color-error-400: 176 90 104;
-  --color-error-500: 181 42 56;
-  --color-error-600: 150 36 48;
-  --color-error-700: 120 29 42;
-  --color-error-800: 93 23 33;
-  --color-error-900: 67 19 26;
-  --color-error-950: 34 10 15;
+  /* Red Scale - Actions & Conversion */
+  --color-red-50: 254 242 242;
+  --color-red-100: 254 226 226;
+  --color-red-200: 254 202 202;
+  --color-red-300: 252 165 165;
+  --color-red-400: 248 113 113;
+  --color-red-500: 239 68 68;
+  --color-red-600: 220 38 38;
+  --color-red-700: 185 28 28;
+  --color-red-800: 153 27 27;
+  --color-red-900: 127 29 29;
+  --color-red-950: 69 10 10;
 
-  --primary: #6B1028;
-  --accent: #C9A24D;
+  /* Neutral Scale - Backgrounds & Surfaces */
+  --color-neutral-50: 255 255 255;
+  --color-neutral-100: 250 248 246;
+  --color-neutral-200: 245 241 237;
+  --color-neutral-300: 237 231 225;
+  --color-neutral-400: 214 204 194;
+  --color-neutral-500: 168 153 138;
+  --color-neutral-600: 120 107 94;
+  --color-neutral-700: 87 76 66;
+  --color-neutral-800: 63 55 48;
+  --color-neutral-900: 45 39 34;
+  --color-neutral-950: 26 22 19;
+
+  /* Semantic Variables */
+  --primary: var(--burgundy);
+  --accent: var(--gold);
+  --success: var(--emerald);
+  --error: var(--red);
+  --beauty: var(--pink);
+  --action: var(--red);
+
+  /* Background & Surface */
   --background: #FAF8F3;
   --surface: #FFFFFF;
   --surface-elevated: #FFFFFF;
+
+  /* Text Colors */
   --text-primary: #242424;
   --text-secondary: #6B6863;
-  --success: #176B4D;
-  --error: #B52A38;
+
+  /* Toast */
   --toast-bg: #FFFFFF;
   --toast-color: #242424;
 }
 
 html.dark {
-  --color-primary-50: 36 10 16;
-  --color-primary-100: 53 14 24;
-  --color-primary-200: 83 23 38;
-  --color-primary-300: 114 31 48;
-  --color-primary-400: 139 40 60;
-  --color-primary-500: 161 49 74;
-  --color-primary-600: 74 11 28;
-  --color-primary-700: 97 15 34;
-  --color-primary-800: 116 20 41;
-  --color-primary-900: 142 27 50;
-  --color-primary-950: 173 39 62;
+  /* Burgundy Scale - Dark Mode: Keep brand colors vibrant, adjust backgrounds */
+  --color-burgundy-50: 54 6 20;
+  --color-burgundy-100: 91 10 34;
+  --color-burgundy-200: 122 14 46;
+  --color-burgundy-300: 168 30 52;
+  --color-burgundy-400: 200 42 68;
+  --color-burgundy-500: 229 59 91;
+  --color-burgundy-600: 236 103 130;
+  --color-burgundy-700: 242 153 172;
+  --color-burgundy-800: 247 193 205;
+  --color-burgundy-900: 251 224 230;
+  --color-burgundy-950: 254 242 245;
 
-  --color-secondary-50: 39 36 34;
-  --color-secondary-100: 46 42 40;
-  --color-secondary-200: 58 53 49;
-  --color-secondary-300: 77 70 64;
-  --color-secondary-400: 103 97 88;
-  --color-secondary-500: 132 123 112;
-  --color-secondary-600: 156 147 135;
-  --color-secondary-700: 188 178 165;
-  --color-secondary-800: 217 208 191;
-  --color-secondary-900: 241 235 225;
-  --color-secondary-950: 245 242 235;
+  /* Gold Scale - Dark Mode: Keep vibrant for premium accents */
+  --color-gold-50: 61 47 16;
+  --color-gold-100: 98 76 26;
+  --color-gold-200: 122 94 31;
+  --color-gold-300: 152 118 38;
+  --color-gold-400: 183 146 46;
+  --color-gold-500: 212 175 55;
+  --color-gold-600: 240 202 89;
+  --color-gold-700: 245 219 131;
+  --color-gold-800: 249 233 176;
+  --color-gold-900: 252 244 215;
+  --color-gold-950: 254 250 239;
 
-  --color-accent-50: 46 38 17;
-  --color-accent-100: 69 57 26;
-  --color-accent-200: 97 80 35;
-  --color-accent-300: 132 110 46;
-  --color-accent-400: 167 139 56;
-  --color-accent-500: 212 175 55;
-  --color-accent-600: 225 187 73;
-  --color-accent-700: 236 199 98;
-  --color-accent-800: 242 209 122;
-  --color-accent-900: 247 220 145;
-  --color-accent-950: 250 229 171;
+  /* Emerald Scale - Dark Mode: Keep vibrant for trust states */
+  --color-emerald-50: 2 44 34;
+  --color-emerald-100: 6 78 59;
+  --color-emerald-200: 6 95 70;
+  --color-emerald-300: 4 120 87;
+  --color-emerald-400: 5 150 105;
+  --color-emerald-500: 16 185 129;
+  --color-emerald-600: 52 211 153;
+  --color-emerald-700: 110 231 183;
+  --color-emerald-800: 167 243 208;
+  --color-emerald-900: 209 250 229;
+  --color-emerald-950: 236 253 244;
 
-  --color-success-50: 12 39 28;
-  --color-success-100: 18 57 40;
-  --color-success-200: 26 83 59;
-  --color-success-300: 36 114 82;
-  --color-success-400: 49 145 108;
-  --color-success-500: 23 107 77;
-  --color-success-600: 29 124 90;
-  --color-success-700: 38 147 109;
-  --color-success-800: 51 171 129;
-  --color-success-900: 66 197 150;
-  --color-success-950: 86 219 170;
+  /* Pink Scale - Dark Mode: Keep vibrant for beauty states */
+  --color-pink-50: 80 9 39;
+  --color-pink-100: 131 15 63;
+  --color-pink-200: 157 18 76;
+  --color-pink-300: 190 24 95;
+  --color-pink-400: 219 39 119;
+  --color-pink-500: 236 72 153;
+  --color-pink-600: 241 107 173;
+  --color-pink-700: 244 154 197;
+  --color-pink-800: 247 194 219;
+  --color-pink-900: 251 224 236;
+  --color-pink-950: 252 241 247;
 
-  --color-warning-50: 46 38 17;
-  --color-warning-100: 69 57 26;
-  --color-warning-200: 97 80 35;
-  --color-warning-300: 132 110 46;
-  --color-warning-400: 167 139 56;
-  --color-warning-500: 212 175 55;
-  --color-warning-600: 225 187 73;
-  --color-warning-700: 236 199 98;
-  --color-warning-800: 242 209 122;
-  --color-warning-900: 247 220 145;
-  --color-warning-950: 250 229 171;
+  /* Red Scale - Dark Mode: Keep vibrant for CTAs */
+  --color-red-50: 69 10 10;
+  --color-red-100: 127 29 29;
+  --color-red-200: 153 27 27;
+  --color-red-300: 185 28 28;
+  --color-red-400: 220 38 38;
+  --color-red-500: 239 68 68;
+  --color-red-600: 248 113 113;
+  --color-red-700: 252 165 165;
+  --color-red-800: 254 202 202;
+  --color-red-900: 254 226 226;
+  --color-red-950: 254 242 242;
 
-  --color-error-50: 44 15 20;
-  --color-error-100: 63 20 28;
-  --color-error-200: 92 28 41;
-  --color-error-300: 130 40 58;
-  --color-error-400: 163 51 73;
-  --color-error-500: 181 42 56;
-  --color-error-600: 192 55 69;
-  --color-error-700: 206 74 90;
-  --color-error-800: 216 95 112;
-  --color-error-900: 227 116 132;
-  --color-error-950: 239 135 151;
+  /* Neutral Scale - Dark Mode: Deep burgundy-tinted neutrals for premium feel */
+  --color-neutral-50: 26 22 19;
+  --color-neutral-100: 45 39 34;
+  --color-neutral-200: 63 55 48;
+  --color-neutral-300: 87 76 66;
+  --color-neutral-400: 120 107 94;
+  --color-neutral-500: 168 153 138;
+  --color-neutral-600: 214 204 194;
+  --color-neutral-700: 237 231 225;
+  --color-neutral-800: 245 241 237;
+  --color-neutral-900: 250 248 246;
+  --color-neutral-950: 255 255 255;
 
-  --background: #121212;
-  --surface: #1E1E1E;
-  --surface-elevated: #242424;
+  /* Dark Mode Overrides - Deep burgundy-tinted dark theme */
+  --background: #1A1614;
+  --surface: #24201D;
+  --surface-elevated: #2E2926;
   --text-primary: #F5F2EA;
   --text-secondary: #CFC7B0;
-  --toast-bg: #1E1E1E;
+  --toast-bg: #24201D;
   --toast-color: #F5F2EA;
 }
 
@@ -189,7 +218,7 @@ html.dark {
   }
 
   * {
-    @apply border-secondary-200 dark:border-secondary-800;
+    @apply border-neutral-200 dark:border-neutral-800;
   }
 
   ::selection {
@@ -203,32 +232,76 @@ html.dark {
     @apply inline-flex items-center justify-center px-4 py-2 rounded-xl font-medium text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
   }
 
+  /* Primary CTA - Red for conversion/actions */
   .btn-primary {
-    @apply btn bg-primary-700 text-white hover:bg-primary-800 focus:ring-primary-600 shadow-soft hover:shadow-soft-lg;
+    @apply btn bg-red-600 text-white hover:bg-red-700 focus:ring-red-500 shadow-soft hover:shadow-soft-lg;
   }
 
+  .dark .btn-primary {
+    @apply bg-red-600 hover:bg-red-500 focus:ring-red-400;
+  }
+
+  /* Secondary CTA - Emerald for trust/secondary actions */
   .btn-secondary {
-    @apply btn bg-[var(--surface)] text-primary-700 border border-primary-200 hover:bg-primary-50 hover:border-primary-300 focus:ring-primary-500;
+    @apply btn bg-emerald-600 text-white hover:bg-emerald-700 focus:ring-emerald-500 shadow-soft hover:shadow-soft-lg;
   }
 
+  .dark .btn-secondary {
+    @apply bg-emerald-600 hover:bg-emerald-500 focus:ring-emerald-400;
+  }
+
+  /* Outline - Burgundy for structure */
   .btn-outline {
-    @apply btn border border-primary-600 text-primary-700 hover:bg-primary-50 focus:ring-primary-500;
+    @apply btn border border-burgundy-600 text-burgundy-700 hover:bg-burgundy-50 focus:ring-burgundy-500;
   }
 
+  .dark .btn-outline {
+    @apply border-burgundy-500 text-burgundy-300 hover:bg-burgundy-900/30 focus:ring-burgundy-400;
+  }
+
+  /* Ghost - Neutral with Burgundy hover */
   .btn-ghost {
-    @apply btn text-primary-700 hover:bg-primary-50 focus:ring-primary-500;
+    @apply btn text-burgundy-700 hover:bg-burgundy-50 focus:ring-burgundy-500;
   }
 
-  .btn-accent {
-    @apply btn bg-accent-500 text-primary-950 hover:bg-accent-600 focus:ring-accent-400;
+  .dark .btn-ghost {
+    @apply text-burgundy-300 hover:bg-burgundy-900/30 focus:ring-burgundy-400;
   }
 
+  /* Premium/Gold - Luxury accents */
+  .btn-gold {
+    @apply btn bg-gold-500 text-burgundy-950 hover:bg-gold-600 focus:ring-gold-400;
+  }
+
+  .dark .btn-gold {
+    @apply bg-gold-500 text-burgundy-950 hover:bg-gold-400 focus:ring-gold-300;
+  }
+
+  /* Success - Emerald for confirmation */
   .btn-success {
-    @apply btn bg-success-500 text-white hover:bg-success-600 focus:ring-success-400;
+    @apply btn bg-emerald-600 text-white hover:bg-emerald-700 focus:ring-emerald-400;
   }
 
+  .dark .btn-success {
+    @apply bg-emerald-600 hover:bg-emerald-500 focus:ring-emerald-400;
+  }
+
+  /* Error - Red for urgent alerts */
   .btn-error {
-    @apply btn bg-error-500 text-white hover:bg-error-600 focus:ring-error-400;
+    @apply btn bg-red-600 text-white hover:bg-red-700 focus:ring-red-400;
+  }
+
+  .dark .btn-error {
+    @apply bg-red-600 hover:bg-red-500 focus:ring-red-400;
+  }
+
+  /* Beauty/Pink - Glam/beauty states */
+  .btn-beauty {
+    @apply btn bg-pink-500 text-white hover:bg-pink-600 focus:ring-pink-400;
+  }
+
+  .dark .btn-beauty {
+    @apply bg-pink-500 hover:bg-pink-400 focus:ring-pink-300;
   }
 
   .btn-lg {
@@ -244,23 +317,35 @@ html.dark {
   }
 
   .input {
-    @apply w-full px-4 py-2.5 bg-[var(--surface)] border border-secondary-200 dark:border-secondary-700 rounded-xl text-[color:var(--text-primary)] placeholder-secondary-400 dark:placeholder-secondary-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200;
+    @apply w-full px-4 py-2.5 bg-[var(--surface)] border border-neutral-200 dark:border-neutral-700 rounded-xl text-[color:var(--text-primary)] placeholder-neutral-400 dark:placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-burgundy-500 focus:border-transparent transition-all duration-200;
+  }
+
+  .dark .input {
+    @apply focus:ring-burgundy-400;
   }
 
   .input-error {
-    @apply border-error-500 focus:ring-error-500;
+    @apply border-red-500 focus:ring-red-500;
   }
 
   .label {
-    @apply block text-sm font-medium text-secondary-700 dark:text-secondary-300 mb-1.5;
+    @apply block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1.5;
   }
 
   .card {
-    @apply bg-[var(--surface)] rounded-2xl shadow-soft border border-primary-100/70 overflow-hidden;
+    @apply bg-[var(--surface)] rounded-2xl shadow-soft border border-burgundy-100/70 overflow-hidden;
+  }
+
+  .dark .card {
+    @apply border-burgundy-900/50;
   }
 
   .card-hover {
     @apply card transition-all duration-300 hover:shadow-soft-lg hover:-translate-y-1 cursor-pointer;
+  }
+
+  .dark .card-hover {
+    @apply hover:shadow-lg;
   }
 
   .badge {
@@ -268,31 +353,44 @@ html.dark {
   }
 
   .badge-primary {
-    @apply badge bg-primary-50 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400;
+    @apply badge bg-burgundy-50 text-burgundy-700 dark:bg-burgundy-900/40 dark:text-burgundy-300;
   }
 
   .badge-secondary {
-    @apply badge bg-secondary-100 text-secondary-700 dark:bg-secondary-800 dark:text-secondary-300;
+    @apply badge bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300;
   }
 
+  /* Trust/Verification - Emerald */
   .badge-success {
-    @apply badge bg-success-100 text-success-700 dark:bg-success-900/30 dark:text-success-400;
+    @apply badge bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300;
   }
 
+  /* Warning - Gold */
   .badge-warning {
-    @apply badge bg-warning-100 text-warning-700 dark:bg-warning-900/30 dark:text-warning-400;
+    @apply badge bg-gold-100 text-gold-700 dark:bg-gold-900/40 dark:text-gold-300;
   }
 
+  /* Error - Red */
   .badge-error {
-    @apply badge bg-error-100 text-error-700 dark:bg-error-900/30 dark:text-error-400;
+    @apply badge bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-300;
+  }
+
+  /* Beauty/Pink */
+  .badge-beauty {
+    @apply badge bg-pink-100 text-pink-700 dark:bg-pink-900/40 dark:text-pink-300;
+  }
+
+  /* Premium - Gold */
+  .badge-premium {
+    @apply badge bg-gold-100 text-gold-700 dark:bg-gold-900/40 dark:text-gold-300;
   }
 
   .skeleton {
-    @apply animate-pulse bg-secondary-200 dark:bg-secondary-800 rounded;
+    @apply animate-pulse bg-neutral-200 dark:bg-neutral-800 rounded;
   }
 
   .link {
-    @apply text-primary-700 dark:text-primary-400 hover:text-primary-800 hover:underline decoration-primary-700 dark:decoration-primary-400 underline-offset-2;
+    @apply text-burgundy-700 dark:text-burgundy-400 hover:text-burgundy-800 hover:underline decoration-burgundy-700 dark:decoration-burgundy-400 underline-offset-2;
   }
 
   .section {
@@ -305,16 +403,62 @@ html.dark {
 }
 
 @layer utilities {
+  /* Official Brand Gradients - Light Mode */
+  .gradient-luxury {
+    @apply bg-gradient-to-r from-burgundy-700 to-gold-500;
+  }
+
+  .gradient-beauty {
+    @apply bg-gradient-to-r from-burgundy-700 to-pink-500;
+  }
+
+  .gradient-energy {
+    @apply bg-gradient-to-r from-burgundy-700 to-red-500;
+  }
+
+  .gradient-trust-premium {
+    @apply bg-gradient-to-r from-emerald-600 to-gold-500;
+  }
+
+  .gradient-signature {
+    @apply bg-gradient-to-r from-burgundy-700 via-pink-500 to-red-500;
+  }
+
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-700 to-accent-600;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-burgundy-700 to-gold-500;
+  }
+
+  /* Dark Mode Gradients - More subtle, burgundy-led */
+  .dark .gradient-luxury {
+    @apply bg-gradient-to-r from-burgundy-800 to-burgundy-600;
+  }
+
+  .dark .gradient-beauty {
+    @apply bg-gradient-to-r from-burgundy-800 to-pink-600;
+  }
+
+  .dark .gradient-energy {
+    @apply bg-gradient-to-r from-burgundy-800 to-red-600;
+  }
+
+  .dark .gradient-trust-premium {
+    @apply bg-gradient-to-r from-emerald-700 to-gold-600;
+  }
+
+  .dark .gradient-signature {
+    @apply bg-gradient-to-r from-burgundy-800 via-pink-600 to-red-600;
+  }
+
+  .dark .text-gradient {
+    @apply bg-gradient-to-r from-gold-400 to-gold-200;
   }
 
   .glass {
-    @apply border border-primary-100/80 bg-[rgba(255,255,255,0.82)] backdrop-blur-xl;
+    @apply border border-burgundy-100/80 bg-[rgba(255,255,255,0.82)] backdrop-blur-xl;
   }
 
   .dark .glass {
-    @apply border-primary-900/40 bg-[rgba(30,30,30,0.86)];
+    @apply border-burgundy-900/50 bg-[rgba(36,32,29,0.9)] backdrop-blur-xl;
   }
 
   .bg-white {
@@ -323,13 +467,13 @@ html.dark {
 
   .gradient-border {
     background: linear-gradient(var(--surface), var(--surface)) padding-box,
-                linear-gradient(135deg, theme('colors.primary.700'), theme('colors.primary.900')) border-box;
+                linear-gradient(135deg, theme('colors.burgundy.700'), theme('colors.burgundy.900')) border-box;
     @apply border-2 border-transparent;
   }
 
   .dark .gradient-border {
     background: linear-gradient(var(--surface), var(--surface)) padding-box,
-                linear-gradient(135deg, theme('colors.primary.600'), theme('colors.primary.800')) border-box;
+                linear-gradient(135deg, theme('colors.burgundy.600'), theme('colors.burgundy.800')) border-box;
   }
 
   .scrollbar-hide {

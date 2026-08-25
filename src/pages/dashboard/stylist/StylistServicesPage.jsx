@@ -37,10 +37,10 @@ export default function StylistServicesPage() {
         className="flex items-center justify-between"
       >
         <div>
-          <h1 className="text-2xl font-display font-bold text-secondary-900 dark:text-white mb-2">
+          <h1 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-2">
             Services
           </h1>
-          <p className="text-secondary-600 dark:text-secondary-400">
+          <p className="text-neutral-600 dark:text-neutral-400">
             Manage your services and pricing.
           </p>
         </div>
@@ -62,28 +62,28 @@ export default function StylistServicesPage() {
               <div className="flex items-start justify-between mb-2">
                 <div>
                   <div className="flex items-center gap-2">
-                    <h3 className="font-semibold text-secondary-900 dark:text-white">{service.name}</h3>
+                    <h3 className="font-semibold text-neutral-900 dark:text-white">{service.name}</h3>
                     {!service.is_active && <Badge variant="secondary">Inactive</Badge>}
                   </div>
                   <Badge variant="primary" className="mt-1">{service.category}</Badge>
                 </div>
-                <p className="text-lg font-bold text-primary-600">{formatCurrency(service.price)}</p>
+                <p className="text-lg font-bold text-burgundy-600">{formatCurrency(service.price)}</p>
               </div>
 
-              <div className="flex items-center gap-4 text-sm text-secondary-500 mt-3">
+              <div className="flex items-center gap-4 text-sm text-neutral-500 mt-3">
                 <span>{service.duration_minutes} min</span>
                 <span>•</span>
                 <span className="capitalize">{service.service_type === 'both' ? 'Home & Salon' : service.service_type}</span>
               </div>
 
-              <div className="flex items-center gap-2 mt-4 pt-4 border-t border-secondary-200 dark:border-secondary-700">
+              <div className="flex items-center gap-2 mt-4 pt-4 border-t border-neutral-200 dark:border-neutral-700">
                 <Button variant="ghost" size="sm" onClick={() => handleToggle(service.id)}>
                   {service.is_active ? 'Deactivate' : 'Activate'}
                 </Button>
                 <Button variant="ghost" size="icon" onClick={() => setEditingService(service)}>
                   <Edit2 className="w-4 h-4" />
                 </Button>
-                <Button variant="ghost" size="icon" className="text-error-500" onClick={() => handleDelete(service.id)}>
+                <Button variant="ghost" size="icon" className="text-red-500" onClick={() => handleDelete(service.id)}>
                   <Trash2 className="w-4 h-4" />
                 </Button>
               </div>
@@ -94,7 +94,7 @@ export default function StylistServicesPage() {
 
       {services.length === 0 && (
         <Card className="p-12 text-center">
-          <p className="text-secondary-600 dark:text-secondary-400">
+          <p className="text-neutral-600 dark:text-neutral-400">
             No services yet. Add your first service to start accepting bookings!
           </p>
         </Card>
@@ -102,3 +102,4 @@ export default function StylistServicesPage() {
     </div>
   )
 }
+

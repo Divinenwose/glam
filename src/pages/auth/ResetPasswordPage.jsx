@@ -35,18 +35,18 @@ export default function ResetPasswordPage() {
   }
 
   return (
-    <div className="min-h-screen bg-secondary-50 dark:bg-secondary-950 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 flex items-center justify-center p-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="w-full max-w-md"
       >
 
-        <div className="bg-white dark:bg-secondary-900 rounded-2xl shadow-soft p-8">
-          <h1 className="text-2xl font-display font-bold text-secondary-900 dark:text-white mb-2">
+        <div className="bg-white dark:bg-neutral-900 rounded-2xl shadow-soft p-8">
+          <h1 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-2">
             Reset Your Password
           </h1>
-          <p className="text-secondary-600 dark:text-secondary-400 mb-6">
+          <p className="text-neutral-600 dark:text-neutral-400 mb-6">
             Enter a new password for your account.
           </p>
 
@@ -54,7 +54,7 @@ export default function ResetPasswordPage() {
             <div>
               <label className="label">New Password</label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-secondary-400" />
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400" />
                 <input
                   type={showPassword ? 'text' : 'password'}
                   required
@@ -67,7 +67,7 @@ export default function ResetPasswordPage() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-secondary-400"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400"
                 >
                   {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                 </button>
@@ -77,7 +77,7 @@ export default function ResetPasswordPage() {
             <div>
               <label className="label">Confirm New Password</label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-secondary-400" />
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400" />
                 <input
                   type="password"
                   required
@@ -99,3 +99,4 @@ export default function ResetPasswordPage() {
     </div>
   )
 }
+

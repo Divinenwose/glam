@@ -40,10 +40,10 @@ export default function LoginPage() {
           animate={{ opacity: 1, y: 0 }}
           className="w-full max-w-md"
         >
-          <h1 className="text-3xl font-display font-bold text-secondary-900 dark:text-white ">
+          <h1 className="text-3xl font-display font-bold text-neutral-900 dark:text-white ">
             Welcome back
           </h1>
-          <p className="text-secondary-600 dark:text-secondary-400 mb-8">
+          <p className="text-neutral-600 dark:text-neutral-400 mb-8">
             Sign in to access your account
           </p>
 
@@ -51,7 +51,7 @@ export default function LoginPage() {
             <div>
               <label className="label">Email</label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-secondary-400" />
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400" />
                 <input
                   type="email"
                   required
@@ -66,12 +66,12 @@ export default function LoginPage() {
             <div>
               <div className="flex items-center justify-between mb-1.5">
                 <label className="label mb-0">Password</label>
-                <Link to="/forgot-password" className="text-sm text-primary-700 hover:text-primary-800 hover:underline">
+                <Link to="/forgot-password" className="text-sm text-burgundy-700 hover:text-burgundy-800 hover:underline">
                   Forgot password?
                 </Link>
               </div>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-secondary-400" />
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400" />
                 <input
                   type={showPassword ? 'text' : 'password'}
                   required
@@ -83,7 +83,7 @@ export default function LoginPage() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-secondary-400 hover:text-secondary-600"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-600"
                 >
                   {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                 </button>
@@ -97,9 +97,9 @@ export default function LoginPage() {
           </form>
 
           <div className="mt-8 text-center">
-              <p className="text-secondary-600 dark:text-secondary-400">
+              <p className="text-neutral-600 dark:text-neutral-400">
               Don't have an account?{' '}
-              <Link to="/register" className="text-primary-700 font-medium hover:text-primary-800 hover:underline">
+              <Link to="/register" className="text-burgundy-700 font-medium hover:text-burgundy-800 hover:underline">
                 Sign up
               </Link>
             </p>
@@ -114,13 +114,13 @@ export default function LoginPage() {
           alt="Hairstylist"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-primary-800/90" />
+        <div className="absolute inset-0 bg-burgundy-800/90" />
         <div className="absolute inset-0 flex items-center justify-center p-12">
           <div className="text-white text-center max-w-md">
             <h2 className="text-3xl font-display font-bold mb-4">
               Find Your Perfect Look
             </h2>
-            <p className="text-primary-100 text-lg">
+            <p className="text-burgundy-100 text-lg">
               Connect with thousands of verified hairstylists ready to bring your hair vision to life.
             </p>
           </div>
@@ -129,3 +129,4 @@ export default function LoginPage() {
     </div>
   )
 }
+

@@ -37,10 +37,10 @@ export default function StylistProfilePage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <h1 className="text-2xl font-display font-bold text-secondary-900 dark:text-white mb-2">
+        <h1 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-2">
           Stylist Profile
         </h1>
-        <p className="text-secondary-600 dark:text-secondary-400">
+        <p className="text-neutral-600 dark:text-neutral-400">
           Manage your business profile and how clients see you.
         </p>
       </motion.div>
@@ -50,12 +50,12 @@ export default function StylistProfilePage() {
         <Card className="p-4 mb-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="p-2 rounded-lg bg-success-100 dark:bg-success-900/30">
-                <Check className="w-5 h-5 text-success-600" />
+              <div className="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-900/30">
+                <Check className="w-5 h-5 text-emerald-600" />
               </div>
               <div>
-                <p className="font-medium text-secondary-900 dark:text-white">Verified Stylist</p>
-                <p className="text-sm text-secondary-500">Your account is verified!</p>
+                <p className="font-medium text-neutral-900 dark:text-white">Verified Stylist</p>
+                <p className="text-sm text-neutral-500">Your account is verified!</p>
               </div>
             </div>
             <Badge variant="success">Verified</Badge>
@@ -64,7 +64,7 @@ export default function StylistProfilePage() {
 
         {/* Profile Photo & Basic Info */}
         <Card className="p-6 mb-6">
-          <h2 className="font-semibold text-secondary-900 dark:text-white mb-4">Basic Information</h2>
+          <h2 className="font-semibold text-neutral-900 dark:text-white mb-4">Basic Information</h2>
           <div className="flex items-center gap-6 mb-6">
             <Avatar size="xl" name={formData.fullName} />
             <div>
@@ -72,7 +72,7 @@ export default function StylistProfilePage() {
                 <Camera className="w-4 h-4 mr-2" />
                 Change Photo
               </Button>
-              <p className="text-xs text-secondary-500 mt-2">JPG, PNG. Max 5MB</p>
+              <p className="text-xs text-neutral-500 mt-2">JPG, PNG. Max 5MB</p>
             </div>
           </div>
 
@@ -101,7 +101,7 @@ export default function StylistProfilePage() {
                 type="email"
                 value={formData.email}
                 disabled
-                className="input bg-secondary-50 dark:bg-secondary-800"
+                className="input bg-neutral-50 dark:bg-neutral-800"
               />
             </div>
             <div>
@@ -118,7 +118,7 @@ export default function StylistProfilePage() {
 
         {/* Location */}
         <Card className="p-6 mb-6">
-          <h2 className="font-semibold text-secondary-900 dark:text-white mb-4">Location</h2>
+          <h2 className="font-semibold text-neutral-900 dark:text-white mb-4">Location</h2>
           <div className="grid sm:grid-cols-2 gap-4">
             <div className="sm:col-span-2">
               <label className="label">Street Address</label>
@@ -163,7 +163,7 @@ export default function StylistProfilePage() {
 
         {/* Bio & Specializations */}
         <Card className="p-6 mb-6">
-          <h2 className="font-semibold text-secondary-900 dark:text-white mb-4">About & Services</h2>
+          <h2 className="font-semibold text-neutral-900 dark:text-white mb-4">About & Services</h2>
           <div className="space-y-4">
             <div>
               <label className="label">Bio</label>
@@ -202,9 +202,9 @@ export default function StylistProfilePage() {
                     type="checkbox"
                     checked={formData.offersSalonService}
                     onChange={(e) => setFormData({ ...formData, offersSalonService: e.target.checked })}
-                    className="w-4 h-4 text-primary-600"
+                    className="w-4 h-4 text-burgundy-600"
                   />
-                  <span className="text-secondary-700 dark:text-secondary-300 flex items-center gap-1">
+                  <span className="text-neutral-700 dark:text-neutral-300 flex items-center gap-1">
                     <Store className="w-4 h-4" />
                     Salon Service
                   </span>
@@ -214,9 +214,9 @@ export default function StylistProfilePage() {
                     type="checkbox"
                     checked={formData.offersHomeService}
                     onChange={(e) => setFormData({ ...formData, offersHomeService: e.target.checked })}
-                    className="w-4 h-4 text-primary-600"
+                    className="w-4 h-4 text-burgundy-600"
                   />
-                  <span className="text-secondary-700 dark:text-secondary-300 flex items-center gap-1">
+                  <span className="text-neutral-700 dark:text-neutral-300 flex items-center gap-1">
                     <Home className="w-4 h-4" />
                     Home Service
                   </span>
@@ -237,3 +237,4 @@ export default function StylistProfilePage() {
     </div>
   )
 }
+

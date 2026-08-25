@@ -41,18 +41,18 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-primary-100/70 bg-[rgba(250,248,243,0.9)] backdrop-blur-xl dark:border-primary-900/40 dark:bg-[rgba(31,26,23,0.68)]">
+    <nav className="sticky top-0 z-50 border-b border-burgundy-100/70 bg-[rgba(250,248,243,0.95)] backdrop-blur-xl dark:border-burgundy-900/50 dark:bg-[rgba(26,22,19,0.95)]">
       <div className="container-custom">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <a href="/" className="flex items-center gap-2 group">
             <motion.div
               whileHover={{ rotate: 15 }}
-              className="p-2 bg-primary-700 rounded-xl"
+              className="p-2 bg-burgundy-700 rounded-xl"
             >
               <Scissors className="w-5 h-5 text-white" />
             </motion.div>
-            <span className="text-xl font-display font-semibold text-secondary-900 dark:text-white">
+            <span className="text-xl font-display font-semibold text-neutral-900 dark:text-white">
               GlamBook
             </span>
           </a>
@@ -64,8 +64,8 @@ export default function Navbar() {
                 key={item.name}
                 href={item.href}
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${isActive(item.href)
-                  ? 'text-primary-700 bg-primary-50 dark:bg-primary-900/20'
-                  : 'text-secondary-700 hover:text-primary-800 dark:text-white dark:hover:text-white hover:bg-primary-50/80 dark:hover:bg-secondary-800'
+                  ? 'text-burgundy-700 bg-burgundy-50 dark:text-gold-400 dark:bg-burgundy-900/30'
+                  : 'text-neutral-700 hover:text-burgundy-800 dark:text-neutral-300 dark:hover:text-gold-400 hover:bg-burgundy-50/80 dark:hover:bg-burgundy-900/20'
                   }`}
               >
                 {item.name}
@@ -81,7 +81,7 @@ export default function Navbar() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={toggleDarkMode}
-                className="p-2 rounded-lg text-secondary-700 hover:bg-primary-50 dark:text-white dark:hover:bg-secondary-800"
+                className="p-2 rounded-lg text-neutral-700 hover:bg-burgundy-50 dark:text-neutral-300 dark:hover:bg-burgundy-900/20"
               >
                 {darkMode ? (
                   <svg
@@ -118,9 +118,9 @@ export default function Navbar() {
             {user ? (
               <>
                 {/* Notifications */}
-                <a href="/notifications" className="relative p-2 rounded-lg text-secondary-700 hover:bg-primary-50 dark:text-white dark:hover:bg-secondary-800">
+                <a href="/notifications" className="relative p-2 rounded-lg text-neutral-700 hover:bg-burgundy-50 dark:text-neutral-300 dark:hover:bg-burgundy-900/20">
                   <Bell className="w-5 h-5" />
-                  <span className="absolute top-1 right-1 w-2 h-2 bg-primary-700 rounded-full"></span>
+                  <span className="absolute top-1 right-1 w-2 h-2 bg-emerald-500 rounded-full ring-2 ring-white dark:ring-[#1A1614]"></span>
                 </a>
 
                 {/* Profile Dropdown */}
@@ -129,16 +129,16 @@ export default function Navbar() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => setProfileOpen(!profileOpen)}
-                    className="flex items-center gap-2 p-1.5 rounded-full bg-secondary-50 dark:bg-secondary-800 hover:bg-primary-50 dark:hover:bg-secondary-700"
+                    className="flex items-center gap-2 p-1.5 rounded-full bg-neutral-50 dark:bg-neutral-800 hover:bg-burgundy-50 dark:hover:bg-burgundy-900/20"
                   >
-                    <div className="w-8 h-8 rounded-full bg-primary-700 text-white flex items-center justify-center">
+                    <div className="w-8 h-8 rounded-full bg-burgundy-700 text-white flex items-center justify-center">
                       {profile?.avatar_url ? (
                         <img src={profile.avatar_url} alt="" className="w-full h-full rounded-full object-cover" />
                       ) : (
                         <span className="text-sm font-medium">{profile?.full_name?.[0] || 'U'}</span>
                       )}
                     </div>
-                    <ChevronDown className="hidden lg:block w-4 h-4 text-secondary-600 dark:text-white" />
+                    <ChevronDown className="hidden lg:block w-4 h-4 text-neutral-600 dark:text-neutral-400" />
                   </motion.button>
 
                   <AnimatePresence>
@@ -147,20 +147,20 @@ export default function Navbar() {
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
-                        className="absolute right-0 mt-2 w-56 rounded-xl bg-white dark:bg-secondary-900 shadow-lg border border-secondary-200 dark:border-secondary-700 py-2"
+                        className="absolute right-0 mt-2 w-56 rounded-xl bg-white dark:bg-[#24201D] shadow-lg border border-neutral-200 dark:border-neutral-700 py-2"
                       >
-                        <div className="px-4 py-2 border-b border-secondary-100 dark:border-secondary-800">
-                          <p className="font-medium text-secondary-900 dark:text-white truncate">
+                        <div className="px-4 py-2 border-b border-neutral-100 dark:border-neutral-700">
+                          <p className="font-medium text-neutral-900 dark:text-white truncate">
                             {profile?.full_name || 'User'}
                           </p>
-                          <p className="text-sm text-secondary-500 truncate">{profile?.email}</p>
+                          <p className="text-sm text-neutral-500 dark:text-neutral-400 truncate">{profile?.email}</p>
                         </div>
 
                         <div className="py-2">
                           <a
                             href={profile?.role === 'stylist' ? '/stylist/dashboard' : profile?.role === 'admin' ? '/admin/dashboard' : '/dashboard'}
                             onClick={() => setProfileOpen(false)}
-                            className="flex items-center gap-3 px-4 py-2 text-secondary-700 dark:text-white hover:bg-primary-50 dark:hover:bg-secondary-800"
+                            className="flex items-center gap-3 px-4 py-2 text-neutral-700 dark:text-neutral-300 hover:bg-burgundy-50 dark:hover:bg-burgundy-900/20"
                           >
                             <LayoutDashboard className="w-4 h-4" />
                             Dashboard
@@ -168,7 +168,7 @@ export default function Navbar() {
                           <a
                             href="/bookings"
                             onClick={() => setProfileOpen(false)}
-                            className="flex items-center gap-3 px-4 py-2 text-secondary-700 dark:text-white hover:bg-primary-50 dark:hover:bg-secondary-800"
+                            className="flex items-center gap-3 px-4 py-2 text-neutral-700 dark:text-neutral-300 hover:bg-burgundy-50 dark:hover:bg-burgundy-900/20"
                           >
                             <Calendar className="w-4 h-4" />
                             Bookings
@@ -176,7 +176,7 @@ export default function Navbar() {
                           <a
                             href="/favorites"
                             onClick={() => setProfileOpen(false)}
-                            className="flex items-center gap-3 px-4 py-2 text-secondary-700 dark:text-white hover:bg-primary-50 dark:hover:bg-secondary-800"
+                            className="flex items-center gap-3 px-4 py-2 text-neutral-700 dark:text-neutral-300 hover:bg-burgundy-50 dark:hover:bg-burgundy-900/20"
                           >
                             <Heart className="w-4 h-4" />
                             Favorites
@@ -184,7 +184,7 @@ export default function Navbar() {
                           <a
                             href="/messages"
                             onClick={() => setProfileOpen(false)}
-                            className="flex items-center gap-3 px-4 py-2 text-secondary-700 dark:text-white hover:bg-primary-50 dark:hover:bg-secondary-800"
+                            className="flex items-center gap-3 px-4 py-2 text-neutral-700 dark:text-neutral-300 hover:bg-burgundy-50 dark:hover:bg-burgundy-900/20"
                           >
                             <MessageSquare className="w-4 h-4" />
                             Messages
@@ -192,17 +192,17 @@ export default function Navbar() {
                           <a
                             href="/settings"
                             onClick={() => setProfileOpen(false)}
-                            className="flex items-center gap-3 px-4 py-2 text-secondary-700 dark:text-white hover:bg-primary-50 dark:hover:bg-secondary-800"
+                            className="flex items-center gap-3 px-4 py-2 text-neutral-700 dark:text-neutral-300 hover:bg-burgundy-50 dark:hover:bg-burgundy-900/20"
                           >
                             <Settings className="w-4 h-4" />
                             Settings
                           </a>
                         </div>
 
-                        <div className="border-t border-secondary-100 dark:border-secondary-800 pt-2">
+                        <div className="border-t border-neutral-100 dark:border-neutral-700 pt-2">
                           <button
                             onClick={handleSignOut}
-                            className="flex items-center gap-3 px-4 py-2 w-full text-left text-error-600 dark:text-error-400 hover:bg-secondary-50 dark:hover:bg-secondary-800"
+                            className="flex items-center gap-3 px-4 py-2 w-full text-left text-red-600 dark:text-red-400 hover:bg-neutral-50 dark:hover:bg-burgundy-900/20"
                           >
                             <LogOut className="w-4 h-4" />
                             Sign out
@@ -235,7 +235,7 @@ export default function Navbar() {
             {/* Mobile menu button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-lg text-secondary-600 hover:bg-secondary-100 dark:text-white dark:hover:bg-secondary-800"
+              className="lg:hidden p-2 rounded-lg text-neutral-600 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-burgundy-900/20"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -251,7 +251,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white dark:bg-black border-t border-secondary-100 dark:border-secondary-800"
+            className="lg:hidden bg-white dark:bg-[#24201D] border-t border-neutral-100 dark:border-neutral-700"
           >
             <div className="container-custom py-4">
               {/* Navigation */}
@@ -262,8 +262,8 @@ export default function Navbar() {
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
                     className={`block px-3 py-2 rounded-lg transition-colors ${isActive(item.href)
-                      ? "text-primary-600 bg-primary-50 dark:bg-primary-900/20"
-                      : "text-secondary-600 dark:text-white"
+                      ? "text-burgundy-600 bg-burgundy-50 dark:text-gold-400 dark:bg-burgundy-900/30"
+                      : "text-neutral-600 dark:text-neutral-300"
                       }`}
                   >
                     {item.name}
@@ -273,11 +273,11 @@ export default function Navbar() {
 
               {/* Auth buttons */}
               {!user && (
-                <div className="mt-6 space-y-3 border-t border-secondary-200 dark:border-secondary-700 pt-4">
+                <div className="mt-6 space-y-3 border-t border-neutral-200 dark:border-neutral-700 pt-4">
                   <a
                     href="/login"
                     onClick={closeMobileMenu}
-                    className="block w-full text-center py-3 rounded-xl border border-primary-200 dark:border-secondary-700 text-primary-700 dark:text-white hover:bg-primary-50 dark:hover:bg-secondary-800 transition"
+                    className="block w-full text-center py-3 rounded-xl border border-burgundy-200 dark:border-neutral-600 text-burgundy-700 dark:text-burgundy-300 hover:bg-burgundy-50 dark:hover:bg-burgundy-900/20 transition"
                   >
                     Sign In
                   </a>
@@ -285,7 +285,7 @@ export default function Navbar() {
                   <a
                     href="/register"
                     onClick={closeMobileMenu}
-                    className="block w-full text-center py-3 rounded-xl bg-primary-700 text-white font-semibold hover:bg-primary-800 transition"
+                    className="block w-full text-center py-3 rounded-xl bg-burgundy-700 text-white font-semibold hover:bg-burgundy-800 dark:bg-burgundy-600 dark:hover:bg-burgundy-700 transition"
                   >
                     Get Started
                   </a>
@@ -298,3 +298,4 @@ export default function Navbar() {
     </nav>
   )
 }
+

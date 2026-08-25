@@ -68,14 +68,14 @@ export default function BecomeStylistPage() {
   }
 
   return (
-    <div className="min-h-screen bg-secondary-50 dark:bg-secondary-950">
+    <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950">
       {/* Header */}
-      <div className="bg-white dark:bg-secondary-900 border-b border-secondary-200 dark:border-secondary-800">
+      <div className="bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800">
         <div className="container-custom py-8">
-          <h1 className="text-2xl font-display font-bold text-secondary-900 dark:text-white mb-2">
+          <h1 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-2">
             Become a Hairstylist
           </h1>
-          <p className="text-secondary-600 dark:text-secondary-400">
+          <p className="text-neutral-600 dark:text-neutral-400">
             Join our marketplace and start growing your business today.
           </p>
         </div>
@@ -95,21 +95,21 @@ export default function BecomeStylistPage() {
                   <div className="flex flex-col items-center min-w-[60px] sm:min-w-[80px]">
                     <div
                       className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs sm:text-sm font-medium ${currentStep >= index
-                          ? 'bg-primary-600 text-white'
-                          : 'bg-secondary-200 dark:bg-secondary-700 text-secondary-500'
+                          ? 'bg-burgundy-600 text-white'
+                          : 'bg-neutral-200 dark:bg-neutral-700 text-neutral-500'
                         }`}
                     >
                       {currentStep > index ? <Check className="w-4 h-4" /> : index + 1}
                     </div>
                     <div className="mt-2 text-center hidden sm:block">
-                      <p className={`text-xs font-medium ${currentStep >= index ? 'text-primary-600' : 'text-secondary-500'}`}>
+                      <p className={`text-xs font-medium ${currentStep >= index ? 'text-burgundy-600' : 'text-neutral-500'}`}>
                         {step.title}
                       </p>
                     </div>
                   </div>
                   {index < steps.length - 1 && (
                     <div
-                      className={`flex-1 h-0.5 mx-2 ${currentStep > index ? 'bg-primary-600' : 'bg-secondary-200 dark:bg-secondary-700'
+                      className={`flex-1 h-0.5 mx-2 ${currentStep > index ? 'bg-burgundy-600' : 'bg-neutral-200 dark:bg-neutral-700'
                         }`}
                     />
                   )}
@@ -122,7 +122,7 @@ export default function BecomeStylistPage() {
               key={currentStep}
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="bg-white dark:bg-secondary-900 rounded-2xl shadow-soft p-4 sm:p-6 lg:p-8"
+              className="bg-white dark:bg-neutral-900 rounded-2xl shadow-soft p-4 sm:p-6 lg:p-8"
             >
               {currentStep === 0 && (
                 <div className="space-y-6">
@@ -249,18 +249,18 @@ export default function BecomeStylistPage() {
                         type="checkbox"
                         checked={formData.offersSalonService}
                         onChange={(e) => setFormData({ ...formData, offersSalonService: e.target.checked })}
-                        className="w-4 h-4 text-primary-600 border-secondary-300 rounded"
+                        className="w-4 h-4 text-burgundy-600 border-neutral-300 rounded"
                       />
-                      <span className="text-secondary-700 dark:text-secondary-300">I offer salon services</span>
+                      <span className="text-neutral-700 dark:text-neutral-300">I offer salon services</span>
                     </label>
                     <label className="flex items-center gap-3">
                       <input
                         type="checkbox"
                         checked={formData.offersHomeService}
                         onChange={(e) => setFormData({ ...formData, offersHomeService: e.target.checked })}
-                        className="w-4 h-4 text-primary-600 border-secondary-300 rounded"
+                        className="w-4 h-4 text-burgundy-600 border-neutral-300 rounded"
                       />
-                      <span className="text-secondary-700 dark:text-secondary-300">I offer home / mobile services</span>
+                      <span className="text-neutral-700 dark:text-neutral-300">I offer home / mobile services</span>
                     </label>
                   </div>
                 </div>
@@ -268,7 +268,7 @@ export default function BecomeStylistPage() {
 
               {currentStep === 2 && (
                 <div className="text-center py-8">
-                  <p className="text-secondary-600 dark:text-secondary-400">
+                  <p className="text-neutral-600 dark:text-neutral-400">
                     Service listing page would be here. After submitting, you'll be redirected to verify your identity.
                   </p>
                 </div>
@@ -276,7 +276,7 @@ export default function BecomeStylistPage() {
 
               {currentStep === 3 && (
                 <div className="text-center py-8">
-                  <p className="text-secondary-600 dark:text-secondary-400">
+                  <p className="text-neutral-600 dark:text-neutral-400">
                     Availability calendar would be here. Set your working hours and days.
                   </p>
                 </div>
@@ -286,13 +286,13 @@ export default function BecomeStylistPage() {
                 <div className="space-y-6">
                   <div>
                     <label className="label">Government ID</label>
-                    <div className="border-2 border-dashed border-secondary-300 dark:border-secondary-700 rounded-xl p-8 text-center">
+                    <div className="border-2 border-dashed border-neutral-300 dark:border-neutral-700 rounded-xl p-8 text-center">
                       <input type="file" accept="image/*,.pdf" className="hidden" id="governmentId" />
                       <label htmlFor="governmentId" className="cursor-pointer">
-                        <p className="text-secondary-600 dark:text-secondary-400">
+                        <p className="text-neutral-600 dark:text-neutral-400">
                           Click to upload or drag and drop
                         </p>
-                        <p className="text-sm text-secondary-500 mt-1">
+                        <p className="text-sm text-neutral-500 mt-1">
                           PNG, JPG, PDF up to 10MB
                         </p>
                       </label>
@@ -300,13 +300,13 @@ export default function BecomeStylistPage() {
                   </div>
                   <div>
                     <label className="label">Portfolio Images (Up to 10)</label>
-                    <div className="border-2 border-dashed border-secondary-300 dark:border-secondary-700 rounded-xl p-8 text-center">
+                    <div className="border-2 border-dashed border-neutral-300 dark:border-neutral-700 rounded-xl p-8 text-center">
                       <input type="file" accept="image/*" multiple className="hidden" id="portfolio" />
                       <label htmlFor="portfolio" className="cursor-pointer">
-                        <p className="text-secondary-600 dark:text-secondary-400">
+                        <p className="text-neutral-600 dark:text-neutral-400">
                           Upload images of your best work
                         </p>
-                        <p className="text-sm text-secondary-500 mt-1">
+                        <p className="text-sm text-neutral-500 mt-1">
                           PNG, JPG up to 5MB each
                         </p>
                       </label>
@@ -316,7 +316,7 @@ export default function BecomeStylistPage() {
               )}
 
               {/* Navigation */}
-              <div className="mt-8 pt-6 border-t border-secondary-200 dark:border-secondary-700 flex flex-col-reverse sm:flex-row gap-3 sm:justify-between">
+              <div className="mt-8 pt-6 border-t border-neutral-200 dark:border-neutral-700 flex flex-col-reverse sm:flex-row gap-3 sm:justify-between">
                 <Button
                   variant="ghost"
                   onClick={handlePrev}
@@ -348,12 +348,12 @@ export default function BecomeStylistPage() {
               {benefits.map((benefit, index) => (
                 <Card key={index} className="p-4">
                   <div className="flex items-start gap-3">
-                    <div className="p-2 rounded-lg bg-primary-50 dark:bg-primary-900/20">
-                      <benefit.icon className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+                    <div className="p-2 rounded-lg bg-burgundy-50 dark:bg-burgundy-900/20">
+                      <benefit.icon className="w-5 h-5 text-burgundy-600 dark:text-burgundy-400" />
                     </div>
                     <div>
-                      <h3 className="font-medium text-secondary-900 dark:text-white">{benefit.title}</h3>
-                      <p className="text-sm text-secondary-600 dark:text-secondary-400">{benefit.description}</p>
+                      <h3 className="font-medium text-neutral-900 dark:text-white">{benefit.title}</h3>
+                      <p className="text-sm text-neutral-600 dark:text-neutral-400">{benefit.description}</p>
                     </div>
                   </div>
                 </Card>
@@ -365,3 +365,4 @@ export default function BecomeStylistPage() {
     </div>
   )
 }
+

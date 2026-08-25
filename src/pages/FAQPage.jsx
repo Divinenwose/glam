@@ -137,16 +137,16 @@ export default function FAQPage() {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h1 className="text-4xl md:text-5xl font-display font-bold text-secondary-900 dark:text-white mb-6">
+            <h1 className="text-4xl md:text-5xl font-display font-bold text-neutral-900 dark:text-white mb-6">
               Frequently Asked Questions
             </h1>
-            <p className="text-lg text-secondary-600 dark:text-secondary-400 mb-8">
+            <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-8">
               Find answers to common questions about using GlamBook.
             </p>
 
             {/* Search */}
             <div className="relative max-w-md mx-auto">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-secondary-400" />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400" />
               <input
                 type="text"
                 placeholder="Search for answers..."
@@ -175,8 +175,8 @@ export default function FAQPage() {
                     }}
                     className={`w-full text-left px-4 py-3 rounded-xl transition-colors ${
                       activeCategory === category.id
-                        ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400 font-medium'
-                        : 'text-secondary-600 dark:text-secondary-400 hover:bg-secondary-100 dark:hover:bg-secondary-800'
+                        ? 'bg-burgundy-50 dark:bg-burgundy-900/20 text-burgundy-600 dark:text-burgundy-400 font-medium'
+                        : 'text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800'
                     }`}
                   >
                     {category.title}
@@ -193,13 +193,13 @@ export default function FAQPage() {
                 animate={{ opacity: 1, y: 0 }}
                 className="space-y-4"
               >
-                <h2 className="text-2xl font-display font-bold text-secondary-900 dark:text-white mb-6">
+                <h2 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-6">
                   {faqCategories.find(c => c.id === activeCategory)?.title}
                 </h2>
 
                 {filteredFAQs.length === 0 ? (
                   <div className="text-center py-12">
-                    <p className="text-secondary-600 dark:text-secondary-400">
+                    <p className="text-neutral-600 dark:text-neutral-400">
                       No FAQs found for your search.
                     </p>
                   </div>
@@ -210,17 +210,17 @@ export default function FAQPage() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.05 }}
-                      className="bg-white dark:bg-secondary-800 rounded-xl overflow-hidden"
+                      className="bg-white dark:bg-neutral-800 rounded-xl overflow-hidden"
                     >
                       <button
                         onClick={() => setExpandedFAQ(expandedFAQ === index ? null : index)}
                         className="w-full text-left px-6 py-4 flex items-start justify-between gap-4"
                       >
-                        <span className="font-medium text-secondary-900 dark:text-white">
+                        <span className="font-medium text-neutral-900 dark:text-white">
                           {faq.question}
                         </span>
                         <ChevronDown
-                          className={`w-5 h-5 text-secondary-400 flex-shrink-0 transition-transform ${
+                          className={`w-5 h-5 text-neutral-400 flex-shrink-0 transition-transform ${
                             expandedFAQ === index ? 'rotate-180' : ''
                           }`}
                         />
@@ -233,7 +233,7 @@ export default function FAQPage() {
                             exit={{ height: 0, opacity: 0 }}
                             transition={{ duration: 0.2 }}
                           >
-                            <div className="px-6 pb-4 text-secondary-600 dark:text-secondary-400">
+                            <div className="px-6 pb-4 text-neutral-600 dark:text-neutral-400">
                               {faq.answer}
                             </div>
                           </motion.div>
@@ -249,7 +249,7 @@ export default function FAQPage() {
       </section>
 
       {/* Still Need Help? */}
-      <section className="section bg-secondary-50 dark:bg-secondary-900">
+      <section className="section bg-neutral-50 dark:bg-neutral-900">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -257,11 +257,11 @@ export default function FAQPage() {
             viewport={{ once: true }}
             className="max-w-2xl mx-auto text-center"
           >
-            <MessageCircle className="w-12 h-12 text-primary-600 mx-auto mb-4" />
-            <h2 className="text-2xl font-display font-bold text-secondary-900 dark:text-white mb-4">
+            <MessageCircle className="w-12 h-12 text-burgundy-600 mx-auto mb-4" />
+            <h2 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-4">
               Still Have Questions?
             </h2>
-            <p className="text-secondary-600 dark:text-secondary-400 mb-6">
+            <p className="text-neutral-600 dark:text-neutral-400 mb-6">
               Our support team is here to help. Reach out and we'll get back to you within 24 hours.
             </p>
             <Link to="/contact" className="btn-primary btn-lg">
@@ -273,3 +273,4 @@ export default function FAQPage() {
     </div>
   )
 }
+

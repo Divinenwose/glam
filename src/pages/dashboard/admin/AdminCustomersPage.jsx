@@ -25,10 +25,10 @@ export default function AdminCustomersPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <h1 className="text-2xl font-display font-bold text-secondary-900 dark:text-white mb-2">
+        <h1 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-2">
           Customer Management
         </h1>
-        <p className="text-secondary-600 dark:text-secondary-400">
+        <p className="text-neutral-600 dark:text-neutral-400">
           View and manage all customer accounts.
         </p>
       </motion.div>
@@ -36,7 +36,7 @@ export default function AdminCustomersPage() {
       {/* Search */}
       <div className="flex items-center gap-4">
         <div className="relative flex-1 max-w-md">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-secondary-400" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400" />
           <input
             type="text"
             placeholder="Search customers..."
@@ -51,36 +51,36 @@ export default function AdminCustomersPage() {
       <Card className="overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full">
-            <thead className="bg-secondary-50 dark:bg-secondary-800">
+            <thead className="bg-neutral-50 dark:bg-neutral-800">
               <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-secondary-500 uppercase">Customer</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-secondary-500 uppercase">Bookings</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-secondary-500 uppercase">Total Spend</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-secondary-500 uppercase">Status</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-secondary-500 uppercase">Joined</th>
-                <th className="px-6 py-3 text-right text-xs font-medium text-secondary-500 uppercase">Actions</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase">Customer</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase">Bookings</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase">Total Spend</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase">Status</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase">Joined</th>
+                <th className="px-6 py-3 text-right text-xs font-medium text-neutral-500 uppercase">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-secondary-200 dark:divide-secondary-700">
+            <tbody className="divide-y divide-neutral-200 dark:divide-neutral-700">
               {filteredCustomers.map((customer) => (
-                <tr key={customer.id} className="hover:bg-secondary-50 dark:hover:bg-secondary-800">
+                <tr key={customer.id} className="hover:bg-neutral-50 dark:hover:bg-neutral-800">
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-3">
                       <Avatar name={customer.name} size="sm" />
                       <div>
-                        <p className="font-medium text-secondary-900 dark:text-white">{customer.name}</p>
-                        <p className="text-sm text-secondary-500">{customer.email}</p>
+                        <p className="font-medium text-neutral-900 dark:text-white">{customer.name}</p>
+                        <p className="text-sm text-neutral-500">{customer.email}</p>
                       </div>
                     </div>
                   </td>
-                  <td className="px-6 py-4 text-secondary-900 dark:text-white">{customer.bookings}</td>
-                  <td className="px-6 py-4 text-secondary-900 dark:text-white">${customer.spend.toLocaleString()}</td>
+                  <td className="px-6 py-4 text-neutral-900 dark:text-white">{customer.bookings}</td>
+                  <td className="px-6 py-4 text-neutral-900 dark:text-white">${customer.spend.toLocaleString()}</td>
                   <td className="px-6 py-4">
                     <Badge variant={customer.status === 'active' ? 'success' : 'secondary'}>
                       {customer.status}
                     </Badge>
                   </td>
-                  <td className="px-6 py-4 text-secondary-600 dark:text-secondary-400">
+                  <td className="px-6 py-4 text-neutral-600 dark:text-neutral-400">
                     {new Date(customer.joined).toLocaleDateString()}
                   </td>
                   <td className="px-6 py-4 text-right">
@@ -97,3 +97,4 @@ export default function AdminCustomersPage() {
     </div>
   )
 }
+

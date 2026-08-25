@@ -37,33 +37,33 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-primary-100/70 bg-[var(--background)] dark:border-primary-900/40 dark:bg-[var(--background)] text-secondary-700 dark:text-secondary-200">
+    <footer className="border-t border-burgundy-100/70 bg-neutral-900 dark:border-burgundy-900/50 dark:bg-[#1A1614] text-neutral-200 dark:text-neutral-300">
       <div className="container-custom py-12 lg:py-16">
         {/* Main Footer Content */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
           {/* Brand Column */}
           <div className="col-span-2 lg:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="p-2 bg-primary-700 rounded-xl">
+              <div className="p-2 bg-burgundy-700 rounded-xl">
                 <Scissors className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-display font-semibold text-secondary-900 dark:text-white">
+              <span className="text-xl font-display font-semibold text-white dark:text-white">
                 GlamBook
               </span>
             </Link>
-            <p className="text-secondary-600 dark:text-secondary-400 mb-6 max-w-xs">
+            <p className="text-neutral-300 dark:text-neutral-400 mb-6 max-w-xs">
               Connecting beauty professionals with clients seeking exceptional hairstyling services.
             </p>
             <div className="space-y-2">
-              <a href="mailto:hello@glambook.com" className="flex items-center gap-2 text-sm text-secondary-600 dark:text-secondary-300 hover:text-primary-700">
+              <a href="mailto:hello@glambook.com" className="flex items-center gap-2 text-sm text-neutral-300 dark:text-neutral-400 hover:text-gold-400 dark:hover:text-gold-300">
                 <Mail className="w-4 h-4" />
                 hello@glambook.com
               </a>
-              <a href="tel:+1234567890" className="flex items-center gap-2 text-sm text-secondary-600 dark:text-secondary-300 hover:text-primary-700">
+              <a href="tel:+1234567890" className="flex items-center gap-2 text-sm text-neutral-300 dark:text-neutral-400 hover:text-gold-400 dark:hover:text-gold-300">
                 <Phone className="w-4 h-4" />
                 (123) 456-7890
               </a>
-              <div className="flex items-center gap-2 text-sm text-secondary-600 dark:text-secondary-300">
+              <div className="flex items-center gap-2 text-sm text-neutral-300 dark:text-neutral-400">
                 <MapPin className="w-4 h-4" />
                 New York, NY 10001
               </div>
@@ -72,13 +72,13 @@ export default function Footer() {
 
           {/* Company Links */}
           <div>
-            <h3 className="font-semibold text-secondary-900 dark:text-white mb-4">Company</h3>
+            <h3 className="font-semibold text-white dark:text-white mb-4">Company</h3>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-sm text-secondary-600 dark:text-secondary-300 hover:text-primary-700"
+                    className="text-sm text-neutral-300 dark:text-neutral-400 hover:text-gold-400 dark:hover:text-gold-300"
                   >
                     {link.name}
                   </Link>
@@ -89,13 +89,13 @@ export default function Footer() {
 
           {/* Support Links */}
           <div>
-            <h3 className="font-semibold text-secondary-900 dark:text-white mb-4">Support</h3>
+            <h3 className="font-semibold text-neutral-900 dark:text-white mb-4">Support</h3>
             <ul className="space-y-2">
               {footerLinks.support.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-sm text-secondary-600 dark:text-secondary-300 hover:text-primary-700"
+                    className="text-sm text-neutral-300 dark:text-neutral-400 hover:text-gold-400 dark:hover:text-gold-300"
                   >
                     {link.name}
                   </Link>
@@ -106,13 +106,13 @@ export default function Footer() {
 
           {/* Legal Links */}
           <div>
-            <h3 className="font-semibold text-secondary-900 dark:text-white mb-4">Legal</h3>
+            <h3 className="font-semibold text-neutral-900 dark:text-white mb-4">Legal</h3>
             <ul className="space-y-2">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-sm text-secondary-600 dark:text-secondary-300 hover:text-primary-700"
+                    className="text-sm text-neutral-300 dark:text-neutral-400 hover:text-gold-400 dark:hover:text-gold-300"
                   >
                     {link.name}
                   </Link>
@@ -123,13 +123,13 @@ export default function Footer() {
 
           {/* Community Links */}
           <div>
-            <h3 className="font-semibold text-secondary-900 dark:text-white mb-4">Community</h3>
+            <h3 className="font-semibold text-neutral-900 dark:text-white mb-4">Community</h3>
             <ul className="space-y-2">
               {footerLinks.community.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-sm text-secondary-600 dark:text-secondary-300 hover:text-primary-700"
+                    className="text-sm text-neutral-300 dark:text-neutral-400 hover:text-gold-400 dark:hover:text-gold-300"
                   >
                     {link.name}
                   </Link>
@@ -140,13 +140,13 @@ export default function Footer() {
         </div>
 
         {/* Newsletter */}
-          <div className="mt-12 pt-8 border-t border-secondary-100 dark:border-secondary-800">
+          <div className="mt-12 pt-8 border-t border-neutral-800 dark:border-burgundy-900/50">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
             <div>
-              <h3 className="font-semibold text-secondary-900 dark:text-white mb-1">
+              <h3 className="font-semibold text-white dark:text-white mb-1">
                 Subscribe to our newsletter
               </h3>
-              <p className="text-sm text-secondary-600 dark:text-secondary-400">
+              <p className="text-sm text-neutral-400 dark:text-neutral-400">
                 Get the latest updates, tips, and exclusive offers.
               </p>
             </div>
@@ -156,7 +156,7 @@ export default function Footer() {
                 placeholder="Enter your email"
                 className="input flex-1 lg:w-80"
               />
-              <button type="submit" className="btn-primary whitespace-nowrap">
+              <button type="submit" className="btn-gold whitespace-nowrap">
                 Subscribe
               </button>
             </form>
@@ -164,9 +164,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-8 pt-8 border-t border-secondary-100 dark:border-secondary-800">
+        <div className="mt-8 pt-8 border-t border-neutral-800 dark:border-burgundy-900/50">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <p className="text-sm text-secondary-600 dark:text-secondary-400">
+            <p className="text-sm text-neutral-400 dark:text-neutral-400">
               &copy; {new Date().getFullYear()} GlamBook. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
@@ -174,7 +174,7 @@ export default function Footer() {
                 <a
                   key={social.name}
                   href={social.href}
-                  className="p-2 rounded-lg text-secondary-600 dark:text-secondary-300 hover:text-primary-700 hover:bg-primary-50 dark:hover:bg-secondary-800 transition-colors"
+                  className="p-2 rounded-lg text-neutral-300 dark:text-neutral-400 hover:text-gold-400 dark:hover:text-gold-300 hover:bg-neutral-800 dark:hover:bg-burgundy-900/30 transition-colors"
                   aria-label={social.name}
                 >
                   <social.icon className="w-5 h-5" />
@@ -187,3 +187,4 @@ export default function Footer() {
     </footer>
   )
 }
+

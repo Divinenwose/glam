@@ -23,7 +23,7 @@ export function ServiceCard({ service, index = 0, onSelect }) {
       >
         <div className="flex items-start justify-between mb-2">
           <div>
-            <h3 className="font-semibold text-secondary-900 dark:text-white">
+            <h3 className="font-semibold text-neutral-900 dark:text-white">
               {service.name}
             </h3>
             <Badge variant="secondary" className="mt-1">
@@ -31,17 +31,17 @@ export function ServiceCard({ service, index = 0, onSelect }) {
             </Badge>
           </div>
           <div className="text-right">
-            <p className="text-lg font-bold text-primary-600">
+            <p className="text-lg font-bold text-burgundy-600">
               {formatCurrency(service.price)}
             </p>
-            <p className="text-xs text-secondary-500">
+            <p className="text-xs text-neutral-500">
               {service.duration_minutes} min
             </p>
           </div>
         </div>
 
         {service.description && (
-          <p className="text-sm text-secondary-600 dark:text-secondary-400 line-clamp-2 mt-2">
+          <p className="text-sm text-neutral-600 dark:text-neutral-400 line-clamp-2 mt-2">
             {service.description}
           </p>
         )}
@@ -73,3 +73,4 @@ export function ServiceCard({ service, index = 0, onSelect }) {
     </motion.div>
   )
 }
+

@@ -11,7 +11,7 @@ export function ReviewCard({ review, index = 0 }) {
       transition={{ delay: index * 0.1 }}
       className="h-full"
     >
-      <Card className="h-full flex flex-col p-4 border-primary-100/80">
+      <Card className="h-full flex flex-col p-4 border-burgundy-100/80">
         <div className="flex items-start gap-3 flex-1">
           <Avatar
             src={review.customer?.avatar_url}
@@ -21,19 +21,19 @@ export function ReviewCard({ review, index = 0 }) {
           <div className="flex-1">
             <div className="flex items-start justify-between">
               <div>
-                <h4 className="font-medium text-secondary-900 dark:text-white">
+                <h4 className="font-medium text-neutral-900 dark:text-white">
                   {review.customer?.full_name || 'Anonymous'}
                 </h4>
                 <div className="flex items-center gap-2 mt-1">
                   <StarRating rating={review.rating} />
-                  <span className="text-sm text-secondary-500 dark:text-secondary-400">
+                  <span className="text-sm text-neutral-500 dark:text-neutral-400">
                     {formatDate(review.created_at)}
                   </span>
                 </div>
               </div>
             </div>
             {review.comment && (
-              <p className="mt-3 text-secondary-600 dark:text-secondary-400">
+              <p className="mt-3 text-neutral-600 dark:text-neutral-400">
                 {review.comment}
               </p>
             )}
@@ -48,7 +48,7 @@ export function ReviewCard({ review, index = 0 }) {
                   />
                 ))}
                 {review.images.length > 4 && (
-                  <div className="w-16 h-16 rounded-lg bg-secondary-100 dark:bg-secondary-800 flex items-center justify-center text-secondary-600 dark:text-secondary-400 text-sm font-medium">
+                  <div className="w-16 h-16 rounded-lg bg-neutral-100 dark:bg-neutral-800 flex items-center justify-center text-neutral-600 dark:text-neutral-400 text-sm font-medium">
                     +{review.images.length - 4}
                   </div>
                 )}
@@ -60,3 +60,4 @@ export function ReviewCard({ review, index = 0 }) {
     </motion.div>
   )
 }
+

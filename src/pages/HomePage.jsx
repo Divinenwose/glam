@@ -168,11 +168,11 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-primary-700">
+      <section className="relative overflow-hidden gradient-luxury">
         {/* Background decoration */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary-200/30 dark:bg-primary-900/20 rounded-full blur-3xl" />
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent-200/30 dark:bg-accent-900/20 rounded-full blur-3xl" />
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-burgundy-200/30 dark:bg-burgundy-900/20 rounded-full blur-3xl" />
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gold-200/30 dark:bg-gold-900/20 rounded-full blur-3xl" />
         </div>
 
         <div className="container-custom relative">
@@ -183,7 +183,7 @@ export default function HomePage() {
               transition={{ duration: 0.6 }}
               className="max-w-3xl mx-auto text-center"
             >
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-600/30 text-primary-700 dark:text-primary-400 text-sm font-medium mb-6">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold-100 dark:bg-gold-900/30 text-burgundy-700 dark:text-gold-400 text-sm font-medium mb-6">
                 <Sparkles className="w-4 h-4" />
                 Over 10,000+ Verified Hairstylists
               </span>
@@ -193,7 +193,7 @@ export default function HomePage() {
                 <span className="text-gradient block">Hairstylist Today</span>
               </h1>
 
-              <p className="text-lg md:text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+              <p className="text-lg md:text-xl text-burgundy-100 mb-8 max-w-2xl mx-auto">
                 Connect with verified beauty professionals in your area. Browse portfolios, read reviews, and book your next appointment with confidence.
               </p>
             </motion.div>
@@ -211,18 +211,18 @@ export default function HomePage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="flex flex-wrap items-center justify-center gap-8 mt-10 text-primary-100"
+              className="flex flex-wrap items-center justify-center gap-8 mt-10 text-burgundy-100"
             >
               <div className="flex items-center gap-2">
-                <Shield className="w-5 h-5 text-success-500" />
+                <Shield className="w-5 h-5 text-emerald-400" />
                 <span className="text-sm">Verified Stylists</span>
               </div>
               <div className="flex items-center gap-2">
-                <Star className="w-5 h-5 text-warning-500" />
+                <Star className="w-5 h-5 text-gold-400" />
                 <span className="text-sm">4.8 Avg Rating</span>
               </div>
               <div className="flex items-center gap-2">
-                <CreditCard className="w-5 h-5 text-primary-500" />
+                <CreditCard className="w-5 h-5 text-burgundy-300" />
                 <span className="text-sm">Secure Payments</span>
               </div>
             </motion.div>
@@ -231,7 +231,7 @@ export default function HomePage() {
       </section>
 
       {/* How It Works */}
-      <section className="section bg-secondary-50 dark:bg-secondary-900">
+      <section className="section bg-neutral-50 dark:bg-neutral-900">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -239,10 +239,10 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 dark:text-black mb-4">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 dark:text-black mb-4">
               How GlamBook Works
             </h2>
-            <p className="text-lg text-secondary-600 dark:text-secondary-100 max-w-2xl mx-auto">
+            <p className="text-lg text-neutral-600 dark:text-neutral-100 max-w-2xl mx-auto">
               Book your next hairstyle in four simple steps
             </p>
           </motion.div>
@@ -257,14 +257,14 @@ export default function HomePage() {
                 transition={{ delay: index * 0.1 }}
                 className="relative"
               >
-                <div className="bg-white dark:bg-secondary-800 rounded-2xl p-6 h-full">
-                  <span className="text-5xl font-bold text-primary-700 dark:text-primary-400/70">
+                <div className="bg-white dark:bg-neutral-800 rounded-2xl p-6 h-full">
+                  <span className="text-5xl font-bold text-burgundy-700 dark:text-burgundy-400/70">
                     {step.number}
                   </span>
-                  <h3 className="text-xl font-semibold text-secondary-900 dark:text-white mt-4 mb-2">
+                  <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mt-4 mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-secondary-600 dark:text-white">
+                  <p className="text-neutral-600 dark:text-white">
                     {step.description}
                   </p>
                 </div>
@@ -284,10 +284,10 @@ export default function HomePage() {
             className="flex items-end justify-between mb-8"
           >
             <div>
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 dark:text-white mb-2">
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 dark:text-white mb-2">
                 Featured Stylists
               </h2>
-              <p className="text-secondary-600 dark:text-secondary-200">
+              <p className="text-neutral-600 dark:text-neutral-200">
                 Top-rated professionals in your area
               </p>
             </div>
@@ -313,7 +313,7 @@ export default function HomePage() {
       </section>
 
       {/* Popular Hairstyles */}
-      <section className="section bg-secondary-50 dark:bg-secondary-900">
+      <section className="section bg-neutral-50 dark:bg-neutral-900">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -321,10 +321,10 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 dark:text-black mb-4">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 dark:text-black mb-4">
               Popular Hairstyles
             </h2>
-            <p className="text-lg text-secondary-600 dark:text-black">
+            <p className="text-lg text-neutral-600 dark:text-black">
               Discover trending styles from our talented stylists
             </p>
           </motion.div>
@@ -367,13 +367,13 @@ export default function HomePage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <span className="text-primary-700 dark:text-primary-400 font-medium text-sm uppercase tracking-wider">
+              <span className="text-burgundy-700 dark:text-burgundy-400 font-medium text-sm uppercase tracking-wider">
                 Why Choose Us
               </span>
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 dark:text-white mt-2 mb-6">
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 dark:text-white mt-2 mb-6">
                 The Smart Way to Find Your Hairstylist
               </h2>
-              <p className="text-lg text-secondary-600 dark:text-white mb-8">
+              <p className="text-lg text-neutral-600 dark:text-white mb-8">
                 We connect you with verified beauty professionals, ensuring quality, safety, and convenience every step of the way.
               </p>
 
@@ -387,14 +387,14 @@ export default function HomePage() {
                     transition={{ delay: index * 0.1 }}
                     className="flex gap-4"
                   >
-                    <div className="p-3 rounded-xl bg-primary-50 dark:bg-primary-900/20 h-fit">
-                      <item.icon className="w-6 h-6 text-primary-700 dark:text-primary-400" />
+                    <div className="p-3 rounded-xl bg-burgundy-50 dark:bg-burgundy-900/20 h-fit">
+                      <item.icon className="w-6 h-6 text-burgundy-700 dark:text-burgundy-400" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-secondary-900 dark:text-white mb-1">
+                      <h3 className="font-semibold text-neutral-900 dark:text-white mb-1">
                         {item.title}
                       </h3>
-                      <p className="text-sm text-secondary-600 dark:text-secondary-400">
+                      <p className="text-sm text-neutral-600 dark:text-neutral-400">
                         {item.description}
                       </p>
                     </div>
@@ -421,12 +421,12 @@ export default function HomePage() {
                   className="rounded-2xl w-full h-64 object-cover mt-8"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-white dark:bg-secondary-800 rounded-2xl shadow-soft-lg p-6">
+              <div className="absolute -bottom-6 -left-6 bg-white dark:bg-neutral-800 rounded-2xl shadow-soft-lg p-6">
                 <div className="flex items-center gap-4">
-                  <div className="text-4xl font-bold text-primary-700">10K+</div>
+                  <div className="text-4xl font-bold text-burgundy-700">10K+</div>
                   <div>
-                    <p className="font-semibold text-secondary-900 dark:text-white">Happy Clients</p>
-                    <p className="text-sm text-secondary-500">Across 50+ cities</p>
+                    <p className="font-semibold text-neutral-900 dark:text-white">Happy Clients</p>
+                    <p className="text-sm text-neutral-500">Across 50+ cities</p>
                   </div>
                 </div>
               </div>
@@ -436,7 +436,7 @@ export default function HomePage() {
       </section>
 
       {/* Customer Reviews */}
-      <section className="section bg-secondary-50 dark:bg-secondary-900">
+      <section className="section bg-neutral-50 dark:bg-neutral-900">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -444,10 +444,10 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 dark:text-black mb-4">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 dark:text-black mb-4">
               What Our Customers Say
             </h2>
-              <p className="text-lg text-secondary-600 dark:text-secondary-200">
+              <p className="text-lg text-neutral-600 dark:text-neutral-200">
               Real experiences from real clients
             </p>
           </motion.div>
@@ -461,7 +461,7 @@ export default function HomePage() {
       </section>
 
       {/* Become a Stylist CTA */}
-      <section className="section bg-primary-700 dark:bg-primary-800">
+      <section className="section gradient-beauty">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -473,18 +473,18 @@ export default function HomePage() {
               <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
                 Join Our Community of Stylists
               </h2>
-              <p className="text-lg text-primary-100 mb-8">
+              <p className="text-lg text-burgundy-100 mb-8">
                 Grow your business, reach new clients, and manage your schedule with ease. Join thousands of stylists who trust GlamBook.
               </p>
               <ul className="space-y-4 mb-8">
                 {['Create your free profile', 'Showcase your portfolio', 'Accept bookings 24/7', 'Earn competitive rates'].map((benefit) => (
                   <li key={benefit} className="flex items-center gap-3">
-                    <Check className="w-5 h-5 text-primary-200" />
+                    <Check className="w-5 h-5 text-gold-200" />
                     <span>{benefit}</span>
                   </li>
                 ))}
               </ul>
-              <Link to="/become-stylist" className="px-4 py-2 flex items-center justify-center gap-2 rounded-full bg-white text-primary-700 hover:bg-primary-50">
+              <Link to="/become-stylist" className="px-4 py-2 flex items-center justify-center gap-2 rounded-full bg-white text-burgundy-700 hover:bg-burgundy-50">
                 Become a Stylist
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
@@ -516,10 +516,10 @@ export default function HomePage() {
             className="max-w-3xl mx-auto"
           >
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 dark:text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 dark:text-white mb-4">
                 Frequently Asked Questions
               </h2>
-              <p className="text-lg text-secondary-600 dark:text-secondary-400">
+              <p className="text-lg text-neutral-600 dark:text-neutral-400">
                 Got questions? We've got answers.
               </p>
             </div>
@@ -532,16 +532,16 @@ export default function HomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="group bg-white dark:bg-secondary-800 rounded-xl overflow-hidden"
+                  className="group bg-white dark:bg-neutral-800 rounded-xl overflow-hidden"
                   open={index === 0}
                 >
                   <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
-                    <h3 className="font-semibold text-secondary-900 dark:text-white pr-4">
+                    <h3 className="font-semibold text-neutral-900 dark:text-white pr-4">
                       {faq.question}
                     </h3>
-                    <ChevronRight className="w-5 h-5 text-secondary-400 rotate-0 group-open:rotate-90 transition-transform flex-shrink-0" />
+                    <ChevronRight className="w-5 h-5 text-neutral-400 rotate-0 group-open:rotate-90 transition-transform flex-shrink-0" />
                   </summary>
-                  <div className="px-6 pb-6 text-secondary-600 dark:text-secondary-400">
+                  <div className="px-6 pb-6 text-neutral-600 dark:text-neutral-400">
                     {faq.answer}
                   </div>
                 </motion.details>
@@ -549,7 +549,7 @@ export default function HomePage() {
             </div>
 
             <div className="text-center mt-8">
-              <p className="text-secondary-600 dark:text-secondary-200 mb-4">
+              <p className="text-neutral-600 dark:text-neutral-200 mb-4">
                 Still have questions?
               </p>
               <Link to="/contact" className="btn-primary">
@@ -561,7 +561,7 @@ export default function HomePage() {
       </section>
 
       {/* Newsletter Section */}
-      <section className="section bg-secondary-50 dark:bg-secondary-900">
+      <section className="section bg-neutral-50 dark:bg-neutral-900">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -569,10 +569,10 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="max-w-2xl mx-auto text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 dark:text-black mb-4">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 dark:text-black mb-4">
               Stay in the Loop
             </h2>
-            <p className="text-lg text-secondary-600 dark:text-black mb-8">
+            <p className="text-lg text-neutral-600 dark:text-black mb-8">
               Subscribe to get the latest tips, trends, and exclusive offers delivered to your inbox.
             </p>
             <form className="flex flex-col sm:flex-row gap-3">
@@ -585,7 +585,7 @@ export default function HomePage() {
                 Subscribe Now
               </button>
             </form>
-            <p className="text-sm text-secondary-500 dark:text-black mt-4">
+            <p className="text-sm text-neutral-500 dark:text-black mt-4">
               No spam, ever. Unsubscribe anytime.
             </p>
           </motion.div>
@@ -594,3 +594,4 @@ export default function HomePage() {
     </div>
   )
 }
+

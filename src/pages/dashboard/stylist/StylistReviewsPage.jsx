@@ -35,10 +35,10 @@ export default function StylistReviewsPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <h1 className="text-2xl font-display font-bold text-secondary-900 dark:text-white mb-2">
+        <h1 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-2">
           Reviews
         </h1>
-        <p className="text-secondary-600 dark:text-secondary-400">
+        <p className="text-neutral-600 dark:text-neutral-400">
           See what clients are saying about your services.
         </p>
       </motion.div>
@@ -47,15 +47,15 @@ export default function StylistReviewsPage() {
       <Card className="p-6">
         <div className="flex items-center gap-6">
           <div className="text-center">
-            <p className="text-4xl font-bold text-secondary-900 dark:text-white">{avgRating.toFixed(1)}</p>
+            <p className="text-4xl font-bold text-neutral-900 dark:text-white">{avgRating.toFixed(1)}</p>
             <div className="flex items-center gap-1 mt-1">
               {[1, 2, 3, 4, 5].map((star) => (
-                <svg key={star} className={`w-4 h-4 ${star <= avgRating ? 'text-warning-500 fill-warning-500' : 'text-secondary-300'}`} viewBox="0 0 20 20" fill="currentColor">
+                <svg key={star} className={`w-4 h-4 ${star <= avgRating ? 'text-gold-500 fill-gold-500' : 'text-neutral-300'}`} viewBox="0 0 20 20" fill="currentColor">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
               ))}
             </div>
-            <p className="text-sm text-secondary-500 mt-1">{mockReviews.length} reviews</p>
+            <p className="text-sm text-neutral-500 mt-1">{mockReviews.length} reviews</p>
           </div>
           <div className="flex-1 space-y-2">
             {[5, 4, 3, 2, 1].map((rating) => {
@@ -63,11 +63,11 @@ export default function StylistReviewsPage() {
               const percentage = (count / mockReviews.length) * 100
               return (
                 <div key={rating} className="flex items-center gap-2">
-                  <span className="text-sm text-secondary-500 w-3">{rating}</span>
-                  <div className="flex-1 h-2 bg-secondary-200 dark:bg-secondary-700 rounded-full overflow-hidden">
-                    <div className="h-full bg-warning-500 rounded-full" style={{ width: `${percentage}%` }} />
+                  <span className="text-sm text-neutral-500 w-3">{rating}</span>
+                  <div className="flex-1 h-2 bg-neutral-200 dark:bg-neutral-700 rounded-full overflow-hidden">
+                    <div className="h-full bg-gold-500 rounded-full" style={{ width: `${percentage}%` }} />
                   </div>
-                  <span className="text-sm text-secondary-500 w-6">{count}</span>
+                  <span className="text-sm text-neutral-500 w-6">{count}</span>
                 </div>
               )
             })}
@@ -91,3 +91,4 @@ export default function StylistReviewsPage() {
     </div>
   )
 }
+

@@ -13,7 +13,7 @@ export function StylistCard({ stylist, index = 0 }) {
       className="h-full"
     >
       <Link to={`/stylists/${stylist.id}`} className="block h-full">
-        <Card hover className="group h-full flex flex-col overflow-hidden border-primary-100/80">
+        <Card hover className="group h-full flex flex-col overflow-hidden border-burgundy-100/80">
           {/* Image */}
           <div className="relative h-48 overflow-hidden">
             <img
@@ -26,7 +26,7 @@ export function StylistCard({ stylist, index = 0 }) {
                 onClick={(e) => {
                   e.preventDefault()
                 }}
-                className="p-2 rounded-full bg-white/90 dark:bg-secondary-900/90 text-secondary-400 hover:text-error-500 transition-colors"
+                className="p-2 rounded-full bg-white/90 dark:bg-neutral-900/90 text-neutral-400 hover:text-pink-500 transition-colors"
               >
                 <Heart className="w-4 h-4" />
               </button>
@@ -45,20 +45,20 @@ export function StylistCard({ stylist, index = 0 }) {
           <div className="p-4 flex flex-col flex-1">
             <div className="mt-auto flex items-center justify-between gap-2 mb-2">
               <div>
-                <h3 className="font-semibold text-secondary-900 dark:text-white">
+                <h3 className="font-semibold text-neutral-900 dark:text-white">
                   {stylist.name}
                 </h3>
-                <p className="text-sm text-secondary-500 dark:text-secondary-400">
+                <p className="text-sm text-neutral-500 dark:text-neutral-400">
                   {stylist.title}
                 </p>
               </div>
-              <div className="flex items-center gap-1 text-warning-500">
-                <Star className="w-4 h-4 fill-warning-500" />
+              <div className="flex items-center gap-1 text-gold-500">
+                <Star className="w-4 h-4 fill-gold-500" />
                 <span className="text-sm font-medium">{stylist.rating?.toFixed(1) || 'New'}</span>
               </div>
             </div>
 
-            <div className="flex items-center gap-1 text-sm text-secondary-500 dark:text-secondary-400 mb-3">
+            <div className="flex items-center gap-1 text-sm text-neutral-500 dark:text-neutral-400 mb-3">
               <MapPin className="w-4 h-4" />
               {stylist.city}
             </div>
@@ -78,8 +78,8 @@ export function StylistCard({ stylist, index = 0 }) {
 
             <div className="flex items-center justify-between">
               <div>
-                <span className="text-sm text-secondary-500 dark:text-secondary-400">From</span>
-                <p className="text-lg font-semibold text-secondary-900 dark:text-white">
+                <span className="text-sm text-neutral-500 dark:text-neutral-400">From</span>
+                <p className="text-lg font-semibold text-neutral-900 dark:text-white">
                   {formatCurrency(stylist.starting_price || 50)}
                 </p>
               </div>
@@ -97,7 +97,7 @@ export function StylistCard({ stylist, index = 0 }) {
 export function StylistHorizontalCard({ stylist }) {
   return (
     <Link to={`/stylists/${stylist.id}`}>
-      <Card hover className="flex flex-col gap-4 p-4 border-primary-100/80 sm:flex-row">
+      <Card hover className="flex flex-col gap-4 p-4 border-burgundy-100/80 sm:flex-row">
         {/* Image */}
         <div className="w-full h-48 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-xl overflow-hidden flex-shrink-0">
           <img
@@ -112,7 +112,7 @@ export function StylistHorizontalCard({ stylist }) {
           <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
             <div>
               <div className="flex flex-wrap items-center gap-2">
-                <h3 className="font-semibold text-secondary-900 dark:text-white break-words">
+                <h3 className="font-semibold text-neutral-900 dark:text-white break-words">
                   {stylist.name}
                 </h3>
                 {stylist.is_verified && (
@@ -122,20 +122,20 @@ export function StylistHorizontalCard({ stylist }) {
                   </Badge>
                 )}
               </div>
-              <p className="text-sm text-secondary-500 dark:text-secondary-400">
+              <p className="text-sm text-neutral-500 dark:text-neutral-400">
                 {stylist.title}
               </p>
             </div>
-            <div className="flex items-center gap-1 text-warning-500 mt-1 sm:mt-0">
-              <Star className="w-4 h-4 fill-warning-500" />
+            <div className="flex items-center gap-1 text-gold-500 mt-1 sm:mt-0">
+              <Star className="w-4 h-4 fill-gold-500" />
               <span className="text-sm font-medium">{stylist.rating?.toFixed(1) || 'New'}</span>
               {stylist.review_count > 0 && (
-                <span className="text-xs text-secondary-400">({stylist.review_count})</span>
+                <span className="text-xs text-neutral-400">({stylist.review_count})</span>
               )}
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3 mt-2 text-sm text-secondary-500 dark:text-secondary-400">
+          <div className="flex flex-wrap items-center gap-3 mt-2 text-sm text-neutral-500 dark:text-neutral-400">
             <div className="flex items-center gap-1">
               <MapPin className="w-4 h-4" />
               {stylist.city}
@@ -155,7 +155,7 @@ export function StylistHorizontalCard({ stylist }) {
           </div>
 
           <div className="flex flex-col gap-2 mt-3 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-lg font-semibold text-primary-600">
+            <p className="text-lg font-semibold text-burgundy-600">
               From {formatCurrency(stylist.starting_price || 50)}
             </p>
           </div>
@@ -164,3 +164,4 @@ export function StylistHorizontalCard({ stylist }) {
     </Link>
   )
 }
+

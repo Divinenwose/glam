@@ -28,7 +28,7 @@ export default function BookingDetailPage() {
 
   return (
     <div className="space-y-6">
-      <Link to="/bookings" className="flex items-center gap-1 text-primary-700 hover:text-primary-800 hover:underline">
+      <Link to="/bookings" className="flex items-center gap-1 text-burgundy-700 hover:text-burgundy-800 hover:underline">
         <ChevronLeft className="w-4 h-4" />
         Back to bookings
       </Link>
@@ -43,10 +43,10 @@ export default function BookingDetailPage() {
           <Card className="p-6">
             <div className="flex items-start justify-between mb-6">
               <div>
-                <h1 className="text-2xl font-display font-bold text-secondary-900 dark:text-white mb-2">
+                <h1 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-2">
                   {booking.service.name}
                 </h1>
-                <p className="text-secondary-600 dark:text-secondary-400">
+                <p className="text-neutral-600 dark:text-neutral-400">
                   by {booking.stylist.name}
                 </p>
               </div>
@@ -55,28 +55,28 @@ export default function BookingDetailPage() {
               </Badge>
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-6 py-4 border-y border-secondary-200 dark:border-secondary-700">
+            <div className="grid sm:grid-cols-2 gap-6 py-4 border-y border-neutral-200 dark:border-neutral-700">
               <div className="flex items-center gap-3">
-                <Calendar className="w-5 h-5 text-secondary-400" />
+                <Calendar className="w-5 h-5 text-neutral-400" />
                 <div>
-                  <p className="text-sm text-secondary-500">Date</p>
-                  <p className="font-medium text-secondary-900 dark:text-white">
+                  <p className="text-sm text-neutral-500">Date</p>
+                  <p className="font-medium text-neutral-900 dark:text-white">
                     {formatDate(booking.booking_date)}
                   </p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <Clock className="w-5 h-5 text-secondary-400" />
+                <Clock className="w-5 h-5 text-neutral-400" />
                 <div>
-                  <p className="text-sm text-secondary-500">Time</p>
-                  <p className="font-medium text-secondary-900 dark:text-white">{booking.booking_time}</p>
+                  <p className="text-sm text-neutral-500">Time</p>
+                  <p className="font-medium text-neutral-900 dark:text-white">{booking.booking_time}</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <MapPin className="w-5 h-5 text-secondary-400" />
+                <MapPin className="w-5 h-5 text-neutral-400" />
                 <div>
-                  <p className="text-sm text-secondary-500">Location</p>
-                  <p className="font-medium text-secondary-900 dark:text-white">
+                  <p className="text-sm text-neutral-500">Location</p>
+                  <p className="font-medium text-neutral-900 dark:text-white">
                     {booking.service_type === 'home' ? 'Your Location' : 'Salon'}
                   </p>
                 </div>
@@ -85,8 +85,8 @@ export default function BookingDetailPage() {
 
             {booking.notes && (
               <div className="mt-6">
-                <p className="text-sm text-secondary-500 mb-2">Notes</p>
-                <p className="text-secondary-700 dark:text-secondary-300 bg-secondary-50 dark:bg-secondary-800 p-3 rounded-lg">
+                <p className="text-sm text-neutral-500 mb-2">Notes</p>
+                <p className="text-neutral-700 dark:text-neutral-300 bg-neutral-50 dark:bg-neutral-800 p-3 rounded-lg">
                   {booking.notes}
                 </p>
               </div>
@@ -94,13 +94,13 @@ export default function BookingDetailPage() {
 
             <div className="flex gap-3 mt-6">
               <Button variant="outline">Contact Stylist</Button>
-              <Button variant="ghost" className="text-error-500">Cancel Booking</Button>
+              <Button variant="ghost" className="text-red-500">Cancel Booking</Button>
             </div>
           </Card>
 
           {/* Status Timeline */}
           <Card className="p-6">
-            <h2 className="font-semibold text-secondary-900 dark:text-white mb-4">Timeline</h2>
+            <h2 className="font-semibold text-neutral-900 dark:text-white mb-4">Timeline</h2>
             <div className="space-y-4">
               {[
                 { datetime: '2024-02-10 15:30', title: 'Booking Confirmed', icon: CheckCircle, status: 'success' },
@@ -109,13 +109,13 @@ export default function BookingDetailPage() {
               ].map((event, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <div className={`p-1 rounded-full ${
-                    event.status === 'success' ? 'bg-success-100 dark:bg-success-900/30 text-success-600' : 'bg-secondary-100 text-secondary-500'
+                    event.status === 'success' ? 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600' : 'bg-neutral-100 text-neutral-500'
                   }`}>
                     <event.icon className="w-4 h-4" />
                   </div>
                   <div>
-                    <p className="font-medium text-secondary-900 dark:text-white">{event.title}</p>
-                    <p className="text-sm text-secondary-500">{event.datetime}</p>
+                    <p className="font-medium text-neutral-900 dark:text-white">{event.title}</p>
+                    <p className="text-sm text-neutral-500">{event.datetime}</p>
                   </div>
                 </div>
               ))}
@@ -126,20 +126,20 @@ export default function BookingDetailPage() {
         {/* Sidebar */}
         <div className="space-y-6">
           <Card className="p-6">
-            <h2 className="font-semibold text-secondary-900 dark:text-white mb-4">Payment Summary</h2>
+            <h2 className="font-semibold text-neutral-900 dark:text-white mb-4">Payment Summary</h2>
             <div className="space-y-3">
               <div className="flex justify-between">
-                <span className="text-secondary-600 dark:text-secondary-400">Service</span>
-                <span className="text-secondary-900 dark:text-white">{formatCurrency(booking.amount)}</span>
+                <span className="text-neutral-600 dark:text-neutral-400">Service</span>
+                <span className="text-neutral-900 dark:text-white">{formatCurrency(booking.amount)}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-secondary-600 dark:text-secondary-400">Platform fee</span>
-                <span className="text-secondary-900 dark:text-white">{formatCurrency(booking.platform_fee)}</span>
+                <span className="text-neutral-600 dark:text-neutral-400">Platform fee</span>
+                <span className="text-neutral-900 dark:text-white">{formatCurrency(booking.platform_fee)}</span>
               </div>
-              <div className="border-t border-secondary-200 dark:border-secondary-700 pt-3 mt-3">
+              <div className="border-t border-neutral-200 dark:border-neutral-700 pt-3 mt-3">
                   <div className="flex justify-between font-bold">
-                  <span className="text-secondary-900 dark:text-white">Total</span>
-                  <span className="text-primary-700">{formatCurrency(booking.total)}</span>
+                  <span className="text-neutral-900 dark:text-white">Total</span>
+                  <span className="text-burgundy-700">{formatCurrency(booking.total)}</span>
                 </div>
               </div>
             </div>
@@ -149,3 +149,4 @@ export default function BookingDetailPage() {
     </div>
   )
 }
+

@@ -21,7 +21,7 @@ export default function ForgotPasswordPage() {
   }
 
   return (
-    <div className="min-h-screen bg-secondary-50 dark:bg-secondary-950 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 flex items-center justify-center p-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -29,15 +29,15 @@ export default function ForgotPasswordPage() {
       >
 
         {sent ? (
-          <div className="bg-white dark:bg-secondary-900 rounded-2xl shadow-soft p-8 text-center">
-            <div className="w-16 h-16 rounded-full bg-success-100 dark:bg-success-900/30 flex items-center justify-center mx-auto mb-4">
-              <Mail className="w-8 h-8 text-success-600" />
+          <div className="bg-white dark:bg-neutral-900 rounded-2xl shadow-soft p-8 text-center">
+            <div className="w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mx-auto mb-4">
+              <Mail className="w-8 h-8 text-emerald-600" />
             </div>
-            <h2 className="text-xl font-display font-bold text-secondary-900 dark:text-white mb-2">
+            <h2 className="text-xl font-display font-bold text-neutral-900 dark:text-white mb-2">
               Check Your Email
             </h2>
-            <p className="text-secondary-600 dark:text-secondary-400 mb-6">
-              We've sent a password reset link to <strong className="text-secondary-900 dark:text-white">{email}</strong>. Please check your inbox.
+            <p className="text-neutral-600 dark:text-neutral-400 mb-6">
+              We've sent a password reset link to <strong className="text-neutral-900 dark:text-white">{email}</strong>. Please check your inbox.
             </p>
             <Link to="/login" className="btn-primary w-full inline-flex items-center justify-center">
               <ArrowLeft className="w-4 h-4 mr-2" />
@@ -45,11 +45,11 @@ export default function ForgotPasswordPage() {
             </Link>
           </div>
         ) : (
-          <div className="bg-white dark:bg-secondary-900 rounded-2xl shadow-soft p-8">
-            <h1 className="text-2xl font-display font-bold text-secondary-900 dark:text-white mb-2">
+          <div className="bg-white dark:bg-neutral-900 rounded-2xl shadow-soft p-8">
+            <h1 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-2">
               Forgot Your Password?
             </h1>
-            <p className="text-secondary-600 dark:text-secondary-400 mb-6">
+            <p className="text-neutral-600 dark:text-neutral-400 mb-6">
               No worries. Enter your email address and we'll send you a link to reset your password.
             </p>
 
@@ -57,7 +57,7 @@ export default function ForgotPasswordPage() {
               <div>
                 <label className="label">Email</label>
                 <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-secondary-400" />
+                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400" />
                   <input
                     type="email"
                     required
@@ -76,7 +76,7 @@ export default function ForgotPasswordPage() {
 
             <Link
               to="/login"
-              className="mt-6 w-full flex items-center justify-center gap-2 text-sm text-secondary-600 dark:text-secondary-400 hover:text-secondary-900 dark:hover:text-white"
+              className="mt-6 w-full flex items-center justify-center gap-2 text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
             >
               <ArrowLeft className="w-4 h-4" />
               Back to Sign In
@@ -87,3 +87,4 @@ export default function ForgotPasswordPage() {
     </div>
   )
 }
+

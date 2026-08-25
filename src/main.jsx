@@ -21,7 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                 background: 'var(--toast-bg)',
                 color: 'var(--toast-color)',
               },
-              className: 'dark:bg-secondary-800 dark:text-secondary-100',
+              className: 'dark:bg-neutral-800 dark:text-neutral-100',
             }}
           />
         </AuthProvider>
@@ -29,3 +29,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </BrowserRouter>
   </React.StrictMode>,
 )
+

@@ -62,7 +62,7 @@ export default function DashboardLayout() {
   const isActive = (path) => location.pathname === path
 
   return (
-    <div className="min-h-screen bg-secondary-50 dark:bg-secondary-950">
+    <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950">
       {/* Mobile sidebar overlay */}
       <AnimatePresence>
         {sidebarOpen && (
@@ -80,21 +80,21 @@ export default function DashboardLayout() {
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 z-50 h-full w-64 bg-white dark:bg-secondary-900 border-r border-secondary-200 dark:border-secondary-800 transform transition-transform duration-300 lg:translate-x-0 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'
+        className={`fixed top-0 left-0 z-50 h-full w-64 bg-white dark:bg-neutral-900 border-r border-neutral-200 dark:border-neutral-800 transform transition-transform duration-300 lg:translate-x-0 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'
           }`}
       >
-        <div className="flex items-center justify-between p-4 border-b border-secondary-200 dark:border-secondary-800">
+        <div className="flex items-center justify-between p-4 border-b border-neutral-200 dark:border-neutral-800">
           <Link to="/" className="flex items-center gap-2">
-            <div className="p-2 bg-primary-600 rounded-xl">
+            <div className="p-2 bg-burgundy-600 rounded-xl">
               <Settings className="w-4 h-4 text-white" />
             </div>
-            <span className="text-lg font-display font-semibold text-secondary-900 dark:text-white">
+            <span className="text-lg font-display font-semibold text-neutral-900 dark:text-white">
               GlamBook
             </span>
           </Link>
           <button
             onClick={() => setSidebarOpen(false)}
-            className="lg:hidden p-2 rounded-lg text-secondary-600 hover:bg-secondary-100"
+            className="lg:hidden p-2 rounded-lg text-neutral-600 hover:bg-neutral-100"
           >
             <X className="w-5 h-5" />
           </button>
@@ -107,8 +107,8 @@ export default function DashboardLayout() {
               to={link.href}
               onClick={() => setSidebarOpen(false)}
               className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${isActive(link.href)
-                ? 'text-primary-600 bg-primary-50 dark:bg-primary-900/20 font-medium'
-                : 'text-secondary-600 dark:text-secondary-400 hover:bg-secondary-100 dark:hover:bg-secondary-800'
+                ? 'text-burgundy-600 bg-burgundy-50 dark:bg-burgundy-900/20 font-medium'
+                : 'text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800'
                 }`}
             >
               <link.icon className="w-5 h-5" />
@@ -117,10 +117,10 @@ export default function DashboardLayout() {
           ))}
         </nav>
 
-        <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-secondary-200 dark:border-secondary-800">
+        <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-neutral-200 dark:border-neutral-800">
           <button
             onClick={handleSignOut}
-            className="flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-error-600 hover:bg-error-50 dark:hover:bg-error-900/20"
+            className="flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20"
           >
             <LogOut className="w-5 h-5" />
             Sign out
@@ -131,16 +131,16 @@ export default function DashboardLayout() {
       {/* Main content */}
       <div className="lg:pl-64">
         {/* Top header */}
-        <header className="sticky top-0 z-30 bg-white dark:bg-secondary-900 border-b border-secondary-200 dark:border-secondary-800">
+        <header className="sticky top-0 z-30 bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800">
           <div className="flex items-center justify-between px-4 py-3">
             <div className="flex items-center gap-4">
               <button
                 onClick={() => setSidebarOpen(true)}
-                className="lg:hidden p-2 rounded-lg text-secondary-600 hover:bg-secondary-100 dark:text-secondary-400 dark:hover:bg-secondary-800"
+                className="lg:hidden p-2 rounded-lg text-neutral-600 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800"
               >
                 <Menu className="w-5 h-5" />
               </button>
-              <h1 className="text-lg font-semibold text-secondary-900 dark:text-white">
+              <h1 className="text-lg font-semibold text-neutral-900 dark:text-white">
                 {links.find(l => isActive(l.href))?.name || 'Dashboard'}
               </h1>
             </div>
@@ -148,23 +148,23 @@ export default function DashboardLayout() {
             <div className="flex items-center gap-2">
               <Link
                 to="/notifications"
-                className="relative p-2 rounded-lg text-secondary-600 hover:bg-secondary-100 dark:text-secondary-400 dark:hover:bg-secondary-800"
+                className="relative p-2 rounded-lg text-neutral-600 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800"
               >
                 <Bell className="w-5 h-5" />
-                <span className="absolute top-1 right-1 w-2 h-2 bg-primary-600 rounded-full"></span>
+                <span className="absolute top-1 right-1 w-2 h-2 bg-burgundy-600 rounded-full"></span>
               </Link>
               <Link
                 to={role === 'stylist' ? '/stylist/profile' : role === 'admin' ? '/admin/settings' : '/profile'}
-                className="flex items-center gap-2 p-1.5 pr-3 rounded-full bg-secondary-100 dark:bg-secondary-800 hover:bg-secondary-200 dark:hover:bg-secondary-700"
+                className="flex items-center gap-2 p-1.5 pr-3 rounded-full bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700"
               >
-                <div className="w-8 h-8 rounded-full bg-primary-600 text-white flex items-center justify-center">
+                <div className="w-8 h-8 rounded-full bg-burgundy-600 text-white flex items-center justify-center">
                   {profile?.avatar_url ? (
                     <img src={profile.avatar_url} alt="" className="w-full h-full rounded-full object-cover" />
                   ) : (
                     <span className="text-sm font-medium">{profile?.full_name?.[0] || 'U'}</span>
                   )}
                 </div>
-                <span className="hidden sm:inline text-sm font-medium text-secondary-700 dark:text-secondary-300">
+                <span className="hidden sm:inline text-sm font-medium text-neutral-700 dark:text-neutral-300">
                   {profile?.full_name?.split(' ')[0] || 'User'}
                 </span>
               </Link>
@@ -180,3 +180,4 @@ export default function DashboardLayout() {
     </div>
   )
 }
+

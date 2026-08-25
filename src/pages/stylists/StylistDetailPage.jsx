@@ -81,11 +81,11 @@ export default function StylistDetailPage() {
   }
 
   return (
-    <div className="bg-secondary-50 dark:bg-secondary-950 pb-12">
+    <div className="bg-neutral-50 dark:bg-neutral-950 pb-12">
       {/* Header */}
-      <div className="bg-white dark:bg-secondary-900 border-b border-secondary-200 dark:border-secondary-800">
+      <div className="bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800">
         <div className="container-custom p-6">
-          <Link to="/stylists" className="flex items-center gap-1 text-primary-700 hover:text-primary-800 hover:underline">
+          <Link to="/stylists" className="flex items-center gap-1 text-burgundy-700 hover:text-burgundy-800 hover:underline">
             <ChevronLeft className="w-4 h-4" />
             Back to stylists
           </Link>
@@ -143,7 +143,7 @@ export default function StylistDetailPage() {
                     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
                       <div>
                         <div className="flex items-center gap-2 mb-1">
-                          <h1 className="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-secondary-900 dark:text-white">
+                          <h1 className="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-neutral-900 dark:text-white">
                             {stylist.name}
                           </h1>
                           {stylist.is_verified && (
@@ -153,18 +153,18 @@ export default function StylistDetailPage() {
                             </Badge>
                           )}
                         </div>
-                        <p className="text-secondary-600 dark:text-secondary-400">
+                        <p className="text-neutral-600 dark:text-neutral-400">
                           {stylist.title}
                         </p>
                       </div>
-                      <div className="flex items-center gap-1 text-warning-500">
-                        <Star className="w-5 h-5 fill-warning-500" />
+                      <div className="flex items-center gap-1 text-gold-500">
+                        <Star className="w-5 h-5 fill-gold-500" />
                         <span className="text-lg font-semibold">{stylist.rating}</span>
-                        <span className="text-sm text-secondary-500">({stylist.review_count})</span>
+                        <span className="text-sm text-neutral-500">({stylist.review_count})</span>
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm mb-4 text-secondary-600 dark:text-secondary-400 mb-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm mb-4 text-neutral-600 dark:text-neutral-400 mb-4">
                       <div className="flex items-center gap-1">
                         <MapPin className="w-4 h-4" />
                         {stylist.city}
@@ -208,15 +208,15 @@ export default function StylistDetailPage() {
             </motion.div>
 
             {/* Tabs */}
-            <div className="border-b border-secondary-200 dark:border-secondary-700">
+            <div className="border-b border-neutral-200 dark:border-neutral-700">
               <div className="flex gap-6 overflow-x-auto whitespace-nowrap scrollbar-hide">
                 {['services', 'portfolio', 'reviews', 'about'].map((tab) => (
                   <button
                     key={tab}
                     onClick={() => setActiveTab(tab)}
                     className={`pb-4 px-2 shrink-0 capitalize font-medium transition-colors ${activeTab === tab
-                      ? 'text-primary-600 border-b-2 border-primary-600'
-                      : 'text-secondary-600 dark:text-secondary-400 hover:text-secondary-900 dark:hover:text-white'
+                      ? 'text-burgundy-600 border-b-2 border-burgundy-600'
+                      : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white'
                       }`}
                   >
                     {tab}
@@ -237,11 +237,11 @@ export default function StylistDetailPage() {
                     <Card key={service.id} className="p-4">
                       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                         <div className="flex-1">
-                          <h3 className="font-semibold text-secondary-900 dark:text-white">{service.name}</h3>
+                          <h3 className="font-semibold text-neutral-900 dark:text-white">{service.name}</h3>
                           {service.description && (
-                            <p className="text-sm text-secondary-600 dark:text-secondary-400 mt-1">{service.description}</p>
+                            <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-1">{service.description}</p>
                           )}
-                          <div className="flex items-center gap-4 mt-2 text-sm text-secondary-500">
+                          <div className="flex items-center gap-4 mt-2 text-sm text-neutral-500">
                             <span className="flex items-center gap-1">
                               <Clock className="w-4 h-4" />
                               {service.duration_minutes} min
@@ -261,7 +261,7 @@ export default function StylistDetailPage() {
                           </div>
                         </div>
                         <div className="sm:text-right">
-                          <p className="text-xl font-bold text-primary-600">{formatCurrency(service.price)}</p>
+                          <p className="text-xl font-bold text-burgundy-600">{formatCurrency(service.price)}</p>
                           <Button
                             size="sm"
                             onClick={handleBookNow}
@@ -296,18 +296,18 @@ export default function StylistDetailPage() {
 
               {activeTab === 'about' && (
                 <Card className="p-6">
-                  <h3 className="font-semibold text-secondary-900 dark:text-white mb-4">About Me</h3>
-                  <p className="text-secondary-600 dark:text-secondary-400 mb-6">{stylist.bio}</p>
+                  <h3 className="font-semibold text-neutral-900 dark:text-white mb-4">About Me</h3>
+                  <p className="text-neutral-600 dark:text-neutral-400 mb-6">{stylist.bio}</p>
 
-                  <h4 className="font-medium text-secondary-900 dark:text-white mb-3">Certifications</h4>
+                  <h4 className="font-medium text-neutral-900 dark:text-white mb-3">Certifications</h4>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {stylist.certifications.map((cert) => (
                       <Badge key={cert} variant="secondary">{cert}</Badge>
                     ))}
                   </div>
 
-                  <h4 className="font-medium text-secondary-900 dark:text-white mb-3">Location</h4>
-                  <p className="text-secondary-600 dark:text-secondary-400 flex items-center gap-2">
+                  <h4 className="font-medium text-neutral-900 dark:text-white mb-3">Location</h4>
+                  <p className="text-neutral-600 dark:text-neutral-400 flex items-center gap-2">
                     <MapPin className="w-4 h-4" />
                     {stylist.address}
                   </p>
@@ -322,8 +322,8 @@ export default function StylistDetailPage() {
               {/* Booking Card */}
               <Card className="p-6">
                 <div className="mb-4">
-                  <span className="text-sm text-secondary-500">Starting at</span>
-                  <p className="text-3xl font-bold text-secondary-900 dark:text-white">
+                  <span className="text-sm text-neutral-500">Starting at</span>
+                  <p className="text-3xl font-bold text-neutral-900 dark:text-white">
                     {formatCurrency(stylist.starting_price)}
                   </p>
                 </div>
@@ -351,12 +351,12 @@ export default function StylistDetailPage() {
 
               {/* Working Hours */}
               <Card className="p-6">
-                <h3 className="font-semibold text-secondary-900 dark:text-white mb-4">Working Hours</h3>
+                <h3 className="font-semibold text-neutral-900 dark:text-white mb-4">Working Hours</h3>
                 <div className="space-y-3 text-sm">
                   {Object.entries(stylist.working_hours).map(([day, hours]) => (
                     <div key={day} className="flex items-center justify-between">
-                      <span className="capitalize text-secondary-600 dark:text-secondary-400">{day}</span>
-                      <span className="text-secondary-900 dark:text-white">
+                      <span className="capitalize text-neutral-600 dark:text-neutral-400">{day}</span>
+                      <span className="text-neutral-900 dark:text-white">
                         {hours ? `${hours.start} - ${hours.end}` : 'Closed'}
                       </span>
                     </div>
@@ -370,3 +370,4 @@ export default function StylistDetailPage() {
     </div>
   )
 }
+

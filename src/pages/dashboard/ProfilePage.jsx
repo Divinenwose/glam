@@ -30,10 +30,10 @@ export default function ProfilePage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <h1 className="text-2xl font-display font-bold text-secondary-900 dark:text-white mb-2">
+        <h1 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-2">
           My Profile
         </h1>
-        <p className="text-secondary-600 dark:text-secondary-400">
+        <p className="text-neutral-600 dark:text-neutral-400">
           Update your personal information and preferences.
         </p>
       </motion.div>
@@ -48,7 +48,7 @@ export default function ProfilePage() {
                 <Camera className="w-4 h-4 mr-2" />
                 Change Photo
               </Button>
-              <p className="text-xs text-secondary-500 mt-2">
+              <p className="text-xs text-neutral-500 mt-2">
                 JPG, PNG. Max size 5MB.
               </p>
             </div>
@@ -59,7 +59,7 @@ export default function ProfilePage() {
             <div>
               <label className="label">Full Name</label>
               <div className="relative">
-                <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-secondary-400" />
+                <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400" />
                 <input
                   type="text"
                   value={formData.fullName}
@@ -72,21 +72,21 @@ export default function ProfilePage() {
             <div>
               <label className="label">Email</label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-secondary-400" />
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400" />
                 <input
                   type="email"
                   value={formData.email}
                   disabled
-                  className="input pl-10 bg-secondary-50 dark:bg-secondary-800"
+                  className="input pl-10 bg-neutral-50 dark:bg-neutral-800"
                 />
               </div>
-              <p className="text-xs text-secondary-500 mt-1">Email can only be changed by contacting support.</p>
+              <p className="text-xs text-neutral-500 mt-1">Email can only be changed by contacting support.</p>
             </div>
 
             <div>
               <label className="label">Phone</label>
               <div className="relative">
-                <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-secondary-400" />
+                <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400" />
                 <input
                   type="tel"
                   value={formData.phone}
@@ -99,7 +99,7 @@ export default function ProfilePage() {
             <div>
               <label className="label">Location</label>
               <div className="relative">
-                <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-secondary-400" />
+                <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400" />
                 <input
                   type="text"
                   value={formData.location}
@@ -110,7 +110,7 @@ export default function ProfilePage() {
               </div>
             </div>
 
-            <div className="pt-6 border-t border-secondary-200 dark:border-secondary-700 flex gap-3">
+            <div className="pt-6 border-t border-neutral-200 dark:border-neutral-700 flex gap-3">
               <Button type="submit" loading={loading}>
                 <Save className="w-4 h-4 mr-2" />
                 Save Changes
@@ -122,3 +122,4 @@ export default function ProfilePage() {
     </div>
   )
 }
+

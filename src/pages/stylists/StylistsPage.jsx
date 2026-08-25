@@ -204,15 +204,15 @@ export default function StylistsPage() {
   const activeFilterCount = Object.values(filters).filter(Boolean).length
 
   return (
-    <div className="min-h-screen bg-secondary-50 dark:bg-secondary-950 pb-12">
+    <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 pb-12">
       {/* Search Header */}
-      <div className="bg-white dark:bg-secondary-900 border-b border-secondary-200 dark:border-secondary-800">
+      <div className="bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800">
         <div className="container-custom py-6">
           <div className="flex flex-col gap-3 xl:flex-row xl:items-center">
             {/* Search Input */}
             <div className="flex-1">
               <div className="relative">
-                <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-secondary-400" />
+                <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400" />
                 <input
                   type="text"
                   placeholder="Search by location or stylist name..."
@@ -246,7 +246,7 @@ export default function StylistsPage() {
               <SlidersHorizontal className="w-4 h-4 mr-2" />
               Filters
               {activeFilterCount > 0 && (
-                <span className="ml-2 px-2 py-0.5 bg-primary-600 text-white text-xs rounded-full">
+                <span className="ml-2 px-2 py-0.5 bg-burgundy-600 text-white text-xs rounded-full">
                   {activeFilterCount}
                 </span>
               )}
@@ -259,7 +259,7 @@ export default function StylistsPage() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="mt-6 pt-6 border-t border-secondary-200 dark:border-secondary-700"
+              className="mt-6 pt-6 border-t border-neutral-200 dark:border-neutral-700"
             >
               <div className="grid gap-4 mb-6 sm:grid-cols-2 xl:grid-cols-4">
                 <div>
@@ -308,18 +308,18 @@ export default function StylistsPage() {
                         type="checkbox"
                         checked={filters.homeService}
                         onChange={(e) => handleFilterChange('homeService', e.target.checked)}
-                        className="w-4 h-4 text-primary-600 border-secondary-300 rounded"
+                        className="w-4 h-4 text-burgundy-600 border-neutral-300 rounded"
                       />
-                      <span className="text-secondary-700 dark:text-secondary-300">Home Service</span>
+                      <span className="text-neutral-700 dark:text-neutral-300">Home Service</span>
                     </label>
                     <label className="flex items-center gap-2">
                       <input
                         type="checkbox"
                         checked={filters.salonService}
                         onChange={(e) => handleFilterChange('salonService', e.target.checked)}
-                        className="w-4 h-4 text-primary-600 border-secondary-300 rounded"
+                        className="w-4 h-4 text-burgundy-600 border-neutral-300 rounded"
                       />
-                      <span className="text-secondary-700 dark:text-secondary-300">Salon Visit</span>
+                      <span className="text-neutral-700 dark:text-neutral-300">Salon Visit</span>
                     </label>
                   </div>
                 </div>
@@ -339,10 +339,10 @@ export default function StylistsPage() {
       <div className="container-custom mt-8">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between mb-6">
           <div>
-            <h1 className="text-2xl font-display font-bold text-secondary-900 dark:text-white">
+            <h1 className="text-2xl font-display font-bold text-neutral-900 dark:text-white">
               Find Stylists
             </h1>
-            <p className="text-secondary-600 dark:text-secondary-400">
+            <p className="text-neutral-600 dark:text-neutral-400">
               {loading ? 'Searching...' : `${stylists.length} stylists found`}
             </p>
           </div>
@@ -358,11 +358,11 @@ export default function StylistsPage() {
 
         {loading ? (
           <div className="flex items-center justify-center py-12">
-            <div className="animate-spin w-8 h-8 border-2 border-primary-600 border-t-transparent rounded-full" />
+            <div className="animate-spin w-8 h-8 border-2 border-burgundy-600 border-t-transparent rounded-full" />
           </div>
         ) : stylists.length === 0 ? (
           <Card className="p-12 text-center">
-            <p className="text-secondary-600 dark:text-secondary-400">
+            <p className="text-neutral-600 dark:text-neutral-400">
               No stylists found matching your criteria. Try adjusting your filters.
             </p>
           </Card>
@@ -384,3 +384,4 @@ export default function StylistsPage() {
     </div>
   )
 }
+

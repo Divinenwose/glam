@@ -18,30 +18,30 @@ export default function VerifyEmailPage() {
   }
 
   return (
-    <div className="min-h-screen bg-secondary-50 dark:bg-secondary-950 flex items-center justify-center px-4 py-8 sm:py-12">
+    <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 flex items-center justify-center px-4 py-8 sm:py-12">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="w-full max-w-md"
       >
-        <div className="bg-white dark:bg-secondary-900 rounded-2xl shadow-soft p-6 sm:p-8 text-center">
-          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center mx-auto mb-5">
-            <Mail className="w-7 h-7 sm:w-8 sm:h-8 text-primary-700" />
+        <div className="bg-white dark:bg-neutral-900 rounded-2xl shadow-soft p-6 sm:p-8 text-center">
+          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-burgundy-100 dark:bg-burgundy-900/30 flex items-center justify-center mx-auto mb-5">
+            <Mail className="w-7 h-7 sm:w-8 sm:h-8 text-burgundy-700" />
           </div>
 
-          <h2 className="text-xl font-display font-bold text-secondary-900 dark:text-white mb-2">
+          <h2 className="text-xl font-display font-bold text-neutral-900 dark:text-white mb-2">
             Verify Your Email
           </h2>
 
-          <p className="text-sm sm:text-base leading-7 text-secondary-600 dark:text-secondary-400 mb-6">
+          <p className="text-sm sm:text-base leading-7 text-neutral-600 dark:text-neutral-400 mb-6">
             We've sent a verification link to
             <br />
-            <strong className="text-secondary-900 dark:text-white">{email || 'your email'}</strong>.
+            <strong className="text-neutral-900 dark:text-white">{email || 'your email'}</strong>.
             <br />
             Please click the link in the email to verify your account.
           </p>
 
-          <p className="text-sm text-secondary-500 dark:text-secondary-500 mb-6">
+          <p className="text-sm text-neutral-500 dark:text-neutral-500 mb-6">
             Didn't receive the email? Check your spam folder or request a new one.
           </p>
 
@@ -58,7 +58,7 @@ export default function VerifyEmailPage() {
           <div className="pt-2">
             <Link
               to="/login"
-              className="text-sm font-medium text-primary-700 hover:text-primary-800 hover:underline"
+              className="text-sm font-medium text-burgundy-700 hover:text-burgundy-800 hover:underline"
             >
               Back to Sign In
             </Link>
@@ -72,3 +72,4 @@ export default function VerifyEmailPage() {
 export function RoleSelectionPage() {
   return null
 }
+

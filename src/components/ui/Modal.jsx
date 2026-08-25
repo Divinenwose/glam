@@ -31,15 +31,15 @@ export const Modal = ({ isOpen, onClose, title, children, size = 'md', showClose
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-              className={`relative w-full ${sizes[size]} bg-white dark:bg-secondary-900 rounded-2xl shadow-xl`}
+              className={`relative w-full ${sizes[size]} bg-white dark:bg-[#24201D] rounded-2xl shadow-xl`}
             >
               {title && (
-                <div className="flex items-center justify-between px-6 py-4 border-b border-secondary-200 dark:border-secondary-800">
-                  <h3 className="text-lg font-semibold text-secondary-900 dark:text-white">{title}</h3>
+                <div className="flex items-center justify-between px-6 py-4 border-b border-neutral-200 dark:border-burgundy-900/50">
+                  <h3 className="text-lg font-semibold text-neutral-900 dark:text-white">{title}</h3>
                   {showClose && (
                     <button
                       onClick={onClose}
-                      className="p-2 rounded-lg text-secondary-400 hover:text-secondary-600 hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors"
+                      className="p-2 rounded-lg text-neutral-400 hover:text-neutral-600 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:text-neutral-200 dark:hover:bg-burgundy-900/30 transition-colors"
                     >
                       <X className="w-5 h-5" />
                     </button>
@@ -49,7 +49,7 @@ export const Modal = ({ isOpen, onClose, title, children, size = 'md', showClose
               {!title && showClose && (
                 <button
                   onClick={onClose}
-                  className="absolute top-4 right-4 p-2 rounded-lg text-secondary-400 hover:text-secondary-600 hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors z-10"
+                  className="absolute top-4 right-4 p-2 rounded-lg text-neutral-400 hover:text-neutral-600 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:text-neutral-200 dark:hover:bg-burgundy-900/30 transition-colors z-10"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -72,7 +72,7 @@ export const Input = forwardRef(({ className, error, label, ...props }, ref) => 
         className={cn('input', error && 'input-error', className)}
         {...props}
       />
-      {error && <p className="mt-1 text-sm text-error-600 dark:text-error-400">{error}</p>}
+      {error && <p className="mt-1 text-sm text-red-600 dark:text-red-400">{error}</p>}
     </div>
   )
 })
@@ -86,7 +86,7 @@ export const Textarea = forwardRef(({ className, error, label, ...props }, ref) 
         className={cn('input min-h-[100px] resize-y', error && 'input-error', className)}
         {...props}
       />
-      {error && <p className="mt-1 text-sm text-error-600 dark:text-error-400">{error}</p>}
+      {error && <p className="mt-1 text-sm text-red-600 dark:text-red-400">{error}</p>}
     </div>
   )
 })
@@ -107,7 +107,7 @@ export const Select = forwardRef(({ className, error, label, options, placeholde
           </option>
         ))}
       </select>
-      {error && <p className="mt-1 text-sm text-error-600 dark:text-error-400">{error}</p>}
+      {error && <p className="mt-1 text-sm text-red-600 dark:text-red-400">{error}</p>}
     </div>
   )
 })
@@ -119,14 +119,14 @@ export const Checkbox = forwardRef(({ className, label, error, ...props }, ref) 
         type="checkbox"
         ref={ref}
         className={cn(
-          'mt-1 w-4 h-4 rounded border-secondary-300 dark:border-secondary-600 text-primary-600 focus:ring-primary-500 cursor-pointer',
+          'mt-1 w-4 h-4 rounded border-neutral-300 dark:border-neutral-600 text-burgundy-600 focus:ring-burgundy-500 cursor-pointer',
           className
         )}
         {...props}
       />
       <div>
-        <span className="text-sm text-secondary-700 dark:text-secondary-300">{label}</span>
-        {error && <p className="mt-1 text-sm text-error-600 dark:text-error-400">{error}</p>}
+        <span className="text-sm text-neutral-700 dark:text-neutral-300">{label}</span>
+        {error && <p className="mt-1 text-sm text-red-600 dark:text-red-400">{error}</p>}
       </div>
     </label>
   )
@@ -138,7 +138,8 @@ export const Button = forwardRef(({ children, variant = 'primary', size = 'md', 
     secondary: 'btn-secondary',
     outline: 'btn-outline',
     ghost: 'btn-ghost',
-    accent: 'btn-accent',
+    gold: 'btn-gold',
+    beauty: 'btn-beauty',
     success: 'btn-success',
     error: 'btn-error',
   }
@@ -175,12 +176,14 @@ export const Button = forwardRef(({ children, variant = 'primary', size = 'md', 
 
 export const Badge = ({ children, variant = 'default', className, ...props }) => {
   const variants = {
-    default: 'bg-secondary-100 text-secondary-700 dark:bg-secondary-800 dark:text-secondary-300',
+    default: 'bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300',
     primary: 'badge-primary',
     secondary: 'badge-secondary',
     success: 'badge-success',
     warning: 'badge-warning',
     error: 'badge-error',
+    beauty: 'badge-beauty',
+    premium: 'badge-premium',
   }
 
   return (
@@ -202,13 +205,13 @@ export const EmptyState = ({ icon: Icon, title, description, action }) => {
   return (
     <div className="flex flex-col items-center justify-center py-12 px-4 text-center">
       {Icon && (
-        <div className="p-4 rounded-full bg-secondary-100 dark:bg-secondary-800 mb-4">
-          <Icon className="w-8 h-8 text-secondary-400" />
+        <div className="p-4 rounded-full bg-neutral-100 dark:bg-burgundy-900/30 mb-4">
+          <Icon className="w-8 h-8 text-neutral-400 dark:text-neutral-500" />
         </div>
       )}
-      <h3 className="text-lg font-medium text-secondary-900 dark:text-white mb-2">{title}</h3>
+      <h3 className="text-lg font-medium text-neutral-900 dark:text-white mb-2">{title}</h3>
       {description && (
-        <p className="text-secondary-600 dark:text-secondary-400 max-w-sm mb-6">{description}</p>
+        <p className="text-neutral-600 dark:text-neutral-400 max-w-sm mb-6">{description}</p>
       )}
       {action}
     </div>
@@ -227,7 +230,7 @@ export const LoadingSpinner = ({ size = 'md', className }) => {
   }
 
   return (
-    <div className={cn('animate-spin text-primary-600', sizes[size], className)}>
+    <div className={cn('animate-spin text-burgundy-600', sizes[size], className)}>
       <svg fill="none" viewBox="0 0 24 24" className="w-full h-full">
         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
         <path
@@ -256,7 +259,7 @@ export const Avatar = ({ src, alt, size = 'md', className }) => {
     .toUpperCase()
 
   return (
-    <div className={cn('rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center font-medium text-primary-700 dark:text-primary-300 overflow-hidden', sizes[size], className)}>
+    <div className={cn('rounded-full bg-burgundy-100 dark:bg-burgundy-900 flex items-center justify-center font-medium text-burgundy-700 dark:text-burgundy-300 overflow-hidden', sizes[size], className)}>
       {src ? (
         <img src={src} alt={alt} className="w-full h-full object-cover" />
       ) : (
@@ -274,7 +277,7 @@ export const StarRating = ({ rating, maxRating = 5, className }) => {
           key={i}
           className={cn(
             'w-4 h-4',
-            i < rating ? 'text-warning-500 fill-warning-500' : 'text-secondary-300 dark:text-secondary-600'
+            i < rating ? 'text-gold-500 fill-gold-500' : 'text-neutral-300 dark:text-neutral-600'
           )}
           viewBox="0 0 20 20"
           fill="currentColor"
@@ -287,3 +290,5 @@ export const StarRating = ({ rating, maxRating = 5, className }) => {
 }
 
 export default Modal;
+
+

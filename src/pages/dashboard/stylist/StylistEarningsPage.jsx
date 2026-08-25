@@ -30,10 +30,10 @@ export default function StylistEarningsPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <h1 className="text-2xl font-display font-bold text-secondary-900 dark:text-white mb-2">
+        <h1 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-2">
           Earnings
         </h1>
-        <p className="text-secondary-600 dark:text-secondary-400">
+        <p className="text-neutral-600 dark:text-neutral-400">
           Track your income and manage withdrawals.
         </p>
       </motion.div>
@@ -48,33 +48,33 @@ export default function StylistEarningsPage() {
       {/* Balance & Withdraw */}
       <div className="grid lg:grid-cols-3 gap-6">
         <Card className="p-6 lg:col-span-2">
-          <h2 className="font-semibold text-secondary-900 dark:text-white mb-4">Balance Overview</h2>
+          <h2 className="font-semibold text-neutral-900 dark:text-white mb-4">Balance Overview</h2>
           <div className="grid sm:grid-cols-2 gap-6">
-            <div className="p-4 rounded-xl bg-primary-50 dark:bg-primary-900/20">
-              <p className="text-sm text-secondary-600 dark:text-secondary-400">Available Balance</p>
-              <p className="text-3xl font-bold text-primary-600">{formatCurrency(availableBalance)}</p>
-              <p className="text-xs text-secondary-500 mt-2">Ready to withdraw</p>
+            <div className="p-4 rounded-xl bg-burgundy-50 dark:bg-burgundy-900/20">
+              <p className="text-sm text-neutral-600 dark:text-neutral-400">Available Balance</p>
+              <p className="text-3xl font-bold text-burgundy-600">{formatCurrency(availableBalance)}</p>
+              <p className="text-xs text-neutral-500 mt-2">Ready to withdraw</p>
             </div>
-            <div className="p-4 rounded-xl bg-secondary-100 dark:bg-secondary-800">
-              <p className="text-sm text-secondary-600 dark:text-secondary-400">Pending Balance</p>
-              <p className="text-3xl font-bold text-secondary-900 dark:text-white">{formatCurrency(balance - availableBalance)}</p>
-              <p className="text-xs text-secondary-500 mt-2">Processing (~3 days)</p>
+            <div className="p-4 rounded-xl bg-neutral-100 dark:bg-neutral-800">
+              <p className="text-sm text-neutral-600 dark:text-neutral-400">Pending Balance</p>
+              <p className="text-3xl font-bold text-neutral-900 dark:text-white">{formatCurrency(balance - availableBalance)}</p>
+              <p className="text-xs text-neutral-500 mt-2">Processing (~3 days)</p>
             </div>
           </div>
 
-          <div className="mt-6 pt-4 border-t border-secondary-200 dark:border-secondary-700">
+          <div className="mt-6 pt-4 border-t border-neutral-200 dark:border-neutral-700">
             <Button>Request Withdrawal</Button>
-            <p className="text-xs text-secondary-500 mt-3">
+            <p className="text-xs text-neutral-500 mt-3">
               Minimum withdrawal amount: $50. Withdrawals typically process within 3-5 business days.
             </p>
           </div>
         </Card>
 
         <Card className="p-6">
-          <h3 className="font-medium text-secondary-900 dark:text-white mb-4">Bank Account</h3>
-          <div className="p-3 rounded-lg bg-secondary-50 dark:bg-secondary-800 mb-4">
-            <p className="font-medium text-secondary-900 dark:text-white">**** **** **** 4242</p>
-            <p className="text-sm text-secondary-500">Primary Account</p>
+          <h3 className="font-medium text-neutral-900 dark:text-white mb-4">Bank Account</h3>
+          <div className="p-3 rounded-lg bg-neutral-50 dark:bg-neutral-800 mb-4">
+            <p className="font-medium text-neutral-900 dark:text-white">**** **** **** 4242</p>
+            <p className="text-sm text-neutral-500">Primary Account</p>
           </div>
           <Button variant="outline" className="w-full">Update Bank Details</Button>
         </Card>
@@ -82,32 +82,32 @@ export default function StylistEarningsPage() {
 
       {/* Transaction History */}
       <Card className="p-6">
-        <h2 className="font-semibold text-secondary-900 dark:text-white mb-4">Transaction History</h2>
+        <h2 className="font-semibold text-neutral-900 dark:text-white mb-4">Transaction History</h2>
         <div className="space-y-3">
           {mockTransactions.map((tx) => (
             <div
               key={tx.id}
-              className="flex items-center justify-between p-4 rounded-lg bg-secondary-50 dark:bg-secondary-800"
+              className="flex items-center justify-between p-4 rounded-lg bg-neutral-50 dark:bg-neutral-800"
             >
               <div className="flex items-center gap-3">
                 <div className={`p-2 rounded-lg ${
-                  tx.type === 'earning' ? 'bg-success-100 dark:bg-success-900/30' :
-                  tx.type === 'withdrawal' ? 'bg-warning-100 dark:bg-warning-900/30' :
-                  'bg-error-100 dark:bg-error-900/30'
+                  tx.type === 'earning' ? 'bg-emerald-100 dark:bg-emerald-900/30' :
+                  tx.type === 'withdrawal' ? 'bg-gold-100 dark:bg-gold-900/30' :
+                  'bg-red-100 dark:bg-red-900/30'
                 }`}>
-                  {tx.type === 'earning' ? <ArrowDownLeft className="w-4 h-4 text-success-600" /> :
-                   tx.type === 'withdrawal' ? <ArrowUpRight className="w-4 h-4 text-warning-600" /> :
-                   <ArrowUpRight className="w-4 h-4 text-error-600" />}
+                  {tx.type === 'earning' ? <ArrowDownLeft className="w-4 h-4 text-emerald-600" /> :
+                   tx.type === 'withdrawal' ? <ArrowUpRight className="w-4 h-4 text-gold-600" /> :
+                   <ArrowUpRight className="w-4 h-4 text-red-600" />}
                 </div>
                 <div>
-                  <p className="font-medium text-secondary-900 dark:text-white capitalize">{tx.type}</p>
-                  <p className="text-xs text-secondary-500">{formatDate(tx.date)}</p>
+                  <p className="font-medium text-neutral-900 dark:text-white capitalize">{tx.type}</p>
+                  <p className="text-xs text-neutral-500">{formatDate(tx.date)}</p>
                 </div>
               </div>
               <p className={`font-medium ${
-                tx.type === 'earning' ? 'text-success-600' :
-                tx.type === 'withdrawal' ? 'text-warning-600' :
-                'text-error-600'
+                tx.type === 'earning' ? 'text-emerald-600' :
+                tx.type === 'withdrawal' ? 'text-gold-600' :
+                'text-red-600'
               }`}>
                 {tx.type === 'earning' ? '+' : '-'}{formatCurrency(Math.abs(tx.amount))}
               </p>
@@ -118,3 +118,4 @@ export default function StylistEarningsPage() {
     </div>
   )
 }
+
