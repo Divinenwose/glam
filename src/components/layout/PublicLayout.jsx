@@ -1,8 +1,10 @@
+import { Suspense } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import { ScrollProgress } from '../motion'
+import { LoadingSpinner } from '../ui'
 
 export default function PublicLayout() {
   const { pathname } = useLocation()
@@ -17,7 +19,15 @@ export default function PublicLayout() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className="flex-1"
       >
-        <Outlet />
+        <Suspense
+          fallback={
+            <div className="min-h-[60vh] flex items-center justify-center">
+              <LoadingSpinner size="lg" />
+            </div>
+          }
+        >
+          <Outlet />
+        </Suspense>
       </motion.main>
       <Footer />
     </div>

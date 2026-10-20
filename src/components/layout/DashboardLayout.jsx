@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
@@ -6,6 +6,7 @@ import {
   User, Bell, Menu, X, ChevronLeft, LogOut, HelpCircle
 } from 'lucide-react'
 import { useAuth } from '../../context/AuthContext'
+import { LoadingSpinner } from '../ui'
 
 const sidebarLinks = {
   customer: [
@@ -174,7 +175,15 @@ export default function DashboardLayout() {
 
         {/* Page content */}
         <main className="p-4 lg:p-6">
-          <Outlet />
+          <Suspense
+            fallback={
+              <div className="min-h-[60vh] flex items-center justify-center">
+                <LoadingSpinner size="lg" />
+              </div>
+            }
+        >
+            <Outlet />
+        </Suspense>
         </main>
       </div>
     </div>
