@@ -7,26 +7,28 @@ import { formatCurrency } from '../../utils/helpers'
 export function StylistCard({ stylist, index = 0 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.1 }}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ duration: 0.7, delay: (index % 4) * 0.1, ease: [0.22, 1, 0.36, 1] }}
       className="h-full"
     >
       <Link to={`/stylists/${stylist.id}`} className="block h-full">
-        <Card hover className="group h-full flex flex-col overflow-hidden border-burgundy-100/80">
+        <Card hover className="group h-full flex flex-col overflow-hidden border-gold-500/20">
           {/* Image */}
-          <div className="relative h-48 overflow-hidden">
+          <div className="relative h-56 overflow-hidden">
             <img
               src={stylist.image || 'https://images.pexels.com/photos/3993312/pexels-photo-3993312.jpeg?auto=compress&cs=tinysrgb&w=800'}
               alt={stylist.name}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[900ms] ease-out"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1B1016] via-[#1B1016]/20 to-transparent" />
             <div className="absolute top-3 right-3">
               <button
                 onClick={(e) => {
                   e.preventDefault()
                 }}
-                className="p-2 rounded-full bg-white/90 dark:bg-neutral-900/90 text-neutral-400 hover:text-pink-500 transition-colors"
+                className="p-2 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-neutral-200 hover:text-pink-400 hover:scale-110 transition-all"
               >
                 <Heart className="w-4 h-4" />
               </button>
@@ -43,12 +45,12 @@ export function StylistCard({ stylist, index = 0 }) {
 
           {/* Content */}
           <div className="p-4 flex flex-col flex-1">
-            <div className="mt-auto flex items-center justify-between gap-2 mb-2">
+            <div className="flex items-center justify-between gap-2 mb-2">
               <div>
-                <h3 className="font-semibold text-neutral-900 dark:text-white">
+                <h3 className="font-display text-lg font-semibold text-white group-hover:text-gold-300 transition-colors">
                   {stylist.name}
                 </h3>
-                <p className="text-sm text-neutral-500 dark:text-neutral-400">
+                <p className="text-sm text-neutral-400">
                   {stylist.title}
                 </p>
               </div>
@@ -58,7 +60,7 @@ export function StylistCard({ stylist, index = 0 }) {
               </div>
             </div>
 
-            <div className="flex items-center gap-1 text-sm text-neutral-500 dark:text-neutral-400 mb-3">
+            <div className="flex items-center gap-1 text-sm text-neutral-400 mb-3">
               <MapPin className="w-4 h-4" />
               {stylist.city}
             </div>
@@ -76,10 +78,10 @@ export function StylistCard({ stylist, index = 0 }) {
               )}
             </div>
 
-            <div className="flex items-center justify-between">
+            <div className="mt-auto flex items-center justify-between">
               <div>
-                <span className="text-sm text-neutral-500 dark:text-neutral-400">From</span>
-                <p className="text-lg font-semibold text-neutral-900 dark:text-white">
+                <span className="text-sm text-neutral-400">From</span>
+                <p className="text-xl font-display font-semibold text-gold-300">
                   {formatCurrency(stylist.starting_price || 50)}
                 </p>
               </div>
@@ -97,7 +99,7 @@ export function StylistCard({ stylist, index = 0 }) {
 export function StylistHorizontalCard({ stylist }) {
   return (
     <Link to={`/stylists/${stylist.id}`}>
-      <Card hover className="flex flex-col gap-4 p-4 border-burgundy-100/80 sm:flex-row">
+      <Card hover className="flex flex-col gap-4 p-4 border-gold-500/20 sm:flex-row">
         {/* Image */}
         <div className="w-full h-48 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-xl overflow-hidden flex-shrink-0">
           <img
@@ -112,7 +114,7 @@ export function StylistHorizontalCard({ stylist }) {
           <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
             <div>
               <div className="flex flex-wrap items-center gap-2">
-                <h3 className="font-semibold text-neutral-900 dark:text-white break-words">
+                <h3 className="font-semibold text-white break-words">
                   {stylist.name}
                 </h3>
                 {stylist.is_verified && (
@@ -122,7 +124,7 @@ export function StylistHorizontalCard({ stylist }) {
                   </Badge>
                 )}
               </div>
-              <p className="text-sm text-neutral-500 dark:text-neutral-400">
+              <p className="text-sm text-neutral-400">
                 {stylist.title}
               </p>
             </div>
@@ -135,7 +137,7 @@ export function StylistHorizontalCard({ stylist }) {
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3 mt-2 text-sm text-neutral-500 dark:text-neutral-400">
+          <div className="flex flex-wrap items-center gap-3 mt-2 text-sm text-neutral-400">
             <div className="flex items-center gap-1">
               <MapPin className="w-4 h-4" />
               {stylist.city}
@@ -155,7 +157,7 @@ export function StylistHorizontalCard({ stylist }) {
           </div>
 
           <div className="flex flex-col gap-2 mt-3 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-lg font-semibold text-burgundy-600">
+            <p className="text-lg font-semibold text-gold-400">
               From {formatCurrency(stylist.starting_price || 50)}
             </p>
           </div>

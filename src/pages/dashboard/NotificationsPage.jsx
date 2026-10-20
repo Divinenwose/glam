@@ -70,10 +70,10 @@ export default function NotificationsPage() {
         className="flex items-center justify-between"
       >
         <div>
-          <h1 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-2">
+          <h1 className="text-2xl font-display font-bold text-white mb-2">
             Notifications
           </h1>
-          <p className="text-neutral-600 dark:text-neutral-400">
+          <p className="text-neutral-400">
             Stay updated on your bookings, messages, and more.
           </p>
         </div>
@@ -94,27 +94,27 @@ export default function NotificationsPage() {
               transition={{ delay: index * 0.1 }}
             >
               <Card className={`p-4 ${
-                !notification.is_read ? 'border-l-4 border-l-burgundy-500 bg-burgundy-50/50 dark:bg-burgundy-900/10' : ''
+                !notification.is_read ? 'border-l-4 border-l-burgundy-500 bg-burgundy-900/10' : ''
               }`}>
                 <div className="flex items-start gap-4">
                   <div className={`p-2 rounded-lg ${
                     !notification.is_read
-                      ? 'bg-burgundy-100 dark:bg-burgundy-900/30'
-                      : 'bg-neutral-100 dark:bg-neutral-800'
+                      ? 'bg-burgundy-900/30'
+                      : 'bg-neutral-800'
                   }`}>
                     <Icon className={`w-5 h-5 ${
-                      !notification.is_read ? 'text-burgundy-600' : 'text-neutral-500'
+                      !notification.is_read ? 'text-gold-400' : 'text-neutral-400'
                     }`} />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-start justify-between gap-4">
                       <div>
                         <h3 className={`font-medium ${
-                          !notification.is_read ? 'text-neutral-900 dark:text-white' : 'text-neutral-700 dark:text-neutral-300'
+                          !notification.is_read ? 'text-white' : 'text-neutral-300'
                         }`}>
                           {notification.title}
                         </h3>
-                        <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                        <p className="text-sm text-neutral-400">
                           {notification.message}
                         </p>
                       </div>
@@ -122,7 +122,7 @@ export default function NotificationsPage() {
                         <Badge variant="primary" className="flex-shrink-0">New</Badge>
                       )}
                     </div>
-                    <p className="text-xs text-neutral-500 mt-2">
+                    <p className="text-xs text-neutral-400 mt-2">
                       {new Date(notification.created_at).toLocaleString()}
                     </p>
                   </div>

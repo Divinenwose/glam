@@ -40,10 +40,10 @@ export default function LoginPage() {
           animate={{ opacity: 1, y: 0 }}
           className="w-full max-w-md"
         >
-          <h1 className="text-3xl font-display font-bold text-neutral-900 dark:text-white ">
+          <h1 className="text-3xl font-display font-bold text-white ">
             Welcome back
           </h1>
-          <p className="text-neutral-600 dark:text-neutral-400 mb-8">
+          <p className="text-neutral-400 mb-8">
             Sign in to access your account
           </p>
 
@@ -66,7 +66,7 @@ export default function LoginPage() {
             <div>
               <div className="flex items-center justify-between mb-1.5">
                 <label className="label mb-0">Password</label>
-                <Link to="/forgot-password" className="text-sm text-burgundy-700 hover:text-burgundy-800 hover:underline">
+                <Link to="/forgot-password" className="text-sm text-gold-400 hover:text-gold-300 hover:underline">
                   Forgot password?
                 </Link>
               </div>
@@ -83,7 +83,7 @@ export default function LoginPage() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-600"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-300"
                 >
                   {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                 </button>
@@ -97,9 +97,9 @@ export default function LoginPage() {
           </form>
 
           <div className="mt-8 text-center">
-              <p className="text-neutral-600 dark:text-neutral-400">
+              <p className="text-neutral-400">
               Don't have an account?{' '}
-              <Link to="/register" className="text-burgundy-700 font-medium hover:text-burgundy-800 hover:underline">
+              <Link to="/register" className="text-gold-400 font-medium hover:text-gold-300 hover:underline">
                 Sign up
               </Link>
             </p>

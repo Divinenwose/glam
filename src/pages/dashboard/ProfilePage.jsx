@@ -30,10 +30,10 @@ export default function ProfilePage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <h1 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-2">
+        <h1 className="text-2xl font-display font-bold text-white mb-2">
           My Profile
         </h1>
-        <p className="text-neutral-600 dark:text-neutral-400">
+        <p className="text-neutral-400">
           Update your personal information and preferences.
         </p>
       </motion.div>
@@ -48,7 +48,7 @@ export default function ProfilePage() {
                 <Camera className="w-4 h-4 mr-2" />
                 Change Photo
               </Button>
-              <p className="text-xs text-neutral-500 mt-2">
+              <p className="text-xs text-neutral-400 mt-2">
                 JPG, PNG. Max size 5MB.
               </p>
             </div>
@@ -77,10 +77,10 @@ export default function ProfilePage() {
                   type="email"
                   value={formData.email}
                   disabled
-                  className="input pl-10 bg-neutral-50 dark:bg-neutral-800"
+                  className="input pl-10 bg-neutral-800"
                 />
               </div>
-              <p className="text-xs text-neutral-500 mt-1">Email can only be changed by contacting support.</p>
+              <p className="text-xs text-neutral-400 mt-1">Email can only be changed by contacting support.</p>
             </div>
 
             <div>
@@ -110,7 +110,7 @@ export default function ProfilePage() {
               </div>
             </div>
 
-            <div className="pt-6 border-t border-neutral-200 dark:border-neutral-700 flex gap-3">
+            <div className="pt-6 border-t border-neutral-700 flex gap-3">
               <Button type="submit" loading={loading}>
                 <Save className="w-4 h-4 mr-2" />
                 Save Changes

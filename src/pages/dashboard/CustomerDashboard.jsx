@@ -40,10 +40,10 @@ export default function CustomerDashboard() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <h1 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-2">
+        <h1 className="text-2xl font-display font-bold text-white mb-2">
           Welcome back!
         </h1>
-        <p className="text-neutral-600 dark:text-neutral-400">
+        <p className="text-neutral-400">
           Here's an overview of your recent activity.
         </p>
       </motion.div>
@@ -60,18 +60,18 @@ export default function CustomerDashboard() {
         {/* Upcoming Bookings */}
         <div className="lg:col-span-2">
           <Card>
-            <div className="p-4 border-b border-neutral-200 dark:border-neutral-800 flex items-center justify-between">
-              <h2 className="font-semibold text-neutral-900 dark:text-white">Upcoming Bookings</h2>
-              <Link to="/bookings" className="text-sm text-burgundy-700 hover:text-burgundy-800 hover:underline">View all</Link>
+            <div className="p-4 border-b border-neutral-800 flex items-center justify-between">
+              <h2 className="font-semibold text-white">Upcoming Bookings</h2>
+              <Link to="/bookings" className="text-sm text-gold-400 hover:text-gold-300 hover:underline">View all</Link>
             </div>
             <div className="p-4 space-y-4">
               {upcomingBookings.map((booking) => (
                 <BookingCard key={booking.id} booking={booking} showActions={false} />
               ))}
               {upcomingBookings.length === 0 && (
-                  <div className="py-8 text-center text-neutral-500">
+                  <div className="py-8 text-center text-neutral-400">
                   No upcoming bookings.{' '}
-                  <Link to="/stylists" className="text-burgundy-700 hover:text-burgundy-800 hover:underline">Find a stylist</Link>
+                  <Link to="/stylists" className="text-gold-400 hover:text-gold-300 hover:underline">Find a stylist</Link>
                 </div>
               )}
             </div>
@@ -82,17 +82,17 @@ export default function CustomerDashboard() {
         <div className="space-y-6">
           {/* Quick Actions */}
           <Card className="p-4">
-            <h3 className="font-medium text-neutral-900 dark:text-white mb-4">Quick Actions</h3>
+            <h3 className="font-medium text-white mb-4">Quick Actions</h3>
             <div className="space-y-2">
-              <Link to="/stylists" className="flex items-center gap-3 p-3 rounded-lg bg-burgundy-50 dark:bg-burgundy-900/20 text-burgundy-700 dark:text-burgundy-400 hover:bg-burgundy-100/50">
+              <Link to="/stylists" className="flex items-center gap-3 p-3 rounded-lg bg-burgundy-900/20 text-burgundy-400 hover:bg-burgundy-900/40">
                 <Calendar className="w-5 h-5" />
                 Book an Appointment
               </Link>
-              <Link to="/favorites" className="flex items-center gap-3 p-3 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700">
+              <Link to="/favorites" className="flex items-center gap-3 p-3 rounded-lg bg-neutral-800 text-neutral-300 hover:bg-neutral-700">
                 <Heart className="w-5 h-5" />
                 View Favorites
               </Link>
-              <Link to="/messages" className="flex items-center gap-3 p-3 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700">
+              <Link to="/messages" className="flex items-center gap-3 p-3 rounded-lg bg-neutral-800 text-neutral-300 hover:bg-neutral-700">
                 <MessageSquare className="w-5 h-5" />
                 Messages
               </Link>
@@ -101,8 +101,8 @@ export default function CustomerDashboard() {
 
           {/* Recent Reviews */}
           <Card className="p-4">
-            <h3 className="font-medium text-neutral-900 dark:text-white mb-4">Recent Reviews Left</h3>
-            <div className="text-center py-8 text-neutral-500">
+            <h3 className="font-medium text-white mb-4">Recent Reviews Left</h3>
+            <div className="text-center py-8 text-neutral-400">
               No reviews yet. After your appointments, you can leave reviews for stylists.
             </div>
           </Card>

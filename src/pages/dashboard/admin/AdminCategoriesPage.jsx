@@ -12,10 +12,10 @@ export default function AdminCategoriesPage() {
         className="flex items-center justify-between"
       >
         <div>
-          <h1 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-2">
+          <h1 className="text-2xl font-display font-bold text-white mb-2">
             Service Categories
           </h1>
-          <p className="text-neutral-600 dark:text-neutral-400">
+          <p className="text-neutral-400">
             Manage hair service categories displayed on the platform.
           </p>
         </div>
@@ -31,7 +31,7 @@ export default function AdminCategoriesPage() {
           <Card key={category.id} className="p-4">
             <div className="flex items-center justify-between">
               <div>
-                <h3 className="font-medium text-neutral-900 dark:text-white">{category.name}</h3>
+                <h3 className="font-medium text-white">{category.name}</h3>
                 <Badge variant="secondary" className="mt-2">{category.id}</Badge>
               </div>
               <div className="flex gap-2">

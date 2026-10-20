@@ -79,16 +79,16 @@ export default function RegisterPage() {
         >
           {/* Progress indicator */}
           <div className="flex items-center gap-2 mb-8">
-            <div className={`flex-1 h-1 rounded ${step >= 1 ? 'bg-burgundy-600' : 'bg-neutral-200 dark:bg-neutral-700'}`} />
-            <div className={`flex-1 h-1 rounded ${step >= 2 ? 'bg-burgundy-600' : 'bg-neutral-200 dark:bg-neutral-700'}`} />
+            <div className={`flex-1 h-1 rounded ${step >= 1 ? 'bg-burgundy-600' : 'bg-neutral-700'}`} />
+            <div className={`flex-1 h-1 rounded ${step >= 2 ? 'bg-burgundy-600' : 'bg-neutral-700'}`} />
           </div>
 
           {step === 1 ? (
             <>
-              <h1 className="text-3xl font-display font-bold text-neutral-900 dark:text-white mb-2">
+              <h1 className="text-3xl font-display font-bold text-white mb-2">
                 Choose Your Role
               </h1>
-              <p className="text-neutral-600 dark:text-neutral-400 mb-8">
+              <p className="text-neutral-400 mb-8">
                 Select how you want to use GlamBook
               </p>
 
@@ -100,21 +100,21 @@ export default function RegisterPage() {
                     onClick={() => handleRoleSelect(role.id)}
                     className={`w-full p-4 rounded-xl border-2 text-left transition-all ${
                       formData.role === role.id
-                        ? 'border-burgundy-600 bg-burgundy-50 dark:bg-burgundy-900/20'
-                        : 'border-neutral-200 dark:border-neutral-700 hover:border-neutral-300 dark:hover:border-neutral-600'
+                        ? 'border-gold-500/50 bg-burgundy-900/20'
+                        : 'border-neutral-700 hover:border-neutral-600'
                     }`}
                   >
                     <div className="flex items-center justify-between">
                       <div>
-                        <h3 className="font-semibold text-neutral-900 dark:text-white">
+                        <h3 className="font-semibold text-white">
                           {role.title}
                         </h3>
-                        <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                        <p className="text-sm text-neutral-400">
                           {role.description}
                         </p>
                       </div>
                       {formData.role === role.id && (
-                        <Check className="w-5 h-5 text-burgundy-600" />
+                        <Check className="w-5 h-5 text-gold-400" />
                       )}
                     </div>
                   </button>
@@ -128,10 +128,10 @@ export default function RegisterPage() {
             </>
           ) : (
             <>
-              <h1 className="text-3xl font-display font-bold text-neutral-900 dark:text-white mb-2">
+              <h1 className="text-3xl font-display font-bold text-white mb-2">
                 Create Your Account
               </h1>
-              <p className="text-neutral-600 dark:text-neutral-400 mb-8">
+              <p className="text-neutral-400 mb-8">
                 {formData.role === 'stylist' ? 'Set up your stylist profile' : 'Fill in your details to get started'}
               </p>
 
@@ -223,15 +223,15 @@ export default function RegisterPage() {
                     type="checkbox"
                     checked={formData.agreeTerms}
                     onChange={(e) => setFormData({ ...formData, agreeTerms: e.target.checked })}
-                    className="mt-1 w-4 h-4 rounded border-neutral-300 text-burgundy-600 focus:ring-burgundy-500"
+                    className="mt-1 w-4 h-4 rounded border-neutral-600 text-gold-400 focus:ring-burgundy-500"
                   />
-                  <span className="text-sm text-neutral-600 dark:text-neutral-400">
+                  <span className="text-sm text-neutral-400">
                     I agree to the{' '}
-                    <Link to="/terms" className="text-burgundy-700 hover:text-burgundy-800 hover:underline">
+                    <Link to="/terms" className="text-gold-400 hover:text-gold-300 hover:underline">
                       Terms of Service
                     </Link>{' '}
                     and{' '}
-                    <Link to="/privacy" className="text-burgundy-700 hover:text-burgundy-800 hover:underline">
+                    <Link to="/privacy" className="text-gold-400 hover:text-gold-300 hover:underline">
                       Privacy Policy
                     </Link>
                   </span>
@@ -246,7 +246,7 @@ export default function RegisterPage() {
               <button
                 type="button"
                 onClick={() => setStep(1)}
-                className="mt-4 w-full text-center text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
+                className="mt-4 w-full text-center text-sm text-neutral-400 hover:text-white"
               >
                 Back to role selection
               </button>
@@ -254,9 +254,9 @@ export default function RegisterPage() {
           )}
 
           <div className="mt-8 text-center">
-              <p className="text-neutral-600 dark:text-neutral-400">
+              <p className="text-neutral-400">
               Already have an account?{' '}
-              <Link to="/login" className="text-burgundy-700 font-medium hover:text-burgundy-800 hover:underline">
+              <Link to="/login" className="text-gold-400 font-medium hover:text-gold-300 hover:underline">
                 Sign in
               </Link>
             </p>

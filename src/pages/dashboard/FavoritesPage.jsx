@@ -46,10 +46,10 @@ export default function FavoritesPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <h1 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-2">
+        <h1 className="text-2xl font-display font-bold text-white mb-2">
           Favorite Stylists
         </h1>
-        <p className="text-neutral-600 dark:text-neutral-400">
+        <p className="text-neutral-400">
           Stylists you've saved for easy access.
         </p>
       </motion.div>
@@ -70,7 +70,7 @@ export default function FavoritesPage() {
       {favorites.length === 0 && (
         <Card className="p-12 text-center">
           <Heart className="w-12 h-12 text-neutral-400 mx-auto mb-4" />
-          <p className="text-neutral-600 dark:text-neutral-400">
+          <p className="text-neutral-400">
             No favorites yet. Browse stylists and save your favorites!
           </p>
         </Card>

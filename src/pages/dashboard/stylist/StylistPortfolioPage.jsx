@@ -32,10 +32,10 @@ export default function StylistPortfolioPage() {
         className="flex items-center justify-between"
       >
         <div>
-          <h1 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-2">
+          <h1 className="text-2xl font-display font-bold text-white mb-2">
             Portfolio
           </h1>
-          <p className="text-neutral-600 dark:text-neutral-400">
+          <p className="text-neutral-400">
             Showcase your best work to attract new clients.
           </p>
         </div>
@@ -46,12 +46,12 @@ export default function StylistPortfolioPage() {
       </motion.div>
 
       {/* Upload Zone */}
-      <Card className="p-8 border-2 border-dashed border-neutral-300 dark:border-neutral-700 text-center">
+      <Card className="p-8 border-2 border-dashed border-neutral-700 text-center">
         <Upload className="w-12 h-12 text-neutral-400 mx-auto mb-4" />
-        <p className="text-neutral-600 dark:text-neutral-400 mb-2">
+        <p className="text-neutral-400 mb-2">
           Drag and drop images here, or click to browse
         </p>
-        <p className="text-sm text-neutral-500">PNG, JPG up to 5MB each</p>
+        <p className="text-sm text-neutral-400">PNG, JPG up to 5MB each</p>
       </Card>
 
       {/* Gallery Grid */}
@@ -70,13 +70,13 @@ export default function StylistPortfolioPage() {
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
-              <Button variant="ghost" size="icon" className="bg-white/90 text-neutral-900">
+              <Button variant="ghost" size="icon" className="bg-neutral-900/90 text-neutral-50">
                 <Camera className="w-4 h-4" />
               </Button>
               <Button
                 variant="ghost"
                 size="icon"
-                className="bg-white/90 text-red-500"
+                className="bg-neutral-900/90 text-red-500"
                 onClick={() => handleDelete(url)}
               >
                 <Trash2 className="w-4 h-4" />
@@ -89,7 +89,7 @@ export default function StylistPortfolioPage() {
       {images.length === 0 && (
         <Card className="p-12 text-center">
           <Camera className="w-12 h-12 text-neutral-400 mx-auto mb-4" />
-          <p className="text-neutral-600 dark:text-neutral-400">
+          <p className="text-neutral-400">
             No portfolio photos yet. Upload your best work to attract clients!
           </p>
         </Card>

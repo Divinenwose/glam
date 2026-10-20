@@ -52,18 +52,18 @@ export default function MessagesPage() {
         animate={{ opacity: 1, y: 0 }}
         className="lg:hidden"
       >
-        <h1 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-2">
+        <h1 className="text-2xl font-display font-bold text-white mb-2">
           Messages
         </h1>
       </motion.div>
 
-      <div className="bg-white dark:bg-neutral-900 rounded-2xl shadow-soft overflow-hidden">
+      <div className="bg-neutral-900 rounded-2xl shadow-soft overflow-hidden">
         <div className="grid lg:grid-cols-3 h-[70vh]">
           {/* Conversations List */}
-          <div className={`lg:col-span-1 border-r border-neutral-200 dark:border-neutral-700 ${
+          <div className={`lg:col-span-1 border-r border-neutral-700 ${
             showConversations ? 'block' : 'hidden lg:block'
           }`}>
-            <div className="p-4 border-b border-neutral-200 dark:border-neutral-700">
+            <div className="p-4 border-b border-neutral-700">
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400" />
                 <input
@@ -81,21 +81,21 @@ export default function MessagesPage() {
                     setActiveConversation(conv)
                     setShowConversations(false)
                   }}
-                  className={`w-full p-4 text-left flex items-center gap-3 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors ${
-                    activeConversation?.id === conv.id ? 'bg-burgundy-50 dark:bg-burgundy-900/10' : ''
+                  className={`w-full p-4 text-left flex items-center gap-3 hover:bg-neutral-800 transition-colors ${
+                    activeConversation?.id === conv.id ? 'bg-burgundy-900/10' : ''
                   }`}
                 >
                   <Avatar name={conv.with.name} src={conv.with.avatar_url} />
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between">
-                      <h3 className="font-medium text-neutral-900 dark:text-white truncate">
+                      <h3 className="font-medium text-white truncate">
                         {conv.with.name}
                       </h3>
-                      <span className="text-xs text-neutral-500">
+                      <span className="text-xs text-neutral-400">
                         {new Date(conv.last_message_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
                       </span>
                     </div>
-                    <p className="text-sm text-neutral-500 truncate">{conv.last_message}</p>
+                    <p className="text-sm text-neutral-400 truncate">{conv.last_message}</p>
                   </div>
                   {conv.unread > 0 && (
                     <span className="px-2 py-0.5 text-xs bg-burgundy-600 text-white rounded-full">
@@ -112,20 +112,20 @@ export default function MessagesPage() {
             {activeConversation ? (
               <>
                 {/* Chat Header */}
-                <div className="p-4 border-b border-neutral-200 dark:border-neutral-700 flex items-center justify-between">
+                <div className="p-4 border-b border-neutral-700 flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <button
                       onClick={() => setShowConversations(true)}
-                      className="lg:hidden p-2 -ml-2 text-neutral-600"
+                      className="lg:hidden p-2 -ml-2 text-neutral-300"
                     >
                       <ChevronLeft className="w-5 h-5" />
                     </button>
                     <Avatar name={activeConversation.with.name} src={activeConversation.with.avatar_url} />
                     <div>
-                      <h3 className="font-medium text-neutral-900 dark:text-white">
+                      <h3 className="font-medium text-white">
                         {activeConversation.with.name}
                       </h3>
-                      <p className="text-xs text-emerald-600">Online</p>
+                      <p className="text-xs text-emerald-400">Online</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
@@ -148,7 +148,7 @@ export default function MessagesPage() {
                         className={`max-w-[80%] lg:max-w-[60%] p-3 rounded-2xl ${
                           msg.sender_id === 'you'
                             ? 'bg-burgundy-600 text-white rounded-br-none'
-                            : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white rounded-bl-none'
+                            : 'bg-neutral-800 text-white rounded-bl-none'
                         }`}
                       >
                         {msg.content}
@@ -161,7 +161,7 @@ export default function MessagesPage() {
                 </div>
 
                 {/* Message Input */}
-                <div className="p-4 border-t border-neutral-200 dark:border-neutral-700">
+                <div className="p-4 border-t border-neutral-700">
                   <div className="flex items-center gap-2">
                     <Button variant="ghost" size="icon">
                       <Paperclip className="w-5 h-5" />
@@ -181,7 +181,7 @@ export default function MessagesPage() {
                 </div>
               </>
             ) : (
-              <div className="flex-1 flex items-center justify-center text-neutral-500">
+              <div className="flex-1 flex items-center justify-center text-neutral-400">
                 Select a conversation to start messaging.
               </div>
             )}

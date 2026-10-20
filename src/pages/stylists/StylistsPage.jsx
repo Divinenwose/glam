@@ -204,9 +204,9 @@ export default function StylistsPage() {
   const activeFilterCount = Object.values(filters).filter(Boolean).length
 
   return (
-    <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 pb-12">
+    <div className="min-h-screen bg-neutral-950 pb-12">
       {/* Search Header */}
-      <div className="bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800">
+      <div className="bg-neutral-900 border-b border-neutral-800">
         <div className="container-custom py-6">
           <div className="flex flex-col gap-3 xl:flex-row xl:items-center">
             {/* Search Input */}
@@ -259,7 +259,7 @@ export default function StylistsPage() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="mt-6 pt-6 border-t border-neutral-200 dark:border-neutral-700"
+              className="mt-6 pt-6 border-t border-neutral-700"
             >
               <div className="grid gap-4 mb-6 sm:grid-cols-2 xl:grid-cols-4">
                 <div>
@@ -308,18 +308,18 @@ export default function StylistsPage() {
                         type="checkbox"
                         checked={filters.homeService}
                         onChange={(e) => handleFilterChange('homeService', e.target.checked)}
-                        className="w-4 h-4 text-burgundy-600 border-neutral-300 rounded"
+                        className="w-4 h-4 text-gold-400 border-neutral-600 rounded"
                       />
-                      <span className="text-neutral-700 dark:text-neutral-300">Home Service</span>
+                      <span className="text-neutral-300">Home Service</span>
                     </label>
                     <label className="flex items-center gap-2">
                       <input
                         type="checkbox"
                         checked={filters.salonService}
                         onChange={(e) => handleFilterChange('salonService', e.target.checked)}
-                        className="w-4 h-4 text-burgundy-600 border-neutral-300 rounded"
+                        className="w-4 h-4 text-gold-400 border-neutral-600 rounded"
                       />
-                      <span className="text-neutral-700 dark:text-neutral-300">Salon Visit</span>
+                      <span className="text-neutral-300">Salon Visit</span>
                     </label>
                   </div>
                 </div>
@@ -339,10 +339,10 @@ export default function StylistsPage() {
       <div className="container-custom mt-8">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between mb-6">
           <div>
-            <h1 className="text-2xl font-display font-bold text-neutral-900 dark:text-white">
+            <h1 className="text-2xl font-display font-bold text-white">
               Find Stylists
             </h1>
-            <p className="text-neutral-600 dark:text-neutral-400">
+            <p className="text-neutral-400">
               {loading ? 'Searching...' : `${stylists.length} stylists found`}
             </p>
           </div>
@@ -358,11 +358,11 @@ export default function StylistsPage() {
 
         {loading ? (
           <div className="flex items-center justify-center py-12">
-            <div className="animate-spin w-8 h-8 border-2 border-burgundy-600 border-t-transparent rounded-full" />
+            <div className="animate-spin w-8 h-8 border-2 border-gold-500/50 border-t-transparent rounded-full" />
           </div>
         ) : stylists.length === 0 ? (
           <Card className="p-12 text-center">
-            <p className="text-neutral-600 dark:text-neutral-400">
+            <p className="text-neutral-400">
               No stylists found matching your criteria. Try adjusting your filters.
             </p>
           </Card>

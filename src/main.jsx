@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import App from './App'
-import { ThemeProvider } from './context/ThemeContext'
 import { AuthProvider } from './context/AuthContext'
 import { Toaster } from 'react-hot-toast'
 import './index.css'
@@ -10,8 +9,7 @@ import './index.css'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
-      <ThemeProvider>
-        <AuthProvider>
+      <AuthProvider>
           <App />
           <Toaster
             position="top-right"
@@ -20,12 +18,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               style: {
                 background: 'var(--toast-bg)',
                 color: 'var(--toast-color)',
+                border: '1px solid rgba(212, 175, 55, 0.3)',
+                borderRadius: '14px',
               },
-              className: 'dark:bg-neutral-800 dark:text-neutral-100',
             }}
           />
-        </AuthProvider>
-      </ThemeProvider>
+      </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>,
 )

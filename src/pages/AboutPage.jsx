@@ -57,17 +57,21 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="section bg-[var(--background)]">
-        <div className="container-custom">
+      <section className="section gradient-luxury noise overflow-hidden relative border-b border-gold-500/25">
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute -top-32 -right-24 w-[420px] h-[420px] rounded-full bg-burgundy-500/30 blur-[110px] animate-drift" />
+          <div className="absolute -bottom-40 -left-24 w-[380px] h-[380px] rounded-full bg-gold-500/15 blur-[110px] animate-drift-slow" />
+        </div>
+        <div className="container-custom relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-neutral-900 dark:text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold text-white mb-6">
               Our Story
             </h1>
-            <p className="text-lg text-neutral-600 dark:text-neutral-400">
+            <p className="text-lg text-neutral-400">
               GlamBook was born from a simple idea: everyone deserves access to skilled hairstylists who understand their unique hair needs. We're building the bridge between talent and clients.
             </p>
           </motion.div>
@@ -83,17 +87,17 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-burgundy-100 dark:bg-burgundy-900/30 text-burgundy-700 dark:text-burgundy-400 text-sm font-medium mb-4">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-burgundy-900/30 text-burgundy-400 text-sm font-medium mb-4">
                 <Target className="w-4 h-4" />
                 Our Mission
               </div>
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 dark:text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-display font-semibold text-white mb-6">
                 Empowering Beauty Professionals Everywhere
               </h2>
-              <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-6">
+              <p className="text-lg text-neutral-400 mb-6">
                 We believe that talented hairstylists deserve a platform where they can showcase their skills, grow their business, and connect with clients who appreciate their craft.
               </p>
-              <p className="text-neutral-600 dark:text-neutral-400">
+              <p className="text-neutral-400">
                 At the same time, clients deserve access to verified, skilled professionals who can bring their hair visions to life. We make this connection seamless, safe, and satisfying for everyone.
               </p>
             </motion.div>
@@ -103,17 +107,17 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold-100 dark:bg-gold-900/30 text-gold-700 dark:text-gold-400 text-sm font-medium mb-4">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold-900/30 text-gold-400 text-sm font-medium mb-4">
                 <Eye className="w-4 h-4" />
                 Our Vision
               </div>
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 dark:text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-display font-semibold text-white mb-6">
                 A World Where Beauty Has No Barriers
               </h2>
-              <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-6">
+              <p className="text-lg text-neutral-400 mb-6">
                 We envision a future where finding the perfect hairstylist is as easy as a tap on your phone, regardless of where you live or your hair type.
               </p>
-              <p className="text-neutral-600 dark:text-neutral-400">
+              <p className="text-neutral-400">
                 By breaking down barriers and creating equal opportunities, we're building a more inclusive and connected beauty community.
               </p>
             </motion.div>
@@ -122,7 +126,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats */}
-      <section className="py-16 bg-burgundy-700 dark:bg-burgundy-900">
+      <section className="py-16 gradient-beauty noise relative overflow-hidden border-y border-gold-500/25">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -134,8 +138,8 @@ export default function AboutPage() {
                 transition={{ delay: index * 0.1 }}
                 className="text-center text-white"
               >
-                <div className="text-4xl md:text-5xl font-bold mb-2">{stat.value}</div>
-                <div className="text-burgundy-200">{stat.label}</div>
+                <div className="text-4xl md:text-5xl font-display font-semibold mb-2 text-gradient">{stat.value}</div>
+                <div className="text-gold-200/90 tracking-wide">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -151,10 +155,10 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
               Our Core Values
             </h2>
-            <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
+            <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
               These principles guide everything we do at GlamBook.
             </p>
           </motion.div>
@@ -167,15 +171,15 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white dark:bg-neutral-800 rounded-2xl p-6 text-center"
+                className="bg-neutral-800 rounded-2xl p-6 text-center"
               >
-                <div className="inline-flex p-3 rounded-xl bg-burgundy-50 dark:bg-burgundy-900/20 mb-4">
-                  <value.icon className="w-6 h-6 text-burgundy-600 dark:text-burgundy-400" />
+                <div className="inline-flex p-3 rounded-xl bg-burgundy-900/20 mb-4">
+                  <value.icon className="w-6 h-6 text-burgundy-400" />
                 </div>
-                <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-2">
+                <h3 className="text-lg font-semibold text-white mb-2">
                   {value.title}
                 </h3>
-                <p className="text-neutral-600 dark:text-neutral-400">
+                <p className="text-neutral-400">
                   {value.description}
                 </p>
               </motion.div>
@@ -185,7 +189,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="section bg-neutral-50 dark:bg-neutral-900">
+      <section className="section-alt">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -193,10 +197,10 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
               Meet Our Team
             </h2>
-            <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
+            <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
               The passionate people behind GlamBook.
             </p>
           </motion.div>
@@ -209,7 +213,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white dark:bg-neutral-800 rounded-2xl overflow-hidden"
+                className="bg-neutral-800 rounded-2xl overflow-hidden"
               >
                 <img
                   src={member.image}
@@ -217,13 +221,13 @@ export default function AboutPage() {
                   className="w-full h-64 object-cover"
                 />
                 <div className="p-6 text-center">
-                  <h3 className="text-lg font-semibold text-neutral-900 dark:text-white">
+                  <h3 className="text-lg font-semibold text-white">
                     {member.name}
                   </h3>
-                  <p className="text-burgundy-600 dark:text-burgundy-400 text-sm mb-2">
+                  <p className="text-burgundy-400 text-sm mb-2">
                     {member.role}
                   </p>
-                  <p className="text-neutral-600 dark:text-neutral-400 text-sm">
+                  <p className="text-neutral-400 text-sm">
                     {member.bio}
                   </p>
                 </div>
@@ -242,10 +246,10 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="max-w-2xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
               Ready to Join Us?
             </h2>
-            <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-8">
+            <p className="text-lg text-neutral-400 mb-8">
               Whether you're looking for a stylist or ready to grow your business, we're here for you.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

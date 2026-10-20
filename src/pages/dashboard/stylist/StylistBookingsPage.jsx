@@ -55,24 +55,24 @@ export default function StylistBookingsPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <h1 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-2">
+        <h1 className="text-2xl font-display font-bold text-white mb-2">
           Bookings
         </h1>
-        <p className="text-neutral-600 dark:text-neutral-400">
+        <p className="text-neutral-400">
           Manage your appointments and booking requests.
         </p>
       </motion.div>
 
       {/* Tabs */}
-      <div className="border-b border-neutral-200 dark:border-neutral-700">
+      <div className="border-b border-neutral-700">
         {['upcoming', 'completed', 'cancelled'].map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
             className={`pb-4 px-1 mr-8 capitalize font-medium transition-colors ${
               activeTab === tab
-                ? 'text-burgundy-600 border-b-2 border-burgundy-600'
-                : 'text-neutral-600 dark:text-neutral-400'
+                ? 'text-gold-400 border-b-2 border-gold-500/50'
+                : 'text-neutral-400'
             }`}
           >
             {tab}
@@ -96,7 +96,7 @@ export default function StylistBookingsPage() {
 
       {filteredBookings.length === 0 && (
         <Card className="p-12 text-center">
-          <p className="text-neutral-600 dark:text-neutral-400">
+          <p className="text-neutral-400">
             No bookings in this category.
           </p>
         </Card>
