@@ -37,33 +37,37 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-burgundy-100/70 bg-neutral-900 dark:border-burgundy-900/50 dark:bg-[#1A1614] text-neutral-200 dark:text-neutral-300">
-      <div className="container-custom py-12 lg:py-16">
+    <footer className="relative overflow-hidden border-t border-gold-500/25 text-neutral-300 bg-[#0A0508]">
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div className="absolute -top-32 left-1/4 w-[520px] h-[520px] rounded-full bg-burgundy-700/25 blur-3xl animate-drift" />
+        <div className="absolute -bottom-40 right-0 w-[420px] h-[420px] rounded-full bg-gold-500/10 blur-3xl animate-drift-slow" />
+      </div>
+      <div className="container-custom relative py-14 lg:py-20">
         {/* Main Footer Content */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
           {/* Brand Column */}
           <div className="col-span-2 lg:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="p-2 bg-burgundy-700 rounded-xl">
-                <Scissors className="w-5 h-5 text-white" />
+              <div className="p-2.5 rounded-xl bg-gradient-to-br from-gold-300 via-gold-500 to-gold-700">
+                <Scissors className="w-5 h-5 text-burgundy-950" />
               </div>
-              <span className="text-xl font-display font-semibold text-white dark:text-white">
-                GlamBook
+              <span className="text-2xl font-display font-semibold text-white">
+                Glam<span className="text-gradient">Book</span>
               </span>
             </Link>
-            <p className="text-neutral-300 dark:text-neutral-400 mb-6 max-w-xs">
+            <p className="text-neutral-400 mb-6 max-w-xs">
               Connecting beauty professionals with clients seeking exceptional hairstyling services.
             </p>
             <div className="space-y-2">
-              <a href="mailto:hello@glambook.com" className="flex items-center gap-2 text-sm text-neutral-300 dark:text-neutral-400 hover:text-gold-400 dark:hover:text-gold-300">
+              <a href="mailto:hello@glambook.com" className="flex items-center gap-2 text-sm text-neutral-400 hover:text-gold-300">
                 <Mail className="w-4 h-4" />
                 hello@glambook.com
               </a>
-              <a href="tel:+1234567890" className="flex items-center gap-2 text-sm text-neutral-300 dark:text-neutral-400 hover:text-gold-400 dark:hover:text-gold-300">
+              <a href="tel:+1234567890" className="flex items-center gap-2 text-sm text-neutral-400 hover:text-gold-300">
                 <Phone className="w-4 h-4" />
                 (123) 456-7890
               </a>
-              <div className="flex items-center gap-2 text-sm text-neutral-300 dark:text-neutral-400">
+              <div className="flex items-center gap-2 text-sm text-neutral-400">
                 <MapPin className="w-4 h-4" />
                 New York, NY 10001
               </div>
@@ -72,13 +76,13 @@ export default function Footer() {
 
           {/* Company Links */}
           <div>
-            <h3 className="font-semibold text-white dark:text-white mb-4">Company</h3>
+            <h3 className="font-display text-lg text-gold-300 mb-5">Company</h3>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-sm text-neutral-300 dark:text-neutral-400 hover:text-gold-400 dark:hover:text-gold-300"
+                    className="text-sm text-neutral-400 hover:text-gold-300 hover:translate-x-1 inline-block transition-all duration-300"
                   >
                     {link.name}
                   </Link>
@@ -89,13 +93,13 @@ export default function Footer() {
 
           {/* Support Links */}
           <div>
-            <h3 className="font-semibold text-neutral-900 dark:text-white mb-4">Support</h3>
+            <h3 className="font-display text-lg text-gold-300 mb-5">Support</h3>
             <ul className="space-y-2">
               {footerLinks.support.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-sm text-neutral-300 dark:text-neutral-400 hover:text-gold-400 dark:hover:text-gold-300"
+                    className="text-sm text-neutral-400 hover:text-gold-300 hover:translate-x-1 inline-block transition-all duration-300"
                   >
                     {link.name}
                   </Link>
@@ -106,13 +110,13 @@ export default function Footer() {
 
           {/* Legal Links */}
           <div>
-            <h3 className="font-semibold text-neutral-900 dark:text-white mb-4">Legal</h3>
+            <h3 className="font-display text-lg text-gold-300 mb-5">Legal</h3>
             <ul className="space-y-2">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-sm text-neutral-300 dark:text-neutral-400 hover:text-gold-400 dark:hover:text-gold-300"
+                    className="text-sm text-neutral-400 hover:text-gold-300 hover:translate-x-1 inline-block transition-all duration-300"
                   >
                     {link.name}
                   </Link>
@@ -123,13 +127,13 @@ export default function Footer() {
 
           {/* Community Links */}
           <div>
-            <h3 className="font-semibold text-neutral-900 dark:text-white mb-4">Community</h3>
+            <h3 className="font-display text-lg text-gold-300 mb-5">Community</h3>
             <ul className="space-y-2">
               {footerLinks.community.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-sm text-neutral-300 dark:text-neutral-400 hover:text-gold-400 dark:hover:text-gold-300"
+                    className="text-sm text-neutral-400 hover:text-gold-300 hover:translate-x-1 inline-block transition-all duration-300"
                   >
                     {link.name}
                   </Link>
@@ -140,13 +144,13 @@ export default function Footer() {
         </div>
 
         {/* Newsletter */}
-          <div className="mt-12 pt-8 border-t border-neutral-800 dark:border-burgundy-900/50">
+          <div className="mt-12 pt-8 border-t border-gold-500/15">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
             <div>
-              <h3 className="font-semibold text-white dark:text-white mb-1">
+              <h3 className="font-display text-2xl text-white mb-1">
                 Subscribe to our newsletter
               </h3>
-              <p className="text-sm text-neutral-400 dark:text-neutral-400">
+              <p className="text-sm text-neutral-400">
                 Get the latest updates, tips, and exclusive offers.
               </p>
             </div>
@@ -164,9 +168,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-8 pt-8 border-t border-neutral-800 dark:border-burgundy-900/50">
+        <div className="mt-8 pt-8 border-t border-gold-500/15">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <p className="text-sm text-neutral-400 dark:text-neutral-400">
+            <p className="text-sm text-neutral-400">
               &copy; {new Date().getFullYear()} GlamBook. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
@@ -174,7 +178,7 @@ export default function Footer() {
                 <a
                   key={social.name}
                   href={social.href}
-                  className="p-2 rounded-lg text-neutral-300 dark:text-neutral-400 hover:text-gold-400 dark:hover:text-gold-300 hover:bg-neutral-800 dark:hover:bg-burgundy-900/30 transition-colors"
+                  className="p-2.5 rounded-xl border border-gold-500/20 text-neutral-400 hover:text-burgundy-950 hover:bg-gold-400 hover:border-gold-400 hover:-translate-y-1 transition-all duration-300"
                   aria-label={social.name}
                 >
                   <social.icon className="w-5 h-5" />

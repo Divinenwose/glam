@@ -62,17 +62,21 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="section bg-[var(--background)]">
-        <div className="container-custom">
+      <section className="section gradient-luxury noise overflow-hidden relative border-b border-gold-500/25">
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute -top-32 -right-24 w-[420px] h-[420px] rounded-full bg-burgundy-500/30 blur-[110px] animate-drift" />
+          <div className="absolute -bottom-40 -left-24 w-[380px] h-[380px] rounded-full bg-gold-500/15 blur-[110px] animate-drift-slow" />
+        </div>
+        <div className="container-custom relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h1 className="text-4xl md:text-5xl font-display font-bold text-neutral-900 dark:text-white mb-6">
+            <h1 className="text-4xl md:text-5xl font-display font-semibold text-white mb-6">
               Get in Touch
             </h1>
-            <p className="text-lg text-neutral-600 dark:text-neutral-400">
+            <p className="text-lg text-neutral-400">
               Have questions, feedback, or need help? We'd love to hear from you. Our team is here to assist.
             </p>
           </motion.div>
@@ -80,7 +84,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Methods */}
-      <section className="py-12 bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800">
+      <section className="py-12 bg-neutral-900 border-b border-neutral-800">
         <div className="container-custom">
           <div className="grid md:grid-cols-3 gap-6">
             {contactMethods.map((method, index) => (
@@ -91,16 +95,16 @@ export default function ContactPage() {
                 transition={{ delay: index * 0.1 }}
               >
                 <Card className="p-6 text-center h-full">
-                  <div className="inline-flex p-3 rounded-xl bg-burgundy-50 dark:bg-burgundy-900/20 mb-4">
-                    <method.icon className="w-6 h-6 text-burgundy-600 dark:text-burgundy-400" />
+                  <div className="inline-flex p-3 rounded-xl bg-burgundy-900/20 mb-4">
+                    <method.icon className="w-6 h-6 text-burgundy-400" />
                   </div>
-                  <h3 className="font-semibold text-neutral-900 dark:text-white mb-1">
+                  <h3 className="font-semibold text-white mb-1">
                     {method.title}
                   </h3>
-                  <p className="text-burgundy-600 dark:text-burgundy-400 font-medium mb-2">
+                  <p className="text-burgundy-400 font-medium mb-2">
                     {method.value}
                   </p>
-                  <p className="text-sm text-neutral-500 dark:text-neutral-500">
+                  <p className="text-sm text-neutral-500">
                     {method.description}
                   </p>
                 </Card>
@@ -120,7 +124,7 @@ export default function ContactPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-6">
+              <h2 className="text-2xl font-display font-semibold text-white mb-6">
                 Send Us a Message
               </h2>
 
@@ -202,12 +206,12 @@ export default function ContactPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <Card className="p-8 h-full bg-neutral-50 dark:bg-neutral-800/50 border-0">
-                <MessageCircle className="w-12 h-12 text-burgundy-600 mb-6" />
-                <h2 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-4">
+              <Card className="p-8 h-full bg-neutral-800/50 border-0">
+                <MessageCircle className="w-12 h-12 text-gold-400 mb-6" />
+                <h2 className="text-2xl font-display font-bold text-white mb-4">
                   Need Quick Help?
                 </h2>
-                <p className="text-neutral-600 dark:text-neutral-400 mb-6">
+                <p className="text-neutral-400 mb-6">
                   Our help center has answers to the most commonly asked questions. You might find what you're looking for there.
                 </p>
 
@@ -215,8 +219,8 @@ export default function ContactPage() {
                   <div className="flex items-start gap-3">
                     <Clock className="w-5 h-5 text-emerald-500 mt-0.5" />
                     <div>
-                      <p className="font-medium text-neutral-900 dark:text-white">Response Time</p>
-                      <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                      <p className="font-medium text-white">Response Time</p>
+                      <p className="text-sm text-neutral-400">
                         We aim to respond within 24 hours on business days.
                       </p>
                     </div>
@@ -224,8 +228,8 @@ export default function ContactPage() {
                   <div className="flex items-start gap-3">
                     <Clock className="w-5 h-5 text-gold-500 mt-0.5" />
                     <div>
-                      <p className="font-medium text-neutral-900 dark:text-white">Phone Support Hours</p>
-                      <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                      <p className="font-medium text-white">Phone Support Hours</p>
+                      <p className="text-sm text-neutral-400">
                         Monday - Friday: 9:00 AM - 6:00 PM EST
                       </p>
                     </div>

@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Bell, Lock, Globe, Palette, ChevronRight, User, Shield } from 'lucide-react'
+import { Bell, Lock, Globe, ChevronRight, User, Shield } from 'lucide-react'
 import { Card, Button } from '../../components/ui'
-import { useTheme } from '../../context/ThemeContext'
 import toast from 'react-hot-toast'
 
 const settingsGroups = [
@@ -26,7 +25,6 @@ const settingsGroups = [
 ]
 
 export default function SettingsPage() {
-  const { darkMode, toggleDarkMode } = useTheme()
   const [settings, setSettings] = useState({
     email_notifications: true,
     push_notifications: true,
@@ -46,46 +44,13 @@ export default function SettingsPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <h1 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-2">
+        <h1 className="text-2xl font-display font-bold text-white mb-2">
           Settings
         </h1>
-        <p className="text-neutral-600 dark:text-neutral-400">
+        <p className="text-neutral-400">
           Customize your preferences and account settings.
         </p>
       </motion.div>
-
-      {/* Appearance */}
-      <Card className="p-0 overflow-hidden">
-        <div className="flex items-center gap-4 p-4 border-b border-neutral-200 dark:border-neutral-700">
-          <div className="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800">
-            <Palette className="w-5 h-5 text-neutral-600" />
-          </div>
-          <div className="flex-1">
-            <h3 className="font-medium text-neutral-900 dark:text-white">Appearance</h3>
-            <p className="text-sm text-neutral-500">Customize how GlamBook looks</p>
-          </div>
-        </div>
-        <div className="p-4">
-          <div className="flex items-center justify-between p-3 rounded-lg bg-neutral-50 dark:bg-neutral-800">
-            <div>
-              <p className="font-medium text-neutral-900 dark:text-white">Dark Mode</p>
-              <p className="text-sm text-neutral-500">Toggle dark mode on or off</p>
-            </div>
-            <button
-              onClick={toggleDarkMode}
-              className={`relative w-14 h-8 rounded-full transition-colors ${
-                darkMode ? 'bg-burgundy-600' : 'bg-neutral-300'
-              }`}
-            >
-              <div
-                className={`absolute top-1 w-6 h-6 rounded-full bg-white transition-transform ${
-                  darkMode ? 'translate-x-7' : 'translate-x-1'
-                }`}
-              />
-            </button>
-          </div>
-        </div>
-      </Card>
 
       {/* Settings Groups */}
       {settingsGroups.map((group, index) => (
@@ -96,33 +61,33 @@ export default function SettingsPage() {
           transition={{ delay: index * 0.1 }}
         >
           <Card className="p-0 overflow-hidden">
-            <div className="flex items-center gap-4 p-4 border-b border-neutral-200 dark:border-neutral-700">
-              <div className="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800">
-                <group.icon className="w-5 h-5 text-neutral-600" />
+            <div className="flex items-center gap-4 p-4 border-b border-neutral-700">
+              <div className="p-2 rounded-lg bg-neutral-800">
+                <group.icon className="w-5 h-5 text-neutral-300" />
               </div>
               <div>
-                <h3 className="font-medium text-neutral-900 dark:text-white">{group.title}</h3>
+                <h3 className="font-medium text-white">{group.title}</h3>
               </div>
             </div>
-            <div className="divide-y divide-neutral-200 dark:divide-neutral-700">
+            <div className="divide-y divide-neutral-700">
               {group.settings.map((setting) => (
                 <div
                   key={setting.id}
                   onClick={() => handleToggle(setting.id)}
-                  className="flex items-center justify-between p-4 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-800"
+                  className="flex items-center justify-between p-4 cursor-pointer hover:bg-neutral-800"
                 >
                   <div className="flex-1">
-                    <p className="font-medium text-neutral-900 dark:text-white">{setting.label}</p>
-                    <p className="text-sm text-neutral-500">{setting.description}</p>
+                    <p className="font-medium text-white">{setting.label}</p>
+                    <p className="text-sm text-neutral-400">{setting.description}</p>
                   </div>
                   <button
                     type="button"
                     className={`relative w-14 h-8 rounded-full transition-colors ${
-                      settings[setting.id] ? 'bg-burgundy-600' : 'bg-neutral-300 dark:bg-neutral-600'
+                      settings[setting.id] ? 'bg-burgundy-600' : 'bg-neutral-600'
                     }`}
                   >
                     <div
-                      className={`absolute top-1 w-6 h-6 rounded-full bg-white transition-transform ${
+                      className={`absolute top-1 w-6 h-6 rounded-full bg-neutral-900 transition-transform ${
                         settings[setting.id] ? 'translate-x-7' : 'translate-x-1'
                       }`}
                     />
@@ -136,7 +101,7 @@ export default function SettingsPage() {
 
       {/* Account Actions */}
       <Card className="p-6">
-        <h3 className="font-medium text-neutral-900 dark:text-white mb-4">Account</h3>
+        <h3 className="font-medium text-white mb-4">Account</h3>
         <div className="space-y-3">
           <Button variant="outline" className="w-full justify-between">
             <span>Change Password</span>
@@ -146,7 +111,7 @@ export default function SettingsPage() {
             <span>Download My Data</span>
             <ChevronRight className="w-4 h-4" />
           </Button>
-          <Button variant="ghost" className="w-full justify-between text-red-500 hover:bg-red-50 dark:hover:bg-red-900/10">
+          <Button variant="ghost" className="w-full justify-between text-red-500 hover:bg-red-900/10">
             <span>Delete Account</span>
             <ChevronRight className="w-4 h-4" />
           </Button>

@@ -30,10 +30,10 @@ export function BookingCard({ booking, index = 0, showActions = true }) {
                 size="md"
               />
               <div>
-                <h3 className="font-medium text-neutral-900 dark:text-white">
+                <h3 className="font-medium text-white">
                   {booking.stylist?.name || booking.customer?.full_name}
                 </h3>
-                <p className="text-sm text-neutral-500 dark:text-neutral-400">
+                <p className="text-sm text-neutral-400">
                   {booking.service?.name}
                 </p>
               </div>
@@ -43,17 +43,17 @@ export function BookingCard({ booking, index = 0, showActions = true }) {
             </Badge>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 py-3 border-y border-neutral-200 dark:border-neutral-700">
-            <div className="flex items-center gap-2 text-neutral-600 dark:text-neutral-400">
+          <div className="grid grid-cols-2 gap-4 py-3 border-y border-neutral-700">
+            <div className="flex items-center gap-2 text-neutral-400">
               <Calendar className="w-4 h-4" />
               <span className="text-sm">{formatDate(booking.booking_date)}</span>
             </div>
-            <div className="flex items-center gap-2 text-neutral-600 dark:text-neutral-400">
+            <div className="flex items-center gap-2 text-neutral-400">
               <Clock className="w-4 h-4" />
               <span className="text-sm">{booking.booking_time}</span>
             </div>
             {booking.service_address && (
-              <div className="col-span-2 flex items-center gap-2 text-neutral-600 dark:text-neutral-400">
+              <div className="col-span-2 flex items-center gap-2 text-neutral-400">
                 <MapPin className="w-4 h-4" />
                 <span className="text-sm truncate">{booking.service_address}</span>
               </div>
@@ -63,21 +63,21 @@ export function BookingCard({ booking, index = 0, showActions = true }) {
           <div className="flex items-center justify-between mt-3">
             <div className="flex items-center gap-2">
               <Scissors className="w-4 h-4 text-neutral-400" />
-              <span className="text-sm text-neutral-500">
+              <span className="text-sm text-neutral-400">
                 {booking.service_type === 'home' ? 'Home Service' : 'Salon Visit'}
               </span>
             </div>
-            <p className="text-lg font-semibold text-neutral-900 dark:text-white">
+            <p className="text-lg font-semibold text-white">
               {formatCurrency(booking.amount)}
             </p>
           </div>
         </div>
 
         {showActions && (
-          <div className="px-4 py-3 bg-neutral-50 dark:bg-neutral-800/50 flex items-center justify-between">
+          <div className="px-4 py-3 bg-neutral-800/50 flex items-center justify-between">
             <Link
               to={`/bookings/${booking.id}`}
-              className="text-sm text-burgundy-700 hover:text-burgundy-800 hover:underline flex items-center gap-1"
+              className="text-sm text-gold-400 hover:text-gold-300 hover:underline flex items-center gap-1"
             >
               View details
               <ChevronRight className="w-4 h-4" />

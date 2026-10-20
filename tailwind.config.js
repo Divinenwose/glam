@@ -4,7 +4,6 @@ export default {
     './index.html',
     './src/**/*.{js,ts,jsx,tsx}',
   ],
-  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -197,9 +196,10 @@ export default {
         },
       },
       boxShadow: {
-        'soft': '0 8px 28px -12px rgba(36, 36, 36, 0.16)',
-        'soft-lg': '0 18px 45px -18px rgba(36, 36, 36, 0.2)',
-        'inner-soft': 'inset 0 1px 2px 0 rgba(36, 36, 36, 0.06)',
+        'soft': '0 10px 30px -14px rgba(0, 0, 0, 0.8)',
+        'soft-lg': '0 24px 60px -20px rgba(0, 0, 0, 0.9)',
+        'inner-soft': 'inset 0 1px 2px 0 rgba(255, 255, 255, 0.05)',
+        'gold': '0 20px 50px -18px rgba(212, 175, 55, 0.5)',
       },
     },
   },

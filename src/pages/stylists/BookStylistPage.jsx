@@ -88,13 +88,13 @@ export default function BookStylistPage() {
   const days = getDaysInMonth(currentMonth.getFullYear(), currentMonth.getMonth())
 
   return (
-    <div className="bg-neutral-50 dark:bg-neutral-950 pb-12">
+    <div className="bg-neutral-950 pb-12">
       {/* Header */}
-      <div className="bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800">
+      <div className="bg-neutral-900 border-b border-neutral-800">
         <div className="container-custom py-4">
           <button
             onClick={() => navigate(-1)}
-            className="flex items-center gap-1 text-burgundy-700 hover:text-burgundy-800 hover:underline"
+            className="flex items-center gap-1 text-gold-400 hover:text-gold-300 hover:underline"
           >
             <ChevronLeft className="w-4 h-4" />
             Back
@@ -103,7 +103,7 @@ export default function BookStylistPage() {
       </div>
 
       <div className="container-custom mt-6">
-        <h1 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-6">
+        <h1 className="text-2xl font-display font-semibold text-white mb-6">
           Book an Appointment
         </h1>
 
@@ -119,17 +119,17 @@ export default function BookStylistPage() {
                     ? 'bg-emerald-500 text-white'
                     : currentStep === step.id
                       ? 'bg-burgundy-600 text-white'
-                      : 'bg-neutral-200 dark:bg-neutral-700 text-neutral-500'
+                      : 'bg-neutral-700 text-neutral-400'
                   }`}>
                   {currentStep > step.id ? <Check className="w-4 h-4" /> : step.id}
                 </div>
-                <p className={`text-xs mt-2 font-medium ${currentStep >= step.id ? 'text-burgundy-600' : 'text-neutral-500'
+                <p className={`text-xs mt-2 font-medium ${currentStep >= step.id ? 'text-gold-400' : 'text-neutral-400'
                   }`}>
                   {step.title}
                 </p>
               </div>
               {index < steps.length - 1 && (
-                <div className={`w-16 h-0.5 ${currentStep > step.id ? 'bg-emerald-500' : 'bg-neutral-200 dark:bg-neutral-700'
+                <div className={`w-16 h-0.5 ${currentStep > step.id ? 'bg-emerald-500' : 'bg-neutral-700'
                   }`} />
               )}
             </div>
@@ -147,7 +147,7 @@ export default function BookStylistPage() {
               <Card className="p-6">
                 {currentStep === 1 && (
                   <div>
-                    <h2 className="text-lg font-semibold text-neutral-900 dark:text-white mb-4">
+                    <h2 className="text-lg font-semibold text-white mb-4">
                       Select a Service
                     </h2>
                     <div className="space-y-3">
@@ -156,17 +156,17 @@ export default function BookStylistPage() {
                           key={service.id}
                           onClick={() => setBooking({ ...booking, serviceId: service.id })}
                           className={`w-full p-4 sm:p-5 rounded-xl border-2 text-left transition-all ${booking.serviceId === service.id
-                              ? 'border-burgundy-600 bg-burgundy-50 dark:bg-burgundy-900/20'
-                              : 'border-neutral-200 dark:border-neutral-700 hover:border-neutral-300'
+                              ? 'border-gold-500/50 bg-burgundy-900/20'
+                              : 'border-neutral-700 hover:border-neutral-600'
                             }`}
                         >
                           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                             <div>
-                              <h3 className="font-medium text-neutral-900 dark:text-white">{service.name}</h3>
-                              <p className="text-sm text-neutral-500">{service.duration_minutes} minutes</p>
+                              <h3 className="font-medium text-white">{service.name}</h3>
+                              <p className="text-sm text-neutral-400">{service.duration_minutes} minutes</p>
                             </div>
                             <div className="text-right">
-                              <p className="font-bold text-burgundy-700">{formatCurrency(service.price)}</p>
+                              <p className="font-bold text-gold-400">{formatCurrency(service.price)}</p>
                             </div>
                           </div>
                         </button>
@@ -174,11 +174,11 @@ export default function BookStylistPage() {
                     </div>
 
                     <div className="mt-6">
-                      <h3 className="font-medium text-neutral-900 dark:text-white mb-3">Service Location</h3>
+                      <h3 className="font-medium text-white mb-3">Service Location</h3>
                       <div className="flex gap-4">
                         <label className={`flex-1 p-4 rounded-xl border-2 cursor-pointer transition-all ${booking.serviceType === 'salon'
-                            ? 'border-burgundy-600 bg-burgundy-50 dark:bg-burgundy-900/20'
-                            : 'border-neutral-200 dark:border-neutral-700'
+                            ? 'border-gold-500/50 bg-burgundy-900/20'
+                            : 'border-neutral-700'
                           }`}>
                           <input
                             type="radio"
@@ -188,11 +188,11 @@ export default function BookStylistPage() {
                             onChange={(e) => setBooking({ ...booking, serviceType: e.target.value })}
                             className="sr-only"
                           />
-                          <span className="font-medium text-neutral-900 dark:text-white">Salon Visit</span>
+                          <span className="font-medium text-white">Salon Visit</span>
                         </label>
                         <label className={`flex-1 p-4 rounded-xl border-2 cursor-pointer transition-all ${booking.serviceType === 'home'
-                            ? 'border-burgundy-600 bg-burgundy-50 dark:bg-burgundy-900/20'
-                            : 'border-neutral-200 dark:border-neutral-700'
+                            ? 'border-gold-500/50 bg-burgundy-900/20'
+                            : 'border-neutral-700'
                           }`}>
                           <input
                             type="radio"
@@ -202,7 +202,7 @@ export default function BookStylistPage() {
                             onChange={(e) => setBooking({ ...booking, serviceType: e.target.value })}
                             className="sr-only"
                           />
-                          <span className="font-medium text-neutral-900 dark:text-white">Home Service</span>
+                          <span className="font-medium text-white">Home Service</span>
                         </label>
                       </div>
                     </div>
@@ -211,15 +211,15 @@ export default function BookStylistPage() {
 
                 {currentStep === 2 && (
                   <div>
-                    <h2 className="text-lg font-semibold text-neutral-900 dark:text-white mb-4">
+                    <h2 className="text-lg font-semibold text-white mb-4">
                       Select a Date
                     </h2>
-                    <div className="bg-white dark:bg-neutral-800 rounded-xl p-4">
+                    <div className="bg-neutral-800 rounded-xl p-4">
                       <div className="flex items-center justify-between mb-4">
                         <button onClick={() => setCurrentMonth(new Date(currentMonth.setMonth(currentMonth.getMonth() - 1)))}>
                           <ChevronLeft className="w-5 h-5" />
                         </button>
-                        <h3 className="font-medium text-neutral-900 dark:text-white">
+                        <h3 className="font-medium text-white">
                           {currentMonth.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
                         </h3>
                         <button onClick={() => setCurrentMonth(new Date(currentMonth.setMonth(currentMonth.getMonth() + 1)))}>
@@ -229,7 +229,7 @@ export default function BookStylistPage() {
 
                       <div className="grid grid-cols-7 gap-1 text-center mb-2">
                         {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
-                          <div key={day} className="text-xs font-medium text-neutral-500 py-2">
+                          <div key={day} className="text-xs font-medium text-neutral-400 py-2">
                             {day}
                           </div>
                         ))}
@@ -244,12 +244,12 @@ export default function BookStylistPage() {
                             className={`aspect-square rounded-lg flex items-center justify-center text-sm transition-all ${!day.date
                                 ? ''
                                 : day.disabled
-                                  ? 'text-neutral-300 dark:text-neutral-600 cursor-not-allowed'
+                                  ? 'text-neutral-600 cursor-not-allowed'
                                   : booking.date && booking.date.toDateString() === day.date.toDateString()
                                       ? 'bg-burgundy-600 text-white'
                                     : day.isToday
-                                      ? 'border-2 border-burgundy-600 text-burgundy-700'
-                                      : 'hover:bg-neutral-100 dark:hover:bg-neutral-700'
+                                      ? 'border-2 border-gold-500/50 text-gold-400'
+                                      : 'hover:bg-neutral-700'
                               }`}
                           >
                             {day.date?.getDate() || ''}
@@ -262,7 +262,7 @@ export default function BookStylistPage() {
 
                 {currentStep === 3 && (
                   <div>
-                    <h2 className="text-lg font-semibold text-neutral-900 dark:text-white mb-4">
+                    <h2 className="text-lg font-semibold text-white mb-4">
                       Select a Time
                     </h2>
                     <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2">
@@ -272,7 +272,7 @@ export default function BookStylistPage() {
                           onClick={() => setBooking({ ...booking, time })}
                           className={`p-3 rounded-xl text-sm font-medium transition-all ${booking.time === time
                               ? 'bg-burgundy-600 text-white'
-                              : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700'
+                              : 'bg-neutral-800 text-neutral-300 hover:bg-neutral-700'
                             }`}
                         >
                           {(() => {
@@ -290,7 +290,7 @@ export default function BookStylistPage() {
 
                 {currentStep === 4 && (
                   <div className="space-y-6">
-                    <h2 className="text-lg font-semibold text-neutral-900 dark:text-white">
+                    <h2 className="text-lg font-semibold text-white">
                       Confirm Your Details
                     </h2>
 
@@ -318,26 +318,26 @@ export default function BookStylistPage() {
                       />
                     </div>
 
-                    <div className="bg-neutral-50 dark:bg-neutral-800 rounded-xl p-4">
-                      <h3 className="font-medium text-neutral-900 dark:text-white mb-3">Booking Summary</h3>
+                    <div className="bg-neutral-800 rounded-xl p-4">
+                      <h3 className="font-medium text-white mb-3">Booking Summary</h3>
                       <div className="space-y-2 text-sm">
                         <div className="flex justify-between">
-                          <span className="text-neutral-600 dark:text-neutral-400">Service</span>
-                          <span className="font-medium text-neutral-900 dark:text-white">{selectedService?.name}</span>
+                          <span className="text-neutral-400">Service</span>
+                          <span className="font-medium text-white">{selectedService?.name}</span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-neutral-600 dark:text-neutral-400">Date</span>
-                          <span className="font-medium text-neutral-900 dark:text-white">
+                          <span className="text-neutral-400">Date</span>
+                          <span className="font-medium text-white">
                             {booking.date?.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}
                           </span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-neutral-600 dark:text-neutral-400">Time</span>
-                          <span className="font-medium text-neutral-900 dark:text-white">{booking.time}</span>
+                          <span className="text-neutral-400">Time</span>
+                          <span className="font-medium text-white">{booking.time}</span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-neutral-600 dark:text-neutral-400">Duration</span>
-                          <span className="font-medium text-neutral-900 dark:text-white">{selectedService?.duration_minutes} min</span>
+                          <span className="text-neutral-400">Duration</span>
+                          <span className="font-medium text-white">{selectedService?.duration_minutes} min</span>
                         </div>
                       </div>
                     </div>
@@ -346,7 +346,7 @@ export default function BookStylistPage() {
 
                 {currentStep === 5 && (
                   <div className="space-y-6">
-                    <h2 className="text-lg font-semibold text-neutral-900 dark:text-white">
+                    <h2 className="text-lg font-semibold text-white">
                       Payment Method
                     </h2>
 
@@ -358,8 +358,8 @@ export default function BookStylistPage() {
                         <label
                           key={method.id}
                           className={`flex items-center gap-3 p-4 rounded-xl border-2 cursor-pointer transition-all ${booking.paymentMethod === method.id
-                              ? 'border-burgundy-600 bg-burgundy-50 dark:bg-burgundy-900/20'
-                              : 'border-neutral-200 dark:border-neutral-700'
+                              ? 'border-gold-500/50 bg-burgundy-900/20'
+                              : 'border-neutral-700'
                             }`}
                         >
                           <input
@@ -370,26 +370,26 @@ export default function BookStylistPage() {
                             onChange={(e) => setBooking({ ...booking, paymentMethod: e.target.value })}
                             className="sr-only"
                           />
-                          {method.icon && <method.icon className="w-5 h-5 text-neutral-600" />}
-                          <span className="font-medium text-neutral-900 dark:text-white">{method.label}</span>
+                          {method.icon && <method.icon className="w-5 h-5 text-neutral-300" />}
+                          <span className="font-medium text-white">{method.label}</span>
                         </label>
                       ))}
                     </div>
 
-                    <div className="bg-neutral-50 dark:bg-neutral-800 rounded-xl p-4">
+                    <div className="bg-neutral-800 rounded-xl p-4">
                       <div className="space-y-2">
                         <div className="flex justify-between">
-                          <span className="text-neutral-600 dark:text-neutral-400">Subtotal</span>
-                          <span className="text-neutral-900 dark:text-white">{formatCurrency(selectedService?.price || 0)}</span>
+                          <span className="text-neutral-400">Subtotal</span>
+                          <span className="text-white">{formatCurrency(selectedService?.price || 0)}</span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-neutral-600 dark:text-neutral-400">Platform fee</span>
-                          <span className="text-neutral-900 dark:text-white">$5.00</span>
+                          <span className="text-neutral-400">Platform fee</span>
+                          <span className="text-white">$5.00</span>
                         </div>
-                        <div className="border-t border-neutral-200 dark:border-neutral-700 pt-2 mt-2">
+                        <div className="border-t border-neutral-700 pt-2 mt-2">
                           <div className="flex justify-between font-bold">
-                            <span className="text-neutral-900 dark:text-white">Total</span>
-                            <span className="text-burgundy-600">{formatCurrency((selectedService?.price || 0) + 5)}</span>
+                            <span className="text-white">Total</span>
+                            <span className="text-gold-400">{formatCurrency((selectedService?.price || 0) + 5)}</span>
                           </div>
                         </div>
                       </div>
@@ -398,7 +398,7 @@ export default function BookStylistPage() {
                 )}
 
                 {/* Navigation */}
-                <div className="flex items-center justify-between mt-8 pt-6 border-t border-neutral-200 dark:border-neutral-700">
+                <div className="flex items-center justify-between mt-8 pt-6 border-t border-neutral-700">
                   <Button variant="ghost" onClick={handlePrev} disabled={currentStep === 1}>
                     <ChevronLeft className="w-4 h-4 mr-2" />
                     Back
@@ -420,35 +420,35 @@ export default function BookStylistPage() {
           <div className="lg:col-span-1">
             <div className="sticky top-24">
               <Card className="p-6">
-                <h3 className="font-semibold text-neutral-900 dark:text-white mb-4">Booking Summary</h3>
+                <h3 className="font-semibold text-white mb-4">Booking Summary</h3>
                 {selectedService && (
                   <div className="space-y-4">
                     <div>
-                      <span className="text-sm text-neutral-500">Service</span>
-                      <p className="font-medium text-neutral-900 dark:text-white">{selectedService.name}</p>
+                      <span className="text-sm text-neutral-400">Service</span>
+                      <p className="font-medium text-white">{selectedService.name}</p>
                     </div>
                     <div>
-                      <span className="text-sm text-neutral-500">Duration</span>
-                      <p className="font-medium text-neutral-900 dark:text-white">{selectedService.duration_minutes} minutes</p>
+                      <span className="text-sm text-neutral-400">Duration</span>
+                      <p className="font-medium text-white">{selectedService.duration_minutes} minutes</p>
                     </div>
                     {booking.date && (
                       <div>
-                        <span className="text-sm text-neutral-500">Date</span>
-                        <p className="font-medium text-neutral-900 dark:text-white">
+                        <span className="text-sm text-neutral-400">Date</span>
+                        <p className="font-medium text-white">
                           {booking.date.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' })}
                         </p>
                       </div>
                     )}
                     {booking.time && (
                       <div>
-                        <span className="text-sm text-neutral-500">Time</span>
-                        <p className="font-medium text-neutral-900 dark:text-white">{booking.time}</p>
+                        <span className="text-sm text-neutral-400">Time</span>
+                        <p className="font-medium text-white">{booking.time}</p>
                       </div>
                     )}
-                    <div className="border-t border-neutral-200 dark:border-neutral-700 pt-4">
+                    <div className="border-t border-neutral-700 pt-4">
                       <div className="flex justify-between">
-                        <span className="text-neutral-600 dark:text-neutral-400">Total</span>
-                        <span className="text-xl font-bold text-burgundy-600">
+                        <span className="text-neutral-400">Total</span>
+                        <span className="text-xl font-bold text-gold-400">
                           {formatCurrency(selectedService.price + 5)}
                         </span>
                       </div>

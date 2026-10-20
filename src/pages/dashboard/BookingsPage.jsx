@@ -67,16 +67,16 @@ export default function BookingsPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <h1 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-2">
+        <h1 className="text-2xl font-display font-bold text-white mb-2">
           My Bookings
         </h1>
-        <p className="text-neutral-600 dark:text-neutral-400">
+        <p className="text-neutral-400">
           View and manage all your appointments.
         </p>
       </motion.div>
 
       {/* Tabs */}
-      <div className="border-b border-neutral-200 dark:border-neutral-700">
+      <div className="border-b border-neutral-700">
         <div className="flex gap-8">
           {[
             { id: 'upcoming', label: 'Upcoming' },
@@ -88,8 +88,8 @@ export default function BookingsPage() {
               onClick={() => setActiveTab(tab.id)}
               className={`pb-4 px-1 font-medium transition-colors ${
                 activeTab === tab.id
-                  ? 'text-burgundy-600 border-b-2 border-burgundy-600'
-                  : 'text-neutral-600 dark:text-neutral-400'
+                  ? 'text-gold-400 border-b-2 border-gold-500/50'
+                  : 'text-neutral-400'
               }`}
             >
               {tab.label}
@@ -114,7 +114,7 @@ export default function BookingsPage() {
 
       {filteredBookings.length === 0 && (
         <Card className="p-12 text-center">
-          <p className="text-neutral-600 dark:text-neutral-400">
+          <p className="text-neutral-400">
             No bookings in this category.
           </p>
         </Card>

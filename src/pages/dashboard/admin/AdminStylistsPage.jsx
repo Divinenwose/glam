@@ -27,10 +27,10 @@ export default function AdminStylistsPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <h1 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-2">
+        <h1 className="text-2xl font-display font-bold text-white mb-2">
           Stylist Management
         </h1>
-        <p className="text-neutral-600 dark:text-neutral-400">
+        <p className="text-neutral-400">
           Approve, suspend, and manage hairstylist accounts.
         </p>
       </motion.div>
@@ -55,7 +55,7 @@ export default function AdminStylistsPage() {
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                 filter === status
                   ? 'bg-burgundy-600 text-white'
-                  : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700'
+                  : 'bg-neutral-800 text-neutral-300 hover:bg-neutral-700'
               }`}
             >
               {status.charAt(0).toUpperCase() + status.slice(1)}
@@ -68,37 +68,37 @@ export default function AdminStylistsPage() {
       <Card className="overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full">
-            <thead className="bg-neutral-50 dark:bg-neutral-800">
+            <thead className="bg-neutral-800">
               <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase">Stylist</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase">Services</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase">Rating</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase">Earnings</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase">Status</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase">Joined</th>
-                <th className="px-6 py-3 text-right text-xs font-medium text-neutral-500 uppercase">Actions</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-neutral-400 uppercase">Stylist</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-neutral-400 uppercase">Services</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-neutral-400 uppercase">Rating</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-neutral-400 uppercase">Earnings</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-neutral-400 uppercase">Status</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-neutral-400 uppercase">Joined</th>
+                <th className="px-6 py-3 text-right text-xs font-medium text-neutral-400 uppercase">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-neutral-200 dark:divide-neutral-700">
+            <tbody className="divide-y divide-neutral-700">
               {filteredStylists.map((stylist) => (
-                <tr key={stylist.id} className="hover:bg-neutral-50 dark:hover:bg-neutral-800">
+                <tr key={stylist.id} className="hover:bg-neutral-800">
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-3">
                       <Avatar name={stylist.name} size="sm" />
                       <div>
-                        <p className="font-medium text-neutral-900 dark:text-white">{stylist.name}</p>
-                        <p className="text-sm text-neutral-500">{stylist.email}</p>
+                        <p className="font-medium text-white">{stylist.name}</p>
+                        <p className="text-sm text-neutral-400">{stylist.email}</p>
                       </div>
                     </div>
                   </td>
-                  <td className="px-6 py-4 text-neutral-900 dark:text-white">{stylist.services}</td>
+                  <td className="px-6 py-4 text-white">{stylist.services}</td>
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-1 text-gold-500">
                       <Star className="w-4 h-4 fill-gold-500" />
                       <span>{stylist.rating}</span>
                     </div>
                   </td>
-                  <td className="px-6 py-4 text-neutral-900 dark:text-white">${stylist.earnings.toLocaleString()}</td>
+                  <td className="px-6 py-4 text-white">${stylist.earnings.toLocaleString()}</td>
                   <td className="px-6 py-4">
                     <Badge variant={
                       stylist.status === 'verified' ? 'success' :
@@ -107,7 +107,7 @@ export default function AdminStylistsPage() {
                       {stylist.status}
                     </Badge>
                   </td>
-                  <td className="px-6 py-4 text-neutral-600 dark:text-neutral-400">
+                  <td className="px-6 py-4 text-neutral-400">
                     {new Date(stylist.joined).toLocaleDateString()}
                   </td>
                   <td className="px-6 py-4 text-right">

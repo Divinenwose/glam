@@ -56,12 +56,12 @@ export default function SearchBar({ variant = 'hero', className, onSearch }) {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className={`bg-white dark:bg-neutral-900 rounded-2xl shadow-soft-lg p-4 border border-burgundy-100/80 ${className}`}
+      className={`glass rounded-3xl shadow-soft-lg p-5 sm:p-6 text-left ${className || ''}`}
     >
       <div className="grid md:grid-cols-4 gap-4">
         {/* Location */}
         <div className="relative">
-          <label className="flex items-center gap-2 text-xs font-medium text-neutral-500 dark:text-neutral-400 mb-2">
+          <label className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gold-400/90 mb-2">
             <MapPin className="w-4 h-4" />
             Location
           </label>
@@ -82,7 +82,7 @@ export default function SearchBar({ variant = 'hero', className, onSearch }) {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
-                className="absolute z-20 mt-1 w-full bg-white dark:bg-neutral-900 rounded-xl shadow-lg border border-neutral-200 dark:border-neutral-700 max-h-48 overflow-y-auto"
+                className="absolute z-20 mt-2 w-full bg-[#1B1016] rounded-xl shadow-soft-lg border border-gold-500/25 max-h-48 overflow-y-auto"
               >
                 {filteredCities.map((city) => (
                   <button
@@ -91,7 +91,7 @@ export default function SearchBar({ variant = 'hero', className, onSearch }) {
                       setLocation(city)
                       setShowLocationDropdown(false)
                     }}
-                    className="w-full px-4 py-2.5 text-left hover:bg-neutral-50 dark:hover:bg-neutral-800 text-neutral-700 dark:text-neutral-300"
+                    className="w-full px-4 py-2.5 text-left hover:bg-gold-500/10 hover:text-gold-200 text-neutral-300 transition-colors"
                   >
                     {city}
                   </button>
@@ -103,7 +103,7 @@ export default function SearchBar({ variant = 'hero', className, onSearch }) {
 
         {/* Service */}
         <div className="relative">
-          <label className="flex items-center gap-2 text-xs font-medium text-neutral-500 dark:text-neutral-400 mb-2">
+          <label className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gold-400/90 mb-2">
             <Search className="w-4 h-4" />
             Hairstyle/Service
           </label>
@@ -124,7 +124,7 @@ export default function SearchBar({ variant = 'hero', className, onSearch }) {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
-                className="absolute z-20 mt-1 w-full bg-white dark:bg-neutral-900 rounded-xl shadow-lg border border-neutral-200 dark:border-neutral-700 max-h-48 overflow-y-auto"
+                className="absolute z-20 mt-2 w-full bg-[#1B1016] rounded-xl shadow-soft-lg border border-gold-500/25 max-h-48 overflow-y-auto"
               >
                 {filteredServices.slice(0, 6).map((s) => (
                   <button
@@ -133,7 +133,7 @@ export default function SearchBar({ variant = 'hero', className, onSearch }) {
                       setService(s.name)
                       setShowServiceDropdown(false)
                     }}
-                    className="w-full px-4 py-2.5 text-left hover:bg-neutral-50 dark:hover:bg-neutral-800 text-neutral-700 dark:text-neutral-300"
+                    className="w-full px-4 py-2.5 text-left hover:bg-gold-500/10 hover:text-gold-200 text-neutral-300 transition-colors"
                   >
                     {s.name}
                   </button>
@@ -145,7 +145,7 @@ export default function SearchBar({ variant = 'hero', className, onSearch }) {
 
         {/* Date */}
         <div>
-          <label className="flex items-center gap-2 text-xs font-medium text-neutral-500 dark:text-neutral-400 mb-2">
+          <label className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gold-400/90 mb-2">
             <Calendar className="w-4 h-4" />
             Preferred Date
           </label>
@@ -160,7 +160,7 @@ export default function SearchBar({ variant = 'hero', className, onSearch }) {
 
         {/* Budget */}
         <div className="relative">
-          <label className="flex items-center gap-2 text-xs font-medium text-neutral-500 dark:text-neutral-400 mb-2">
+          <label className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gold-400/90 mb-2">
             <DollarSign className="w-4 h-4" />
             Budget
           </label>
@@ -168,7 +168,7 @@ export default function SearchBar({ variant = 'hero', className, onSearch }) {
             onClick={() => setShowBudgetDropdown(!showBudgetDropdown)}
             className="input w-full text-left flex items-center justify-between"
           >
-            <span className={budget ? 'text-neutral-900 dark:text-white' : 'text-neutral-400'}>
+            <span className={budget ? 'text-white' : 'text-neutral-400'}>
               {budget || 'Select budget'}
             </span>
           </button>
@@ -178,7 +178,7 @@ export default function SearchBar({ variant = 'hero', className, onSearch }) {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
-                className="absolute z-20 mt-1 w-full bg-white dark:bg-neutral-900 rounded-xl shadow-lg border border-neutral-200 dark:border-neutral-700"
+                className="absolute z-20 mt-2 w-full bg-[#1B1016] rounded-xl shadow-soft-lg border border-gold-500/25"
               >
                 {PRICE_RANGES.map((range) => (
                   <button
@@ -187,7 +187,7 @@ export default function SearchBar({ variant = 'hero', className, onSearch }) {
                       setBudget(range.label)
                       setShowBudgetDropdown(false)
                     }}
-                    className="w-full px-4 py-2.5 text-left hover:bg-neutral-50 dark:hover:bg-neutral-800 text-neutral-700 dark:text-neutral-300"
+                    className="w-full px-4 py-2.5 text-left hover:bg-gold-500/10 hover:text-gold-200 text-neutral-300 transition-colors"
                   >
                     {range.label}
                   </button>

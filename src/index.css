@@ -2,28 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ==========================================================================
+   GlamBook design system — single, premium dark theme.
+   Deep burgundy + black base, gold accents, ivory text.
+   (No light/dark switching: every surface in the app is dark.)
+   ========================================================================== */
+
 :root {
-  /* Brand Colors - Official Palette */
+  color-scheme: dark;
+
+  /* Brand Colors */
   --burgundy: #7A0E2E;
   --gold: #D4AF37;
   --emerald: #027A48;
   --pink: #FF4D94;
   --red: #D72638;
 
-  /* Burgundy Scale - Primary Foundation */
-  --color-burgundy-50: 254 242 245;
-  --color-burgundy-100: 251 224 230;
-  --color-burgundy-200: 247 193 205;
-  --color-burgundy-300: 242 153 172;
-  --color-burgundy-400: 236 103 130;
-  --color-burgundy-500: 229 59 91;
-  --color-burgundy-600: 200 42 68;
-  --color-burgundy-700: 168 30 52;
-  --color-burgundy-800: 122 14 46;
-  --color-burgundy-900: 91 10 34;
-  --color-burgundy-950: 54 6 20;
+  /* Burgundy Scale — deep wine (50 = lightest, 950 = darkest) */
+  --color-burgundy-50: 253 242 245;
+  --color-burgundy-100: 250 224 232;
+  --color-burgundy-200: 244 190 206;
+  --color-burgundy-300: 233 142 168;
+  --color-burgundy-400: 214 92 128;
+  --color-burgundy-500: 184 52 90;
+  --color-burgundy-600: 150 30 66;
+  --color-burgundy-700: 122 14 46;
+  --color-burgundy-800: 94 10 36;
+  --color-burgundy-900: 66 8 27;
+  --color-burgundy-950: 38 4 16;
 
-  /* Gold Scale - Luxury Accents */
+  /* Gold Scale — luxury accents */
   --color-gold-50: 254 250 239;
   --color-gold-100: 252 244 215;
   --color-gold-200: 249 233 176;
@@ -36,7 +44,7 @@
   --color-gold-900: 98 76 26;
   --color-gold-950: 61 47 16;
 
-  /* Emerald Scale - Trust & Verification */
+  /* Emerald Scale — trust & verification */
   --color-emerald-50: 236 253 244;
   --color-emerald-100: 209 250 229;
   --color-emerald-200: 167 243 208;
@@ -49,7 +57,7 @@
   --color-emerald-900: 6 78 59;
   --color-emerald-950: 2 44 34;
 
-  /* Pink Scale - Beauty & Glam */
+  /* Pink Scale — beauty & glam */
   --color-pink-50: 252 241 247;
   --color-pink-100: 251 224 236;
   --color-pink-200: 247 194 219;
@@ -62,7 +70,7 @@
   --color-pink-900: 131 15 63;
   --color-pink-950: 80 9 39;
 
-  /* Red Scale - Actions & Conversion */
+  /* Red Scale — alerts & destructive actions */
   --color-red-50: 254 242 242;
   --color-red-100: 254 226 226;
   --color-red-200: 254 202 202;
@@ -75,128 +83,43 @@
   --color-red-900: 127 29 29;
   --color-red-950: 69 10 10;
 
-  /* Neutral Scale - Backgrounds & Surfaces */
-  --color-neutral-50: 255 255 255;
-  --color-neutral-100: 250 248 246;
-  --color-neutral-200: 245 241 237;
-  --color-neutral-300: 237 231 225;
-  --color-neutral-400: 214 204 194;
-  --color-neutral-500: 168 153 138;
-  --color-neutral-600: 120 107 94;
-  --color-neutral-700: 87 76 66;
-  --color-neutral-800: 63 55 48;
-  --color-neutral-900: 45 39 34;
-  --color-neutral-950: 26 22 19;
+  /* Neutral Scale — warm, burgundy-tinted (50 = lightest text, 950 = near-black) */
+  --color-neutral-50: 250 246 241;
+  --color-neutral-100: 243 236 228;
+  --color-neutral-200: 229 219 209;
+  --color-neutral-300: 207 195 184;
+  --color-neutral-400: 172 158 148;
+  --color-neutral-500: 138 124 116;
+  --color-neutral-600: 104 90 88;
+  --color-neutral-700: 66 48 56;
+  --color-neutral-800: 40 26 33;
+  --color-neutral-900: 26 16 22;
+  --color-neutral-950: 14 8 11;
 
-  /* Semantic Variables */
+  /* Semantic variables */
   --primary: var(--burgundy);
   --accent: var(--gold);
   --success: var(--emerald);
   --error: var(--red);
   --beauty: var(--pink);
-  --action: var(--red);
 
-  /* Background & Surface */
-  --background: #FAF8F3;
-  --surface: #FFFFFF;
-  --surface-elevated: #FFFFFF;
+  /* Backgrounds & surfaces — all dark */
+  --background: #0E080B;
+  --background-alt: #150C10;
+  --surface: #1B1016;
+  --surface-elevated: #251720;
 
-  /* Text Colors */
-  --text-primary: #242424;
-  --text-secondary: #6B6863;
+  /* Text */
+  --text-primary: #F8F2E9;
+  --text-secondary: #C8BBB0;
+
+  /* Hairlines */
+  --line: rgba(212, 175, 55, 0.16);
+  --line-strong: rgba(212, 175, 55, 0.42);
 
   /* Toast */
-  --toast-bg: #FFFFFF;
-  --toast-color: #242424;
-}
-
-html.dark {
-  /* Burgundy Scale - Dark Mode: Keep brand colors vibrant, adjust backgrounds */
-  --color-burgundy-50: 54 6 20;
-  --color-burgundy-100: 91 10 34;
-  --color-burgundy-200: 122 14 46;
-  --color-burgundy-300: 168 30 52;
-  --color-burgundy-400: 200 42 68;
-  --color-burgundy-500: 229 59 91;
-  --color-burgundy-600: 236 103 130;
-  --color-burgundy-700: 242 153 172;
-  --color-burgundy-800: 247 193 205;
-  --color-burgundy-900: 251 224 230;
-  --color-burgundy-950: 254 242 245;
-
-  /* Gold Scale - Dark Mode: Keep vibrant for premium accents */
-  --color-gold-50: 61 47 16;
-  --color-gold-100: 98 76 26;
-  --color-gold-200: 122 94 31;
-  --color-gold-300: 152 118 38;
-  --color-gold-400: 183 146 46;
-  --color-gold-500: 212 175 55;
-  --color-gold-600: 240 202 89;
-  --color-gold-700: 245 219 131;
-  --color-gold-800: 249 233 176;
-  --color-gold-900: 252 244 215;
-  --color-gold-950: 254 250 239;
-
-  /* Emerald Scale - Dark Mode: Keep vibrant for trust states */
-  --color-emerald-50: 2 44 34;
-  --color-emerald-100: 6 78 59;
-  --color-emerald-200: 6 95 70;
-  --color-emerald-300: 4 120 87;
-  --color-emerald-400: 5 150 105;
-  --color-emerald-500: 16 185 129;
-  --color-emerald-600: 52 211 153;
-  --color-emerald-700: 110 231 183;
-  --color-emerald-800: 167 243 208;
-  --color-emerald-900: 209 250 229;
-  --color-emerald-950: 236 253 244;
-
-  /* Pink Scale - Dark Mode: Keep vibrant for beauty states */
-  --color-pink-50: 80 9 39;
-  --color-pink-100: 131 15 63;
-  --color-pink-200: 157 18 76;
-  --color-pink-300: 190 24 95;
-  --color-pink-400: 219 39 119;
-  --color-pink-500: 236 72 153;
-  --color-pink-600: 241 107 173;
-  --color-pink-700: 244 154 197;
-  --color-pink-800: 247 194 219;
-  --color-pink-900: 251 224 236;
-  --color-pink-950: 252 241 247;
-
-  /* Red Scale - Dark Mode: Keep vibrant for CTAs */
-  --color-red-50: 69 10 10;
-  --color-red-100: 127 29 29;
-  --color-red-200: 153 27 27;
-  --color-red-300: 185 28 28;
-  --color-red-400: 220 38 38;
-  --color-red-500: 239 68 68;
-  --color-red-600: 248 113 113;
-  --color-red-700: 252 165 165;
-  --color-red-800: 254 202 202;
-  --color-red-900: 254 226 226;
-  --color-red-950: 254 242 242;
-
-  /* Neutral Scale - Dark Mode: Deep burgundy-tinted neutrals for premium feel */
-  --color-neutral-50: 26 22 19;
-  --color-neutral-100: 45 39 34;
-  --color-neutral-200: 63 55 48;
-  --color-neutral-300: 87 76 66;
-  --color-neutral-400: 120 107 94;
-  --color-neutral-500: 168 153 138;
-  --color-neutral-600: 214 204 194;
-  --color-neutral-700: 237 231 225;
-  --color-neutral-800: 245 241 237;
-  --color-neutral-900: 250 248 246;
-  --color-neutral-950: 255 255 255;
-
-  /* Dark Mode Overrides - Deep burgundy-tinted dark theme */
-  --background: #1A1614;
-  --surface: #24201D;
-  --surface-elevated: #2E2926;
-  --text-primary: #F5F2EA;
-  --text-secondary: #CFC7B0;
-  --toast-bg: #24201D;
-  --toast-color: #F5F2EA;
+  --toast-bg: #251720;
+  --toast-color: #F8F2E9;
 }
 
 @layer base {
@@ -204,124 +127,189 @@ html.dark {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: var(--background);
+  }
+
+  html, body {
+    overflow-x: clip;
   }
 
   body {
     background-color: var(--background);
+    background-image:
+      radial-gradient(1100px 600px at 8% -8%, rgba(122, 14, 46, 0.32), transparent 60%),
+      radial-gradient(900px 520px at 100% 6%, rgba(212, 175, 55, 0.07), transparent 60%);
+    background-attachment: fixed;
     color: var(--text-primary);
     font-family: 'Inter', system-ui, sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
+    letter-spacing: -0.01em;
     @apply font-semibold;
   }
 
   * {
-    @apply border-neutral-200 dark:border-neutral-800;
+    @apply border-neutral-700/60;
   }
 
   ::selection {
-    background-color: rgba(107, 16, 40, 0.2);
-    color: var(--text-primary);
+    background-color: rgba(212, 175, 55, 0.35);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--color-gold-500));
+    outline-offset: 2px;
+  }
+
+  input, select, textarea {
+    color-scheme: dark;
+  }
+
+  /* Dark, branded scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(var(--color-burgundy-700)) var(--background);
+  }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: var(--background); }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgb(var(--color-burgundy-700)), rgb(var(--color-gold-700)));
+    border-radius: 999px;
+    border: 2px solid var(--background);
   }
 }
 
 @layer components {
-  .btn {
-    @apply inline-flex items-center justify-center px-4 py-2 rounded-xl font-medium text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
-  }
-
-  /* Primary CTA - Red for conversion/actions */
-  .btn-primary {
-    @apply btn bg-red-600 text-white hover:bg-red-700 focus:ring-red-500 shadow-soft hover:shadow-soft-lg;
-  }
-
-  .dark .btn-primary {
-    @apply bg-red-600 hover:bg-red-500 focus:ring-red-400;
-  }
-
-  /* Secondary CTA - Emerald for trust/secondary actions */
-  .btn-secondary {
-    @apply btn bg-emerald-600 text-white hover:bg-emerald-700 focus:ring-emerald-500 shadow-soft hover:shadow-soft-lg;
-  }
-
-  .dark .btn-secondary {
-    @apply bg-emerald-600 hover:bg-emerald-500 focus:ring-emerald-400;
-  }
-
-  /* Outline - Burgundy for structure */
-  .btn-outline {
-    @apply btn border border-burgundy-600 text-burgundy-700 hover:bg-burgundy-50 focus:ring-burgundy-500;
-  }
-
-  .dark .btn-outline {
-    @apply border-burgundy-500 text-burgundy-300 hover:bg-burgundy-900/30 focus:ring-burgundy-400;
-  }
-
-  /* Ghost - Neutral with Burgundy hover */
-  .btn-ghost {
-    @apply btn text-burgundy-700 hover:bg-burgundy-50 focus:ring-burgundy-500;
-  }
-
-  .dark .btn-ghost {
-    @apply text-burgundy-300 hover:bg-burgundy-900/30 focus:ring-burgundy-400;
-  }
-
-  /* Premium/Gold - Luxury accents */
-  .btn-gold {
-    @apply btn bg-gold-500 text-burgundy-950 hover:bg-gold-600 focus:ring-gold-400;
-  }
-
-  .dark .btn-gold {
-    @apply bg-gold-500 text-burgundy-950 hover:bg-gold-400 focus:ring-gold-300;
-  }
-
-  /* Success - Emerald for confirmation */
-  .btn-success {
-    @apply btn bg-emerald-600 text-white hover:bg-emerald-700 focus:ring-emerald-400;
-  }
-
-  .dark .btn-success {
-    @apply bg-emerald-600 hover:bg-emerald-500 focus:ring-emerald-400;
-  }
-
-  /* Error - Red for urgent alerts */
-  .btn-error {
-    @apply btn bg-red-600 text-white hover:bg-red-700 focus:ring-red-400;
-  }
-
-  .dark .btn-error {
-    @apply bg-red-600 hover:bg-red-500 focus:ring-red-400;
-  }
-
-  /* Beauty/Pink - Glam/beauty states */
+  /* ---------- Buttons ---------- */
+  .btn,
+  .btn-primary,
+  .btn-secondary,
+  .btn-outline,
+  .btn-ghost,
+  .btn-gold,
+  .btn-success,
+  .btn-error,
   .btn-beauty {
-    @apply btn bg-pink-500 text-white hover:bg-pink-600 focus:ring-pink-400;
+    @apply relative inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm tracking-wide transition-all duration-300 overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed;
   }
 
-  .dark .btn-beauty {
-    @apply bg-pink-500 hover:bg-pink-400 focus:ring-pink-300;
+  /* Soft "sheen" sweep on hover for the filled buttons */
+  .btn-primary::after,
+  .btn-gold::after,
+  .btn-secondary::after,
+  .btn-beauty::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.38) 50%, transparent 70%);
+    transform: translateX(-130%);
+    transition: transform 0.8s ease;
+    pointer-events: none;
+  }
+  .btn-primary:hover::after,
+  .btn-gold:hover::after,
+  .btn-secondary:hover::after,
+  .btn-beauty:hover::after {
+    transform: translateX(130%);
+  }
+
+  /* Primary CTA — metallic gold */
+  .btn-primary,
+  .btn-gold {
+    color: rgb(var(--color-burgundy-950));
+    font-weight: 600;
+    background-image: linear-gradient(135deg, rgb(var(--color-gold-300)) 0%, rgb(var(--color-gold-500)) 55%, rgb(var(--color-gold-600)) 100%);
+    box-shadow: 0 10px 28px -10px rgba(212, 175, 55, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  }
+  .btn-primary:hover,
+  .btn-gold:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.06);
+    box-shadow: 0 16px 36px -10px rgba(212, 175, 55, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  }
+  .btn-primary:active,
+  .btn-gold:active {
+    transform: translateY(0);
+  }
+
+  /* Secondary — rich burgundy */
+  .btn-secondary {
+    @apply text-white border border-burgundy-500/40;
+    background-image: linear-gradient(135deg, rgb(var(--color-burgundy-600)), rgb(var(--color-burgundy-800)));
+    box-shadow: 0 10px 28px -12px rgba(184, 52, 90, 0.6);
+  }
+  .btn-secondary:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.15);
+  }
+
+  /* Outline — gold hairline */
+  .btn-outline {
+    @apply border border-gold-500/50 text-gold-300 hover:bg-gold-500/10 hover:border-gold-400 hover:text-gold-200;
+  }
+  .btn-outline:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 26px -14px rgba(212, 175, 55, 0.6);
+  }
+
+  /* Ghost */
+  .btn-ghost {
+    @apply text-neutral-300 hover:text-gold-300 hover:bg-white/5;
+  }
+
+  /* Success */
+  .btn-success {
+    @apply bg-emerald-600 text-white hover:bg-emerald-500;
+  }
+
+  /* Error / destructive */
+  .btn-error {
+    @apply bg-red-600 text-white hover:bg-red-500;
+  }
+
+  /* Beauty / pink */
+  .btn-beauty {
+    @apply text-white;
+    background-image: linear-gradient(135deg, rgb(var(--color-pink-500)), rgb(var(--color-burgundy-600)));
+    box-shadow: 0 10px 28px -12px rgba(236, 72, 153, 0.55);
+  }
+  .btn-beauty:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
   }
 
   .btn-lg {
-    @apply px-6 py-3 text-base;
+    @apply px-7 py-3.5 text-base;
   }
 
   .btn-sm {
-    @apply px-3 py-1.5 text-xs;
+    @apply px-3.5 py-1.5 text-xs;
   }
 
   .btn-icon {
     @apply p-2;
   }
 
+  /* ---------- Forms ---------- */
   .input {
-    @apply w-full px-4 py-2.5 bg-[var(--surface)] border border-neutral-200 dark:border-neutral-700 rounded-xl text-[color:var(--text-primary)] placeholder-neutral-400 dark:placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-burgundy-500 focus:border-transparent transition-all duration-200;
+    @apply w-full px-4 py-2.5 rounded-xl text-[color:var(--text-primary)] placeholder-neutral-500 focus:outline-none transition-all duration-200;
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(212, 175, 55, 0.18);
   }
-
-  .dark .input {
-    @apply focus:ring-burgundy-400;
+  .input:hover {
+    border-color: rgba(212, 175, 55, 0.34);
+  }
+  .input:focus {
+    background-color: rgba(255, 255, 255, 0.06);
+    border-color: rgb(var(--color-gold-500));
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.18);
+  }
+  select.input option {
+    background-color: #1B1016;
+    color: #F8F2E9;
   }
 
   .input-error {
@@ -329,151 +317,208 @@ html.dark {
   }
 
   .label {
-    @apply block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1.5;
+    @apply block text-sm font-medium text-neutral-300 mb-1.5;
   }
 
+  /* ---------- Cards ---------- */
   .card {
-    @apply bg-[var(--surface)] rounded-2xl shadow-soft border border-burgundy-100/70 overflow-hidden;
-  }
-
-  .dark .card {
-    @apply border-burgundy-900/50;
+    @apply rounded-2xl overflow-hidden;
+    background-image: linear-gradient(180deg, rgba(37, 23, 32, 0.92), rgba(27, 16, 22, 0.96));
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    box-shadow: 0 18px 40px -22px rgba(0, 0, 0, 0.85);
   }
 
   .card-hover {
-    @apply card transition-all duration-300 hover:shadow-soft-lg hover:-translate-y-1 cursor-pointer;
+    @apply card cursor-pointer;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-6px);
+    border-color: var(--line-strong);
+    box-shadow: 0 30px 60px -24px rgba(0, 0, 0, 0.95), 0 0 44px -14px rgba(212, 175, 55, 0.32);
   }
 
-  .dark .card-hover {
-    @apply hover:shadow-lg;
-  }
-
+  /* ---------- Badges ---------- */
   .badge {
-    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border border-transparent;
   }
 
   .badge-primary {
-    @apply badge bg-burgundy-50 text-burgundy-700 dark:bg-burgundy-900/40 dark:text-burgundy-300;
+    @apply badge bg-burgundy-800/50 text-burgundy-200 border-burgundy-600/40;
   }
 
   .badge-secondary {
-    @apply badge bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300;
+    @apply badge bg-white/5 text-neutral-300 border-white/10;
   }
 
-  /* Trust/Verification - Emerald */
   .badge-success {
-    @apply badge bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300;
+    @apply badge bg-emerald-900/40 text-emerald-300 border-emerald-600/30;
   }
 
-  /* Warning - Gold */
   .badge-warning {
-    @apply badge bg-gold-100 text-gold-700 dark:bg-gold-900/40 dark:text-gold-300;
+    @apply badge bg-gold-900/30 text-gold-300 border-gold-600/30;
   }
 
-  /* Error - Red */
   .badge-error {
-    @apply badge bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-300;
+    @apply badge bg-red-900/40 text-red-300 border-red-600/30;
   }
 
-  /* Beauty/Pink */
   .badge-beauty {
-    @apply badge bg-pink-100 text-pink-700 dark:bg-pink-900/40 dark:text-pink-300;
+    @apply badge bg-pink-900/40 text-pink-300 border-pink-600/30;
   }
 
-  /* Premium - Gold */
   .badge-premium {
-    @apply badge bg-gold-100 text-gold-700 dark:bg-gold-900/40 dark:text-gold-300;
+    @apply badge bg-gold-900/30 text-gold-300 border-gold-600/30;
   }
 
   .skeleton {
-    @apply animate-pulse bg-neutral-200 dark:bg-neutral-800 rounded;
+    @apply animate-pulse bg-neutral-800 rounded;
   }
 
   .link {
-    @apply text-burgundy-700 dark:text-burgundy-400 hover:text-burgundy-800 hover:underline decoration-burgundy-700 dark:decoration-burgundy-400 underline-offset-2;
+    @apply text-gold-400 hover:text-gold-300 hover:underline decoration-gold-400 underline-offset-4 transition-colors;
   }
 
+  /* ---------- Layout helpers ---------- */
   .section {
-    @apply py-16 lg:py-24;
+    @apply relative py-16 lg:py-24;
   }
+
+  /* Slightly lifted band with gold hairlines top and bottom */
+  .section-alt {
+    @apply relative py-16 lg:py-24;
+    background-color: var(--background-alt);
+    background-image:
+      radial-gradient(700px 320px at 12% 0%, rgba(122, 14, 46, 0.22), transparent 70%),
+      radial-gradient(600px 300px at 92% 100%, rgba(212, 175, 55, 0.06), transparent 70%);
+  }
+  .section-alt::before,
+  .section-alt::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.35), transparent);
+  }
+  .section-alt::before { top: 0; }
+  .section-alt::after { bottom: 0; }
 
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
+
+  /* Small uppercase gold eyebrow above headings */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-gold-400;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgb(var(--color-gold-400)));
+  }
 }
 
 @layer utilities {
-  /* Official Brand Gradients - Light Mode */
+  /* ---------- Brand gradients (all dark, glowing) ---------- */
   .gradient-luxury {
-    @apply bg-gradient-to-r from-burgundy-700 to-gold-500;
+    background:
+      radial-gradient(900px 520px at 88% 0%, rgba(212, 175, 55, 0.2), transparent 60%),
+      radial-gradient(800px 600px at 0% 100%, rgba(184, 52, 90, 0.32), transparent 60%),
+      linear-gradient(135deg, rgb(var(--color-burgundy-950)) 0%, rgb(var(--color-burgundy-900)) 48%, #0E080B 100%);
   }
 
   .gradient-beauty {
-    @apply bg-gradient-to-r from-burgundy-700 to-pink-500;
+    background:
+      radial-gradient(800px 500px at 100% 100%, rgba(236, 72, 153, 0.22), transparent 60%),
+      radial-gradient(700px 500px at 0% 0%, rgba(212, 175, 55, 0.14), transparent 60%),
+      linear-gradient(135deg, rgb(var(--color-burgundy-900)) 0%, rgb(var(--color-burgundy-950)) 55%, #0E080B 100%);
   }
 
   .gradient-energy {
-    @apply bg-gradient-to-r from-burgundy-700 to-red-500;
+    background: linear-gradient(135deg, rgb(var(--color-burgundy-900)), rgb(var(--color-red-900)) 60%, #0E080B);
   }
 
   .gradient-trust-premium {
-    @apply bg-gradient-to-r from-emerald-600 to-gold-500;
+    background: linear-gradient(135deg, rgb(var(--color-emerald-900)), rgb(var(--color-gold-900)) 70%, #0E080B);
   }
 
   .gradient-signature {
-    @apply bg-gradient-to-r from-burgundy-700 via-pink-500 to-red-500;
+    background: linear-gradient(135deg, rgb(var(--color-burgundy-900)), rgb(var(--color-pink-900)) 50%, rgb(var(--color-red-900)));
   }
 
+  /* Animated gold shimmer for headline words */
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-burgundy-700 to-gold-500;
+    background-image: linear-gradient(100deg, rgb(var(--color-gold-200)) 0%, rgb(var(--color-gold-400)) 30%, rgb(var(--color-gold-500)) 50%, rgb(var(--color-gold-200)) 75%, rgb(var(--color-gold-400)) 100%);
+    background-size: 220% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: shimmerText 7s linear infinite;
   }
 
-  /* Dark Mode Gradients - More subtle, burgundy-led */
-  .dark .gradient-luxury {
-    @apply bg-gradient-to-r from-burgundy-800 to-burgundy-600;
-  }
-
-  .dark .gradient-beauty {
-    @apply bg-gradient-to-r from-burgundy-800 to-pink-600;
-  }
-
-  .dark .gradient-energy {
-    @apply bg-gradient-to-r from-burgundy-800 to-red-600;
-  }
-
-  .dark .gradient-trust-premium {
-    @apply bg-gradient-to-r from-emerald-700 to-gold-600;
-  }
-
-  .dark .gradient-signature {
-    @apply bg-gradient-to-r from-burgundy-800 via-pink-600 to-red-600;
-  }
-
-  .dark .text-gradient {
-    @apply bg-gradient-to-r from-gold-400 to-gold-200;
-  }
-
+  /* Frosted dark glass */
   .glass {
-    @apply border border-burgundy-100/80 bg-[rgba(255,255,255,0.82)] backdrop-blur-xl;
+    background: rgba(27, 16, 22, 0.62);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border: 1px solid var(--line);
   }
 
-  .dark .glass {
-    @apply border-burgundy-900/50 bg-[rgba(36,32,29,0.9)] backdrop-blur-xl;
-  }
-
-  .bg-white {
-    background-color: var(--surface) !important;
-  }
-
+  /* Gradient hairline border (gold -> burgundy) */
   .gradient-border {
-    background: linear-gradient(var(--surface), var(--surface)) padding-box,
-                linear-gradient(135deg, theme('colors.burgundy.700'), theme('colors.burgundy.900')) border-box;
-    @apply border-2 border-transparent;
+    background:
+      linear-gradient(var(--surface), var(--surface)) padding-box,
+      linear-gradient(135deg, rgb(var(--color-gold-400)), rgb(var(--color-burgundy-600)) 55%, rgb(var(--color-gold-600))) border-box;
+    border: 1px solid transparent;
   }
 
-  .dark .gradient-border {
-    background: linear-gradient(var(--surface), var(--surface)) padding-box,
-                linear-gradient(135deg, theme('colors.burgundy.600'), theme('colors.burgundy.800')) border-box;
+  /* Animated, slowly rotating gold border for hero highlights */
+  .gold-border-anim {
+    position: relative;
+    border-radius: 1rem;
+  }
+  .gold-border-anim::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: conic-gradient(from var(--angle, 0deg), transparent 0%, rgba(212, 175, 55, 0.9) 12%, transparent 28%, transparent 60%, rgba(184, 52, 90, 0.8) 72%, transparent 88%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: borderSpin 6s linear infinite;
+    pointer-events: none;
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.25), 0 20px 60px -20px rgba(212, 175, 55, 0.45);
+  }
+
+  .divider-gold {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), transparent);
+  }
+
+  /* Film-grain overlay for extra depth on hero blocks */
+  .noise::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.07;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+
+  /* Subtle gold dotted grid texture */
+  .bg-dots {
+    background-image: radial-gradient(rgba(212, 175, 55, 0.14) 1px, transparent 1px);
+    background-size: 26px 26px;
   }
 
   .scrollbar-hide {
@@ -483,5 +528,79 @@ html.dark {
 
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
+  }
+}
+
+/* ---------- Motion primitives ---------- */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes borderSpin {
+  to { --angle: 360deg; }
+}
+
+@keyframes shimmerText {
+  0% { background-position: 0% center; }
+  100% { background-position: 220% center; }
+}
+
+
+/* ---------- Marquee ---------- */
+.marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+.marquee-track { display: flex; width: max-content; animation: marquee var(--marquee-speed, 40s) linear infinite; }
+.marquee-track.marquee-reverse { animation-direction: reverse; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee-group { display: flex; flex-shrink: 0; align-items: center; gap: 3rem; padding-right: 3rem; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* ---------- Spotlight card (cursor-follow glow) ---------- */
+.spotlight { position: relative; isolation: isolate; }
+.spotlight::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  background: radial-gradient(360px circle at var(--mx, 50%) var(--my, 50%), rgba(212, 175, 55, 0.16), transparent 60%);
+  pointer-events: none;
+}
+.spotlight:hover::before { opacity: 1; }
+
+/* ---------- Ambient motion ---------- */
+@keyframes floatSlow { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-16px) } }
+@keyframes drift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(40px, -30px, 0) scale(1.12); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.45); }
+  50%      { box-shadow: 0 0 0 14px rgba(212, 175, 55, 0); }
+}
+@keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+
+.animate-drift { animation: drift 16s ease-in-out infinite; }
+.animate-drift-slow { animation: drift 24s ease-in-out infinite reverse; }
+.animate-pulse-glow { animation: pulseGlow 2.6s ease-out infinite; }
+.animate-float-slow { animation: floatSlow 7s ease-in-out infinite; }
+.animate-fade-up { animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+/* Image zoom frame used by gallery tiles */
+.zoom-frame { overflow: hidden; }
+.zoom-frame img { transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1); }
+.zoom-frame:hover img { transform: scale(1.08); }
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
