@@ -211,8 +211,15 @@ export function Sparkles({ count = 18 }) {
       {dots.map((d, i) => (
         <motion.span
           key={i}
-          className="absolute rounded-full bg-gold-300"
-          style={{ left: d.left, top: d.top, width: d.size, height: d.size, boxShadow: '0 0 12px 2px rgba(240,202,89,0.55)' }}
+          className="absolute bg-gold-300"
+          style={{
+            left: d.left,
+            top: d.top,
+            width: d.size,
+            height: d.size,
+            clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
+            filter: 'drop-shadow(0 0 6px rgba(240,202,89,0.9))',
+          }}
           animate={{ y: [0, -34, 0], opacity: [0, 0.9, 0], scale: [0.6, 1, 0.6] }}
           transition={{ duration: d.duration, delay: d.delay, repeat: Infinity, ease: 'easeInOut' }}
         />
