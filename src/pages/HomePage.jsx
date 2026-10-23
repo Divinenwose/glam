@@ -241,7 +241,8 @@ export default function HomePage() {
         <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
           <div className="absolute -top-40 -right-32 w-[560px] h-[560px] rounded-full bg-burgundy-500/30 blur-[120px] animate-drift" />
           <div className="absolute -bottom-48 -left-32 w-[520px] h-[520px] rounded-full bg-gold-500/20 blur-[120px] animate-drift-slow" />
-          <div className="absolute top-1/3 left-1/2 w-[380px] h-[380px] -translate-x-1/2 rounded-full bg-pink-500/10 blur-[110px] animate-drift" />
+          <div className="absolute top-1/3 left-1/2 w-[380px] h-[380px] -translate-x-1/2 rounded-full bg-emerald-500/10 blur-[110px] animate-drift" />
+          <div className="absolute -bottom-40 -right-24 w-[460px] h-[460px] rounded-full bg-emerald-500/20 blur-[120px] animate-drift-slow" />
           <div className="absolute inset-0 bg-dots opacity-40 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
         </div>
         <SparkleField count={22} />
@@ -313,10 +314,10 @@ export default function HomePage() {
       {/* ───────────── Marquee ───────────── */}
       <section className="relative py-7 bg-[#0A0508] border-b border-gold-500/10">
         <Marquee speed={45}>
-          {marqueeItems.map((item) => (
+          {marqueeItems.map((item, i) => (
             <span key={item} className="flex items-center gap-12 whitespace-nowrap">
               <span className="font-display text-2xl md:text-3xl text-neutral-300/80 hover:text-gold-300 transition-colors">{item}</span>
-              <Sparkles className="w-5 h-5 text-gold-500/70" />
+              <Sparkles className={`w-5 h-5 ${i % 2 ? 'text-emerald-400/80' : 'text-gold-500/70'}`} />
             </span>
           ))}
         </Marquee>
@@ -332,14 +333,14 @@ export default function HomePage() {
           />
 
           <Stagger className="relative grid md:grid-cols-2 lg:grid-cols-4 gap-6" gap={0.12}>
-            <div className="hidden lg:block absolute top-[3.2rem] left-[12%] right-[12%] h-px bg-gradient-to-r from-transparent via-gold-500/40 to-transparent" aria-hidden="true" />
+            <div className="hidden lg:block absolute top-[3.2rem] left-[12%] right-[12%] h-px bg-gradient-to-r from-transparent via-emerald-400/50 to-transparent" aria-hidden="true" />
             {steps.map((step) => (
               <StaggerItem key={step.number} className="relative">
                 <SpotlightCard className="card h-full p-7 group hover:border-gold-500/45 transition-colors duration-500">
                   <span className="block text-6xl font-display font-semibold text-gradient leading-none">{step.number}</span>
                   <h3 className="text-xl font-display font-semibold text-white mt-6 mb-3">{step.title}</h3>
                   <p className="text-neutral-300 leading-relaxed">{step.description}</p>
-                  <div className="mt-6 h-px w-10 bg-gold-500/60 group-hover:w-full transition-all duration-700" />
+                  <div className="mt-6 h-px w-10 bg-emerald-400/70 group-hover:w-full transition-all duration-700" />
                 </SpotlightCard>
               </StaggerItem>
             ))}
@@ -427,8 +428,8 @@ export default function HomePage() {
                 {whyChooseUs.map((item) => (
                   <StaggerItem key={item.title}>
                     <SpotlightCard className="h-full rounded-2xl border border-gold-500/15 bg-white/[0.03] p-5 hover:border-gold-500/40 transition-colors duration-500 group">
-                      <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-burgundy-600 to-burgundy-800 ring-1 ring-gold-500/30 mb-4 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
-                        <item.icon className="w-6 h-6 text-gold-300" />
+                      <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-900 ring-1 ring-emerald-400/40 shadow-[0_8px_24px_-10px_rgba(16,185,129,0.6)] mb-4 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
+                        <item.icon className="w-6 h-6 text-emerald-100" />
                       </div>
                       <h3 className="font-display text-lg font-semibold text-white mb-1.5">{item.title}</h3>
                       <p className="text-sm text-neutral-400 leading-relaxed">{item.description}</p>
@@ -482,13 +483,14 @@ export default function HomePage() {
 
       {/* ───────────── Stats band ───────────── */}
       <section className="relative py-20 gradient-beauty noise overflow-hidden border-y border-gold-500/25">
+        <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(700px_320px_at_85%_100%,rgba(16,185,129,0.22),transparent_70%),radial-gradient(500px_260px_at_8%_0%,rgba(16,185,129,0.12),transparent_70%)]" aria-hidden="true" />
         <div className="absolute inset-0 bg-dots opacity-30 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)] pointer-events-none" aria-hidden="true" />
         <div className="container-custom relative">
           <Stagger className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-6" gap={0.12}>
             {stats.map((stat) => (
               <StaggerItem key={stat.label} className="text-center">
-                <div className="inline-flex p-3 rounded-full border border-gold-500/40 bg-gold-500/10 mb-4 animate-pulse-glow">
-                  <stat.icon className="w-5 h-5 text-gold-300" />
+                <div className="inline-flex p-3 rounded-full border border-emerald-400/50 bg-emerald-500/10 mb-4 animate-pulse-glow-emerald">
+                  <stat.icon className="w-5 h-5 text-emerald-300" />
                 </div>
                 <div className="text-4xl md:text-5xl font-display font-semibold text-white">
                   <Counter to={stat.to} decimals={stat.decimals || 0} suffix={stat.suffix} />
@@ -518,6 +520,7 @@ export default function HomePage() {
 
       {/* ───────────── Become a stylist ───────────── */}
       <section className="section gradient-beauty noise overflow-hidden">
+        <div className="absolute -bottom-32 -left-24 w-[420px] h-[420px] rounded-full bg-emerald-500/15 blur-[110px] animate-drift-slow pointer-events-none" aria-hidden="true" />
         <div className="absolute -top-24 right-0 w-[420px] h-[420px] rounded-full bg-gold-500/15 blur-3xl animate-drift pointer-events-none" aria-hidden="true" />
         <div className="container-custom relative">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
@@ -539,8 +542,8 @@ export default function HomePage() {
                     transition={{ delay: 0.15 + i * 0.1, duration: 0.6 }}
                     className="flex items-center gap-3"
                   >
-                    <span className="flex items-center justify-center w-6 h-6 rounded-full bg-gold-500/20 ring-1 ring-gold-400/60">
-                      <Check className="w-3.5 h-3.5 text-gold-300" />
+                    <span className="flex items-center justify-center w-6 h-6 rounded-full bg-emerald-500/20 ring-1 ring-emerald-400/70">
+                      <Check className="w-3.5 h-3.5 text-emerald-300" />
                     </span>
                     <span className="text-neutral-100">{benefit}</span>
                   </motion.li>
