@@ -41,7 +41,7 @@ export default function SearchBar({ variant = 'hero', className, onSearch }) {
               placeholder="Search stylists by name, service, or location..."
               value={location}
               onChange={(e) => setLocation(e.target.value)}
-              className="input pl-10"
+              className="input input-burgundy pl-10"
             />
           </div>
           <Button onClick={handleSearch}>
@@ -74,7 +74,7 @@ export default function SearchBar({ variant = 'hero', className, onSearch }) {
               setShowLocationDropdown(true)
             }}
             onFocus={() => setShowLocationDropdown(true)}
-            className="input w-full"
+            className="input input-burgundy w-full"
           />
           <AnimatePresence>
             {showLocationDropdown && filteredCities.length > 0 && (
@@ -116,7 +116,7 @@ export default function SearchBar({ variant = 'hero', className, onSearch }) {
               setShowServiceDropdown(true)
             }}
             onFocus={() => setShowServiceDropdown(true)}
-            className="input w-full"
+            className="input input-burgundy w-full"
           />
           <AnimatePresence>
             {showServiceDropdown && filteredServices.length > 0 && (
@@ -151,10 +151,12 @@ export default function SearchBar({ variant = 'hero', className, onSearch }) {
           </label>
           <input
             type="date"
+            data-placeholder="Select date"
+            required
             value={date}
             onChange={(e) => setDate(e.target.value)}
             min={new Date().toISOString().split('T')[0]}
-            className="input w-full"
+            className="input input-burgundy w-full"
           />
         </div>
 
@@ -166,9 +168,9 @@ export default function SearchBar({ variant = 'hero', className, onSearch }) {
           </label>
           <button
             onClick={() => setShowBudgetDropdown(!showBudgetDropdown)}
-            className="input w-full text-left flex items-center justify-between"
+            className="input input-burgundy w-full text-left flex items-center justify-between"
           >
-            <span className={budget ? 'text-white' : 'text-neutral-400'}>
+            <span className={budget ? 'text-white font-medium' : 'text-white/65'}>
               {budget || 'Select budget'}
             </span>
           </button>

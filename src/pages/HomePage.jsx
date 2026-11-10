@@ -232,7 +232,6 @@ export default function HomePage() {
   const [openFaq, setOpenFaq] = useState(0)
   const { scrollY } = useScroll()
   const heroY = useTransform(scrollY, [0, 600], [0, 120])
-  const heroFade = useTransform(scrollY, [0, 500], [1, 0.2])
 
   return (
     <div className="min-h-screen overflow-x-clip">
@@ -248,7 +247,7 @@ export default function HomePage() {
         <SparkleField count={22} />
 
         <div className="container-custom relative">
-          <motion.div style={{ y: heroY, opacity: heroFade }} className="pt-20 pb-24 lg:pt-28 lg:pb-32">
+          <motion.div style={{ y: heroY }} className="pt-20 pb-24 lg:pt-28 lg:pb-32">
             <div className="max-w-4xl mx-auto text-center">
               <motion.span
                 initial={{ opacity: 0, y: 16, scale: 0.95 }}
