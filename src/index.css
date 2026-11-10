@@ -307,6 +307,33 @@
     border-color: rgb(var(--color-gold-500));
     box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.18);
   }
+
+  /* Soft burgundy inputs for the hero search */
+  .input-burgundy {
+    color: #fff;
+    caret-color: #F0CA59;
+    background-image: linear-gradient(180deg, rgba(128, 24, 58, 0.62), rgba(94, 16, 42, 0.68));
+    background-color: rgba(110, 18, 48, 0.6);
+    border: 1px solid rgba(240, 202, 89, 0.28);
+    color-scheme: dark;
+  }
+  .input-burgundy::placeholder { color: rgba(255, 255, 255, 0.62); opacity: 1; }
+  .input-burgundy:hover { border-color: rgba(240, 202, 89, 0.5); }
+  .input-burgundy:focus {
+    background-color: rgba(128, 24, 58, 0.78);
+    border-color: rgb(var(--color-gold-400));
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.22);
+  }
+  .input-burgundy[type="date"] { min-height: 2.75rem; }
+  .input-burgundy[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1) sepia(1) saturate(3) hue-rotate(5deg); opacity: 0.85; cursor: pointer; }
+  /* show a readable placeholder while the date is empty */
+  .input-burgundy[type="date"]:invalid:not(:focus) { color: transparent; }
+  .input-burgundy[type="date"]:invalid:not(:focus)::before {
+    content: attr(data-placeholder);
+    color: rgba(255, 255, 255, 0.62);
+    position: absolute;
+  }
+
   select.input option {
     background-color: #1B1016;
     color: #F8F2E9;
