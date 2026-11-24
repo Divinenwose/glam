@@ -7,11 +7,11 @@ import { SERVICE_CATEGORIES } from '../../../constants'
 import toast from 'react-hot-toast'
 
 const mockServices = [
-  { id: 1, name: 'Box Braids', category: 'Braids', price: 150, duration_minutes: 240, service_type: 'both', is_active: true },
-  { id: 2, name: 'Knotless Braids', category: 'Braids', price: 180, duration_minutes: 270, service_type: 'both', is_active: true },
-  { id: 3, name: 'Cornrows', category: 'Cornrows', price: 85, duration_minutes: 120, service_type: 'both', is_active: true },
-  { id: 4, name: 'Goddess Locs', category: 'Locs', price: 250, duration_minutes: 300, service_type: 'salon', is_active: true },
-  { id: 5, name: 'Spring Twists', category: 'Twists', price: 120, duration_minutes: 180, service_type: 'both', is_active: false },
+  { id: 1, name: 'Box Braids', category: 'Braids', price: 45000, duration_minutes: 240, service_type: 'both', is_active: true },
+  { id: 2, name: 'Knotless Braids', category: 'Braids', price: 54000, duration_minutes: 270, service_type: 'both', is_active: true },
+  { id: 3, name: 'Cornrows', category: 'Cornrows', price: 25500, duration_minutes: 120, service_type: 'both', is_active: true },
+  { id: 4, name: 'Goddess Locs', category: 'Locs', price: 75000, duration_minutes: 300, service_type: 'salon', is_active: true },
+  { id: 5, name: 'Spring Twists', category: 'Twists', price: 36000, duration_minutes: 180, service_type: 'both', is_active: false },
 ]
 
 export default function StylistServicesPage() {

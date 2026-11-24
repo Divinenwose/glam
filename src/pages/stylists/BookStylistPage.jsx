@@ -1,22 +1,16 @@
 import { useState } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Calendar as CalendarIcon, Clock, MapPin, CreditCard, Check, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Calendar as CalendarIcon, Clock, MapPin, CreditCard, Check, ChevronLeft, ChevronRight, Lock, ShieldCheck, Landmark, Smartphone } from 'lucide-react'
 import { Button, Card, Badge } from '../../components/ui'
 import { formatCurrency } from '../../utils/helpers'
+import { BOOKABLE_SERVICES, BOOKING_TIME_SLOTS, PLATFORM_FEE } from '../../constants/pricing'
+import { createPayment, toLocalISODate } from '../../lib/payments'
+import { useAuth } from '../../context/AuthContext'
 import toast from 'react-hot-toast'
 
-const mockServices = [
-  { id: 1, name: 'Box Braids', price: 150, duration_minutes: 240 },
-  { id: 2, name: 'Knotless Braids', price: 180, duration_minutes: 270 },
-  { id: 3, name: 'Cornrows', price: 85, duration_minutes: 120 },
-]
-
-const timeSlots = [
-  '09:00', '09:30', '10:00', '10:30', '11:00', '11:30',
-  '12:00', '12:30', '13:00', '13:30', '14:00', '14:30',
-  '15:00', '15:30', '16:00', '16:30', '17:00', '17:30',
-]
+const mockServices = BOOKABLE_SERVICES
+const timeSlots = BOOKING_TIME_SLOTS
 
 const steps = [
   { id: 1, title: 'Select Service' },
@@ -29,6 +23,8 @@ const steps = [
 export default function BookStylistPage() {
   const { id } = useParams()
   const navigate = useNavigate()
+  const location = useLocation()
+  const { user } = useAuth()
   const [currentStep, setCurrentStep] = useState(1)
   const [loading, setLoading] = useState(false)
   const [booking, setBooking] = useState({
@@ -38,7 +34,6 @@ export default function BookStylistPage() {
     time: null,
     address: '',
     notes: '',
-    paymentMethod: 'card',
   })
 
   const selectedService = mockServices.find(s => s.id === booking.serviceId)
@@ -51,12 +46,42 @@ export default function BookStylistPage() {
     if (currentStep > 1) setCurrentStep(currentStep - 1)
   }
 
-  const handleConfirmBooking = async () => {
+  const total = (selectedService?.price || 0) + PLATFORM_FEE
+
+  const canContinue =
+    (currentStep === 1 && !!booking.serviceId) ||
+    (currentStep === 2 && !!booking.date) ||
+    (currentStep === 3 && !!booking.time) ||
+    (currentStep === 4 && (booking.serviceType !== 'home' || booking.address.trim().length > 0)) ||
+    currentStep === 5
+
+  // Sends the booking choices to the server, then hands the customer to Paystack's secure checkout.
+  const handlePay = async () => {
+    if (!user) {
+      toast('Please sign in to complete your booking.')
+      navigate('/login', { state: { from: location.pathname } })
+      return
+    }
+    if (!selectedService || !booking.date || !booking.time) {
+      toast.error('Please complete the earlier steps first.')
+      return
+    }
     setLoading(true)
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    toast.success('Booking confirmed!')
-    navigate('/bookings')
-    setLoading(false)
+    try {
+      const payment = await createPayment({
+        stylistId: String(id),
+        serviceId: selectedService.id,
+        serviceType: booking.serviceType,
+        date: toLocalISODate(booking.date),
+        time: booking.time,
+        address: booking.address,
+        notes: booking.notes,
+      })
+      window.location.assign(payment.authorization_url)
+    } catch (err) {
+      toast.error(err.message)
+      setLoading(false)
+    }
   }
 
   const getDaysInMonth = (year, month) => {
@@ -347,33 +372,33 @@ export default function BookStylistPage() {
                 {currentStep === 5 && (
                   <div className="space-y-6">
                     <h2 className="text-lg font-semibold text-white">
-                      Payment Method
+                      Secure Payment
                     </h2>
 
-                    <div className="space-y-3">
-                      {[
-                        { id: 'card', label: 'Credit/Debit Card', icon: CreditCard },
-                        { id: 'cash', label: 'Pay in Cash', icon: null },
-                      ].map((method) => (
-                        <label
-                          key={method.id}
-                          className={`flex items-center gap-3 p-4 rounded-xl border-2 cursor-pointer transition-all ${booking.paymentMethod === method.id
-                              ? 'border-gold-500/50 bg-burgundy-900/20'
-                              : 'border-neutral-700'
-                            }`}
-                        >
-                          <input
-                            type="radio"
-                            name="paymentMethod"
-                            value={method.id}
-                            checked={booking.paymentMethod === method.id}
-                            onChange={(e) => setBooking({ ...booking, paymentMethod: e.target.value })}
-                            className="sr-only"
-                          />
-                          {method.icon && <method.icon className="w-5 h-5 text-neutral-300" />}
-                          <span className="font-medium text-white">{method.label}</span>
-                        </label>
-                      ))}
+                    <div className="rounded-2xl border border-emerald-400/30 bg-emerald-500/[0.07] p-5">
+                      <div className="flex items-start gap-3">
+                        <span className="p-2 rounded-xl bg-emerald-500/15 ring-1 ring-emerald-400/40">
+                          <ShieldCheck className="w-5 h-5 text-emerald-300" />
+                        </span>
+                        <div>
+                          <p className="font-medium text-white">Pay securely with Paystack</p>
+                          <p className="text-sm text-neutral-300 mt-1">
+                            You'll be taken to Paystack's encrypted checkout to complete your payment, then brought straight back here. We never see or store your card details.
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex flex-wrap gap-2 mt-4">
+                        {[
+                          { icon: CreditCard, label: 'Card' },
+                          { icon: Landmark, label: 'Bank transfer' },
+                          { icon: Smartphone, label: 'USSD' },
+                        ].map(({ icon: Icon, label }) => (
+                          <span key={label} className="inline-flex items-center gap-1.5 rounded-full border border-gold-500/25 bg-white/5 px-3 py-1 text-xs text-neutral-200">
+                            <Icon className="w-3.5 h-3.5 text-gold-300" />
+                            {label}
+                          </span>
+                        ))}
+                      </div>
                     </div>
 
                     <div className="bg-neutral-800 rounded-xl p-4">
@@ -384,12 +409,12 @@ export default function BookStylistPage() {
                         </div>
                         <div className="flex justify-between">
                           <span className="text-neutral-400">Platform fee</span>
-                          <span className="text-white">$5.00</span>
+                          <span className="text-white">{formatCurrency(PLATFORM_FEE)}</span>
                         </div>
                         <div className="border-t border-neutral-700 pt-2 mt-2">
                           <div className="flex justify-between font-bold">
-                            <span className="text-white">Total</span>
-                            <span className="text-gold-400">{formatCurrency((selectedService?.price || 0) + 5)}</span>
+                            <span className="text-white">Total to pay</span>
+                            <span className="text-gold-400">{formatCurrency(total)}</span>
                           </div>
                         </div>
                       </div>
@@ -405,10 +430,11 @@ export default function BookStylistPage() {
                   </Button>
 
                   {currentStep < 5 ? (
-                    <Button onClick={handleNext}>Continue</Button>
+                    <Button onClick={handleNext} disabled={!canContinue}>Continue</Button>
                   ) : (
-                    <Button onClick={handleConfirmBooking} loading={loading}>
-                      Confirm Booking
+                    <Button onClick={handlePay} loading={loading} disabled={!canContinue}>
+                      <Lock className="w-4 h-4 mr-2" />
+                      Pay {formatCurrency(total)}
                     </Button>
                   )}
                 </div>
@@ -449,7 +475,7 @@ export default function BookStylistPage() {
                       <div className="flex justify-between">
                         <span className="text-neutral-400">Total</span>
                         <span className="text-xl font-bold text-gold-400">
-                          {formatCurrency(selectedService.price + 5)}
+                          {formatCurrency(selectedService.price + PLATFORM_FEE)}
                         </span>
                       </div>
                     </div>

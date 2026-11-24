@@ -13,6 +13,7 @@ const ContactPage = lazy(() => import('./pages/ContactPage'))
 const StylistsPage = lazy(() => import('./pages/stylists/StylistsPage'))
 const StylistDetailPage = lazy(() => import('./pages/stylists/StylistDetailPage'))
 const BookStylistPage = lazy(() => import('./pages/stylists/BookStylistPage'))
+const PaymentCallbackPage = lazy(() => import('./pages/PaymentCallbackPage'))
 const BecomeStylistPage = lazy(() => import('./pages/BecomeStylistPage'))
 
 // Auth pages
@@ -80,6 +81,7 @@ function App() {
           <Route path="/stylists/:id" element={<StylistDetailPage />} />
           <Route path="/stylists/:id/book" element={<BookStylistPage />} />
           <Route path="/become-stylist" element={<BecomeStylistPage />} />
+          <Route path="/payment/callback" element={<PaymentCallbackPage />} />
         </Route>
 
         {/* Auth routes */}

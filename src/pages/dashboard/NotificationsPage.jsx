@@ -36,7 +36,7 @@ const mockNotifications = [
     id: '4',
     type: 'payment',
     title: 'Payment Successful',
-    message: 'Your payment of $155 has been processed successfully.',
+    message: 'Your payment of ₦46,500 has been processed successfully.',
     data: { payment_id: '1' },
     is_read: true,
     created_at: '2024-02-10T15:30:00',

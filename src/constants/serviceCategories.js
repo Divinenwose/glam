@@ -23,10 +23,10 @@ export const SERVICE_TYPES = [
 ]
 
 export const PRICE_RANGES = [
-  { id: 'budget', label: 'Budget', min: 0, max: 50 },
-  { id: 'mid-range', label: 'Mid-Range', min: 50, max: 150 },
-  { id: 'premium', label: 'Premium', min: 150, max: 500 },
-  { id: 'luxury', label: 'Luxury', min: 500, max: null },
+  { id: 'budget', label: 'Budget', min: 0, max: 15000 },
+  { id: 'mid-range', label: 'Mid-Range', min: 15000, max: 45000 },
+  { id: 'premium', label: 'Premium', min: 45000, max: 150000 },
+  { id: 'luxury', label: 'Luxury', min: 150000, max: null },
 ]
 
 export const RATING_OPTIONS = [

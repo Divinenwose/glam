@@ -20,7 +20,7 @@ const mockStylist = {
   rating: 4.9,
   review_count: 128,
   experience_years: 8,
-  starting_price: 85,
+  starting_price: 25500,
   specializations: ['Braids', 'Cornrows', 'Twists', 'Box Braids', 'Knotless Braids', 'Goddess Locs'],
   certifications: ['Licensed Cosmetologist', 'Braiding Certified', 'Hair Care Specialist'],
   portfolio_images: [
@@ -43,11 +43,11 @@ const mockStylist = {
     sunday: null,
   },
   services: [
-    { id: 1, name: 'Box Braids', description: 'Classic box braids using high-quality synthetic hair.', price: 150, duration_minutes: 240, service_type: 'both' },
-    { id: 2, name: 'Knotless Braids', description: 'Tension-free knotless braids for a natural look.', price: 180, duration_minutes: 270, service_type: 'both' },
-    { id: 3, name: 'Cornrows', description: 'Neat cornrows in various patterns and styles.', price: 85, duration_minutes: 120, service_type: 'both' },
-    { id: 4, name: 'Goddess Locs', description: 'Beautiful goddess locs with wavy ends.', price: 250, duration_minutes: 300, service_type: 'salon' },
-    { id: 5, name: 'Spring Twists', description: 'Lightweight spring twists for a bouncy look.', price: 120, duration_minutes: 180, service_type: 'both' },
+    { id: 1, name: 'Box Braids', description: 'Classic box braids using high-quality synthetic hair.', price: 45000, duration_minutes: 240, service_type: 'both' },
+    { id: 2, name: 'Knotless Braids', description: 'Tension-free knotless braids for a natural look.', price: 54000, duration_minutes: 270, service_type: 'both' },
+    { id: 3, name: 'Cornrows', description: 'Neat cornrows in various patterns and styles.', price: 25500, duration_minutes: 120, service_type: 'both' },
+    { id: 4, name: 'Goddess Locs', description: 'Beautiful goddess locs with wavy ends.', price: 75000, duration_minutes: 300, service_type: 'salon' },
+    { id: 5, name: 'Spring Twists', description: 'Lightweight spring twists for a bouncy look.', price: 36000, duration_minutes: 180, service_type: 'both' },
   ],
   reviews: [
     { id: 1, rating: 5, comment: 'Jasmine did an amazing job with my box braids! They look so natural and lasted for months. Highly recommend!', created_at: '2024-01-15', customer: { full_name: 'Aisha M.', avatar_url: null } },
