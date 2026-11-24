@@ -4,10 +4,12 @@ export function cn(...inputs) {
   return clsx(inputs)
 }
 
-export function formatCurrency(amount, currency = 'USD') {
-  return new Intl.NumberFormat('en-US', {
+export function formatCurrency(amount, currency = 'NGN') {
+  return new Intl.NumberFormat('en-NG', {
     style: 'currency',
     currency,
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 2,
   }).format(amount)
 }
 

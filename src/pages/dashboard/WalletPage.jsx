@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion'
-import { Wallet, ArrowDownLeft, ArrowUpRight, CreditCard, DollarSign, ArrowRight } from 'lucide-react'
+import { Wallet, ArrowDownLeft, ArrowUpRight, CreditCard, Banknote, ArrowRight } from 'lucide-react'
 import { Card, Button } from '../../components/ui'
 import { formatCurrency, formatDate } from '../../utils/helpers'
 
 const mockTransactions = [
-  { id: 1, type: 'booking_payment', amount: -155, date: '2024-02-12', status: 'completed', booking_id: '1' },
-  { id: 2, type: 'booking_payment', amount: -50, date: '2024-02-10', status: 'completed', booking_id: '2' },
-  { id: 3, type: 'refund', amount: 100, date: '2024-01-28', status: 'completed', booking_id: '3' },
+  { id: 1, type: 'booking_payment', amount: -46500, date: '2024-02-12', status: 'completed', booking_id: '1' },
+  { id: 2, type: 'booking_payment', amount: -15000, date: '2024-02-10', status: 'completed', booking_id: '2' },
+  { id: 3, type: 'refund', amount: 30000, date: '2024-01-28', status: 'completed', booking_id: '3' },
 ]
 
 export default function WalletPage() {

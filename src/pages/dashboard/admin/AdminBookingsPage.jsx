@@ -5,9 +5,9 @@ import { Card, Badge, Button } from '../../../components/ui'
 import { formatCurrency, formatDate } from '../../../utils/helpers'
 
 const mockBookings = [
-  { id: 'B001', customer: 'Aisha M.', stylist: 'Jasmine Williams', service: 'Box Braids', date: '2024-02-15', amount: 155, status: 'confirmed' },
-  { id: 'B002', customer: 'Patricia L.', stylist: 'Marcus Johnson', service: 'Fade', date: '2024-02-14', amount: 50, status: 'completed' },
-  { id: 'B003', customer: 'Tanya W.', stylist: 'Amara Chen', service: 'Balayage', date: '2024-02-13', amount: 200, status: 'pending' },
+  { id: 'B001', customer: 'Aisha M.', stylist: 'Jasmine Williams', service: 'Box Braids', date: '2024-02-15', amount: 46500, status: 'confirmed' },
+  { id: 'B002', customer: 'Patricia L.', stylist: 'Marcus Johnson', service: 'Fade', date: '2024-02-14', amount: 15000, status: 'completed' },
+  { id: 'B003', customer: 'Tanya W.', stylist: 'Amara Chen', service: 'Balayage', date: '2024-02-13', amount: 60000, status: 'pending' },
 ]
 
 export default function AdminBookingsPage() {

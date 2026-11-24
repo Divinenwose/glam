@@ -4,10 +4,10 @@ import { Search, MoreVertical, Check, X, Star, AlertTriangle } from 'lucide-reac
 import { Card, Badge, Avatar, Button } from '../../../components/ui'
 
 const mockStylists = [
-  { id: 1, name: 'Jasmine Williams', email: 'jasmine@example.com', services: 5, rating: 4.9, earnings: 15000, status: 'verified', joined: '2023-06-15' },
-  { id: 2, name: 'Marcus Johnson', email: 'marcus@example.com', services: 4, rating: 4.8, earnings: 12000, status: 'verified', joined: '2023-07-10' },
-  { id: 3, name: 'Kofi Asante', email: 'kofi@example.com', services: 3, rating: 4.85, earnings: 8000, status: 'pending', joined: '2024-02-01' },
-  { id: 4, name: 'Taylor Smith', email: 'taylor@example.com', services: 6, rating: 4.92, earnings: 20000, status: 'verified', joined: '2023-05-20' },
+  { id: 1, name: 'Jasmine Williams', email: 'jasmine@example.com', services: 5, rating: 4.9, earnings: 4500000, status: 'verified', joined: '2023-06-15' },
+  { id: 2, name: 'Marcus Johnson', email: 'marcus@example.com', services: 4, rating: 4.8, earnings: 3600000, status: 'verified', joined: '2023-07-10' },
+  { id: 3, name: 'Kofi Asante', email: 'kofi@example.com', services: 3, rating: 4.85, earnings: 2400000, status: 'pending', joined: '2024-02-01' },
+  { id: 4, name: 'Taylor Smith', email: 'taylor@example.com', services: 6, rating: 4.92, earnings: 6000000, status: 'verified', joined: '2023-05-20' },
 ]
 
 export default function AdminStylistsPage() {

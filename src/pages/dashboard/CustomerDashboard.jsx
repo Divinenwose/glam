@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Calendar, Heart, MessageSquare, Clock, TrendingUp, Users, DollarSign, Eye } from 'lucide-react'
+import { Calendar, Heart, MessageSquare, Clock, TrendingUp, Users, Banknote, Eye } from 'lucide-react'
 import { StatsCard, Card, BookingCard } from '../../components/ui'
 
 const upcomingBookings = [
@@ -10,7 +10,7 @@ const upcomingBookings = [
     service: { name: 'Box Braids' },
     booking_date: '2024-02-15',
     booking_time: '10:00',
-    amount: 155,
+    amount: 46500,
     status: 'confirmed',
     service_type: 'salon',
   },
@@ -20,7 +20,7 @@ const upcomingBookings = [
     service: { name: 'Fade Haircut' },
     booking_date: '2024-02-18',
     booking_time: '14:30',
-    amount: 50,
+    amount: 15000,
     status: 'pending',
     service_type: 'salon',
   },

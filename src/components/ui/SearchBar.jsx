@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { MapPin, Search, Calendar, DollarSign, X } from 'lucide-react'
+import { MapPin, Search, Calendar, Banknote, X } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import { Button, Input } from './Modal'
 import { SERVICE_CATEGORIES, PRICE_RANGES } from '../../constants'
@@ -163,7 +163,7 @@ export default function SearchBar({ variant = 'hero', className, onSearch }) {
         {/* Budget */}
         <div className="relative">
           <label className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gold-400/90 mb-2">
-            <DollarSign className="w-4 h-4" />
+            <Banknote className="w-4 h-4" />
             Budget
           </label>
           <button

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Calendar, DollarSign, Users, TrendingUp, Clock, Star, ArrowRight, CheckCircle } from 'lucide-react'
+import { Calendar, Banknote, Users, TrendingUp, Clock, Star, ArrowRight, CheckCircle } from 'lucide-react'
 import { StatsCard, Card, BookingCard } from '../../../components/ui'
 import { formatCurrency } from '../../../utils/helpers'
 
@@ -11,7 +11,7 @@ const todayBookings = [
     service: { name: 'Box Braids' },
     booking_date: new Date().toISOString(),
     booking_time: '10:00',
-    amount: 150,
+    amount: 45000,
     status: 'confirmed',
   },
   {
@@ -20,7 +20,7 @@ const todayBookings = [
     service: { name: 'Cornrows' },
     booking_date: new Date().toISOString(),
     booking_time: '14:30',
-    amount: 85,
+    amount: 25500,
     status: 'pending',
   },
 ]
@@ -28,7 +28,7 @@ const todayBookings = [
 export default function StylistDashboard() {
   const stats = [
     { title: "Today's Bookings", value: '2', change: '+1', changeType: 'positive', icon: Calendar },
-    { title: 'This Week Earnings', value: '$850', change: '+12%', changeType: 'positive', icon: DollarSign },
+    { title: 'This Week Earnings', value: '₦255,000', change: '+12%', changeType: 'positive', icon: Banknote },
     { title: 'Total Customers', value: '128', change: '+5', changeType: 'positive', icon: Users },
     { title: 'Average Rating', value: '4.9', change: '+0.1', changeType: 'positive', icon: Star },
   ]

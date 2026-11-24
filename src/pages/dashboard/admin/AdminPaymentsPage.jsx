@@ -3,17 +3,17 @@ import { Card, StatsCard } from '../../../components/ui'
 import { formatCurrency } from '../../../utils/helpers'
 
 const mockPayments = [
-  { id: 'P001', amount: 155, type: 'booking_payment', status: 'completed', date: '2024-02-15', user: 'Aisha M.' },
-  { id: 'P002', amount: 500, type: 'withdrawal', status: 'pending', date: '2024-02-14', user: 'Jasmine Williams' },
-  { id: 'P003', amount: 50, type: 'booking_payment', status: 'completed', date: '2024-02-14', user: 'Patricia L.' },
+  { id: 'P001', amount: 46500, type: 'booking_payment', status: 'completed', date: '2024-02-15', user: 'Aisha M.' },
+  { id: 'P002', amount: 150000, type: 'withdrawal', status: 'pending', date: '2024-02-14', user: 'Jasmine Williams' },
+  { id: 'P003', amount: 15000, type: 'booking_payment', status: 'completed', date: '2024-02-14', user: 'Patricia L.' },
 ]
 
 export default function AdminPaymentsPage() {
   const stats = [
-    { title: 'Total Processed', value: formatCurrency(125000), icon: null },
-    { title: 'Pending Withdrawals', value: formatCurrency(8500), icon: null },
-    { title: 'Platform Revenue', value: formatCurrency(25000), icon: null },
-    { title: 'Pending Refunds', value: formatCurrency(500), icon: null },
+    { title: 'Total Processed', value: formatCurrency(37500000), icon: null },
+    { title: 'Pending Withdrawals', value: formatCurrency(2550000), icon: null },
+    { title: 'Platform Revenue', value: formatCurrency(7500000), icon: null },
+    { title: 'Pending Refunds', value: formatCurrency(150000), icon: null },
   ]
 
   return (

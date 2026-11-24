@@ -1,19 +1,19 @@
 import { motion } from 'framer-motion'
-import { Users, DollarSign, ShoppingBag, Star, TrendingUp, TrendingDown, AlertTriangle, CheckCircle } from 'lucide-react'
+import { Users, Banknote, ShoppingBag, Star, TrendingUp, TrendingDown, AlertTriangle, CheckCircle } from 'lucide-react'
 import { Card, StatsCard } from '../../../components/ui'
 import { formatCurrency } from '../../../utils/helpers'
 
 export default function AdminDashboard() {
   const stats = [
     { title: 'Total Users', value: '15,240', change: '+12%', changeType: 'positive', icon: Users },
-    { title: 'Total Revenue', value: formatCurrency(125000), change: '+8%', changeType: 'positive', icon: DollarSign },
+    { title: 'Total Revenue', value: formatCurrency(37500000), change: '+8%', changeType: 'positive', icon: Banknote },
     { title: 'Total Bookings', value: '8,520', change: '+15%', changeType: 'positive', icon: ShoppingBag },
     { title: 'Active Stylists', value: '2,340', change: '+5%', changeType: 'positive', icon: Star },
   ]
 
   const pendingApprovals = [
     { id: 1, name: 'Kofi Asante', type: 'stylist_verification', date: '2024-02-14' },
-    { id: 2, name: 'Amara Chen', type: 'withdrawal_request', amount: 500 },
+    { id: 2, name: 'Amara Chen', type: 'withdrawal_request', amount: 150000 },
     { id: 3, name: 'Sarah Miller', type: 'support_ticket', subject: 'Payment not received' },
   ]
 
@@ -59,7 +59,7 @@ export default function AdminDashboard() {
                       'bg-red-900/30'
                     }`}>
                       {item.type === 'stylist_verification' ? <Users className="w-4 h-4 text-gold-400" /> :
-                       item.type === 'withdrawal_request' ? <DollarSign className="w-4 h-4 text-gold-400" /> :
+                       item.type === 'withdrawal_request' ? <Banknote className="w-4 h-4 text-gold-400" /> :
                        <AlertTriangle className="w-4 h-4 text-red-400" />}
                     </div>
                     <div>
@@ -110,7 +110,7 @@ export default function AdminDashboard() {
               <div>
                 <div className="flex justify-between text-sm mb-1">
                   <span className="text-neutral-400">Platform Fees</span>
-                  <span className="font-medium">{formatCurrency(25000)}</span>
+                  <span className="font-medium">{formatCurrency(7500000)}</span>
                 </div>
                 <div className="h-2 bg-neutral-700 rounded-full overflow-hidden">
                   <div className="h-full w-[20%] bg-burgundy-600 rounded-full" />
@@ -119,7 +119,7 @@ export default function AdminDashboard() {
               <div>
                 <div className="flex justify-between text-sm mb-1">
                   <span className="text-neutral-400">Stylist Earnings</span>
-                  <span className="font-medium">{formatCurrency(100000)}</span>
+                  <span className="font-medium">{formatCurrency(30000000)}</span>
                 </div>
                 <div className="h-2 bg-neutral-700 rounded-full overflow-hidden">
                   <div className="h-full w-[80%] bg-gold-500 rounded-full" />

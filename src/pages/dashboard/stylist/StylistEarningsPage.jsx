@@ -1,16 +1,16 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { DollarSign, TrendingUp, ArrowDownLeft, ArrowUpRight, Calendar, Clock } from 'lucide-react'
+import { Banknote, TrendingUp, ArrowDownLeft, ArrowUpRight, Calendar, Clock } from 'lucide-react'
 import { Card, Button } from '../../../components/ui'
 import { StatsCard } from '../../../components/ui'
 import { formatCurrency, formatDate } from '../../../utils/helpers'
 
 const mockTransactions = [
-  { id: 1, type: 'earning', amount: 150, date: '2024-02-12', status: 'completed', booking_id: '1' },
-  { id: 2, type: 'earning', amount: 85, date: '2024-02-10', status: 'completed', booking_id: '2' },
-  { id: 3, type: 'withdrawal', amount: -500, date: '2024-02-08', status: 'completed', account: '****4242' },
-  { id: 4, type: 'earning', amount: 200, date: '2024-02-05', status: 'completed', booking_id: '3' },
-  { id: 5, type: 'refund', amount: -100, date: '2024-02-01', status: 'completed', booking_id: '4' },
+  { id: 1, type: 'earning', amount: 45000, date: '2024-02-12', status: 'completed', booking_id: '1' },
+  { id: 2, type: 'earning', amount: 25500, date: '2024-02-10', status: 'completed', booking_id: '2' },
+  { id: 3, type: 'withdrawal', amount: -150000, date: '2024-02-08', status: 'completed', account: '****4242' },
+  { id: 4, type: 'earning', amount: 60000, date: '2024-02-05', status: 'completed', booking_id: '3' },
+  { id: 5, type: 'refund', amount: -30000, date: '2024-02-01', status: 'completed', booking_id: '4' },
 ]
 
 export default function StylistEarningsPage() {
@@ -18,10 +18,10 @@ export default function StylistEarningsPage() {
   const availableBalance = 435
 
   const stats = [
-    { title: 'Today\'s Earnings', value: formatCurrency(235), change: '+15%', changeType: 'positive', icon: DollarSign },
-    { title: 'This Week', value: formatCurrency(850), change: '+12%', changeType: 'positive', icon: TrendingUp },
-    { title: 'This Month', value: formatCurrency(3450), change: '+8%', changeType: 'positive', icon: Calendar },
-    { title: 'Total Earned', value: formatCurrency(25000), change: '', icon: DollarSign },
+    { title: 'Today\'s Earnings', value: formatCurrency(70500), change: '+15%', changeType: 'positive', icon: Banknote },
+    { title: 'This Week', value: formatCurrency(255000), change: '+12%', changeType: 'positive', icon: TrendingUp },
+    { title: 'This Month', value: formatCurrency(1035000), change: '+8%', changeType: 'positive', icon: Calendar },
+    { title: 'Total Earned', value: formatCurrency(7500000), change: '', icon: Banknote },
   ]
 
   return (
@@ -65,7 +65,7 @@ export default function StylistEarningsPage() {
           <div className="mt-6 pt-4 border-t border-neutral-700">
             <Button>Request Withdrawal</Button>
             <p className="text-xs text-neutral-400 mt-3">
-              Minimum withdrawal amount: $50. Withdrawals typically process within 3-5 business days.
+              Minimum withdrawal amount: ₦15,000. Withdrawals typically process within 3-5 business days.
             </p>
           </div>
         </Card>

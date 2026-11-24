@@ -24,7 +24,7 @@ const mockMessages = [
   { id: 1, sender_id: 'you', content: 'Hi! I wanted to ask about the box braids service.', created_at: '2024-02-12 14:00' },
   { id: 2, sender_id: '2', content: 'Hello! Of course, I would be happy to help. What would you like to know?', created_at: '2024-02-12 14:05' },
   { id: 3, sender_id: 'you', content: 'What length options do you have for box braids?', created_at: '2024-02-12 14:10' },
-  { id: 4, sender_id: '2', content: 'I offer medium length (shoulder) for $150, long length (waist) for $180, and extra long for $200. All include the hair.', created_at: '2024-02-12 14:20' },
+  { id: 4, sender_id: '2', content: 'I offer medium length (shoulder) for ₦45,000, long length (waist) for ₦54,000, and extra long for ₦60,000. All include the hair.', created_at: '2024-02-12 14:20' },
   { id: 5, sender_id: 'you', content: 'Perfect! I would like the medium length. When is your next availability?', created_at: '2024-02-12 14:25' },
   { id: 6, sender_id: '2', content: 'Looking forward to seeing you on Friday!', created_at: '2024-02-12 14:30' },
 ]
